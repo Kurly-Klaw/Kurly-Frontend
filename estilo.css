@@ -1,3 +1,54 @@
+:root{
+    --cinza-claro:#d1d1d1;
+    --cinza-medio:#a3a3a3;
+    --cinza-80:#585858;
+    --cinza-100:#3a3a3a;
+}
+body{
+    margin: 0px;
+}
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--cinza-80);
+    display: flexbox;
+}
+.banner{
+    width: 90%;
+    max-width: 700px;
+    background-color: var(--cinza-medio);
+    margin: 0 auto;
+    padding: 20px 5px;
+    font-style: italic;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+nav{
+    background-color: var(--cinza-claro);
+    padding: 2px 5px;
+    color: #0f0c25;
+}
+a{
+    padding: 5px 8px;
+}
+a:link{
+    color: #0f0c25;
+}
+a:hover{
+    background-color: white;
+}
+
+
+@media screen and (max-width:320px){
+    body{
+    background-color: red;
+    }
+}
+
+
+
 #pgLogin{
         background-color: #0f0c25;
         color: white;
