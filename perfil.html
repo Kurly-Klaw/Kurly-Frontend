@@ -1,19 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt_br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Pagina</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/773/773634.png">
+    <title>Perfil</title>
 </head>
+
 <body>
     <header>
-        <div class="banner">
-            <img src="./src/logo-pre.png" alt="">
-            <h1 class="headerT">Blend Kashos</h1>
+        <div class="left_btn">
+            <a href="index.html">
+                <h2>SETA</h2>
+            </a>
         </div>
-        <nav>Paginas:<a href="./login.html">Login</a><a href="./cadastro.html">Cadastro</a><a href="./perfil.html">Perfil</a><a href="./agenda.html">agenda</a></nav>
+        <div id="banner">
+            <img src="./src/logo-pre.png" alt="Logo do salão" style="height: 45px;width: auto;">
+        </div>
+        <div class="right_btn">
+            <a>P</a>
+            <a>:</a>
+        </div>
     </header>
-    <div class="caixa"></div>
+    <main>
+        <section id="infos">
+            <img src="./src/logo-pre.png" style="width: 80px;height: 80px; border-radius: 90px; border: 1px solid red;">
+            <div>
+                <h1 id="nome_cliente">Fernanda</h1>
+                <h5 id="num_cliente">(85) 91234-5678</h5>
+            </div>
+        </section>
+        <section id="meuCabelo">
+            <h1>Meu cabelo</h1>
+            <form>
+                <div class="containerH">
+                    <img src="./src/Cabelos lisos.svg" id="cabeloSVG">
+                    <input type="range" id="cabeloSlide">
+                    <div class="tiposCabelo">
+                        <div id="liso" class="tipoCabelo">
+                            <div>
+                                <label for="1A">1A</label>
+                                <input labelledby="1A" type="radio" id="1A" name="cabelo" value="1A">
+                            </div>
+                            <div>
+                                <label for="1B">1B</label>
+                                <input type="radio" id="1B" name="cabelo" value="1B">
+                            </div>
+                            <div>
+                                <label for="1C">1C</label>
+                                <input type="radio" id="1C" name="cabelo" value="1C">
+                            </div>
+                        </div>
+                        <div id="ondulado" class="tipoCabelo">
+                            <div>
+                                <label for="2A">2A </label>
+                                <input type="radio" id="2A" name="cabelo" value="2A">
+                            </div>
+                            <div>
+                                <label for="2B">2B </label>
+                                <input type="radio" id="2B" name="cabelo" value="2B">
+                            </div>
+                            <div>
+                                <label for="2C">2C </label>
+                                <input type="radio" id="2C" name="cabelo" value="2C">
+                            </div>
+                        </div>
+                        <div id="cacheado" class="tipoCabelo">
+                            <div>
+                                <label for="3A">3A </label>
+                                <input type="radio" id="3A" name="cabelo" value="3A">
+                            </div>
+                            <div>
+                                <label for="3B">3B </label>
+                                <input type="radio" id="3B" name="cabelo" value="3B">
+                            </div>
+                            <div>
+                                <label for="3C">3C </label>
+                                <input type="radio" id="3C" name="cabelo" value="3C">
+                            </div>
+                        </div>
+                        <div id="ondulado" class="tipoCabelo">
+                            <div>
+                                <label for="4A">4A </label>
+                                <input type="radio" id="4A" name="cabelo" value="4A">
+                            </div>
+                            <div>
+                                <label for="4B">4B </label>
+                                <input type="radio" id="4B" name="cabelo" value="4B">
+                            </div>
+                            <div>
+                                <label for="4C">4C </label>
+                                <input type="radio" id="4C" name="cabelo" value="4C">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+    </main>
+    <script></script>
 </body>
+
 </html>
