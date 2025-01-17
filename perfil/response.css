@@ -1,0 +1,53 @@
+/* Tela média */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Reduz tamanho da fonte */
+    }
+    
+    #infos{
+        height: 15vw;
+    }
+
+    .container-menu {
+        background-color: green; /* Feedback visual */
+    }
+
+    .periodos-container{
+        background-color:green; /* Cor inicial */
+    }
+}
+
+/* Tela pequena */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Tamanho mínimo */
+    }
+    .container-base{
+        padding: 2% 2%;
+        gap: 8px
+    }
+    .container-menu {
+        background-color: red; /* Feedback visual */
+    }
+
+    .periodos-container{
+        background-color:red; /* Cor inicial */
+    }
+}
+
+/* Tela extra-pequena */
+@media (max-width: 320px) {
+    body {
+        font-size: 12px; /* Tamanho mínimo */
+    }
+
+    .container-menu {
+        background-color: purple; /* Feedback visual */
+
+    }
+
+    
+    .periodos-container{
+        background-color:purple; /* Cor inicial */
+    }
+}
