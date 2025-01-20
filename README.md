@@ -64,9 +64,7 @@ module.exports = {
  ## Estrutura das páginas:
 
 ### Utilize esse padrão para manter o projeto organizado.
- <pre><code>
-
-./
+ <pre><code>./
 
 ├── src/ # Diretorio de imagens
 
