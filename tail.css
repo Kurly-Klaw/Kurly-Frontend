@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.test{
-    @apply text-xl text-blue-500;
+header{   
+    @apply grid grid-cols-4 gap-4 justify-items-center bg-indigo-500;
+}
+
+header *{
+    @apply self-center bg-green-600;
+}
+
+.logo{
+    @apply col-span-2;
 }
