@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+
+    <div class=" w-sm p-6 bg-purple-200 rounded-lg shadow-lg md px-9 ">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Cadastro de Usuário</h2>
+
+        <form action="#" method="POST">
+            <!-- Nome -->
+            <div class="mb-4">
+                <label for="nome" class="block text-sm font-semibold text-gray-700">Nome</label>
+                <input type="text" id="nome" name="nome" class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+            </div>
+
+            <!-- E-mail -->
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-semibold text-gray-700">E-mail</label>
+                <input type="email" id="email" name="email" class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+            </div>
+
+            <!-- Senha -->
+            <div class="mb-4">
+                <label for="senha" class="block text-sm font-semibold text-gray-700">Senha</label>
+                <input type="password" id="senha" name="senha" class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+            </div>
+
+            <!-- Confirmar Senha -->
+            <div class="mb-4">
+                <label for="confirmar_senha" class="block text-sm font-semibold text-gray-700">Confirmar Senha</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" class="w-full p-3 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <div class="mt-6">
+                <button type="submit" class="w-full bg-purple-500 text-white p-3 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500"><a href="index.html">Cadastrar</a></button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
