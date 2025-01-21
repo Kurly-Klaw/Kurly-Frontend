@@ -2,6 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-.test{
-    @apply text-xl text-blue-500;
+body{
+    @apply bg-gray-300;
+}
+
+header,article{
+    @apply grid grid-cols-12 gap-1;
+}
+
+header a{
+    @apply flex self-center justify-center col-span-2 aspect-square;
+}
+
+#menu-lateral,#perfil{
+    @apply self-center;
+}
+
+#logo{
+    @apply flex col-span-8;
+}
+
+main{
+    @apply grid gap-2;
+}
+section{
+    @apply p-1 m-0 rounded-xl bg-cyan-300;
+}
+
+section:first-of-type{
+    @apply bg-gray-300 rounded-t-none;
+}
+
+#dados img{
+    @apply rounded-full aspect-square;
+}
+#img-tab,#img-dados{
+    @apply col-span-5;
+}
+#infos{
+    @apply content-center col-span-7 col-start-6;
+}
+
+#tab{
+    @apply grid grid-cols-12;
+}
+#cabelo_slider{
+    writing-mode: vertical-lr;
+    direction: ltr;
+    height: 23%;
+}
+.tipos{
+    @apply grid col-span-6 col-start-7;
+}
+.tipo_cabelo{
+    @apply grid content-around w-10 grid-flow-col grid-rows-2 gap-5 columns-3;
+}
+#liso{
+    @apply flex;
+}
+#liso input[type="radio"]{
+    width: 6vw;
+}
+
+.pro-lb{
+    @apply col-span-5;
+}
+
+@media only screen and (max-width: 768px){
+    body{
+        @apply bg-gray-400;
+    }
+}
+@media only screen and (max-width: 512px){
+    body{
+        @apply bg-gray-500;
+    }
 }

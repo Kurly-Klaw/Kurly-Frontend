@@ -554,9 +554,139 @@ video {
   display: none;
 }
 
-.test {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+.flex {
+  display: flex;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
+header,article {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+
+header a {
+  grid-column: span 2 / span 2;
+  display: flex;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  align-self: center;
+}
+
+#menu-lateral,#perfil {
+  align-self: center;
+}
+
+#logo {
+  grid-column: span 8 / span 8;
+  display: flex;
+}
+
+main {
+  display: grid;
+  gap: 0.5rem;
+}
+
+section {
+  margin: 0px;
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(103 232 249 / var(--tw-bg-opacity, 1));
+  padding: 0.25rem;
+}
+
+section:first-of-type {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
+#dados img {
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+}
+
+#img-tab,#img-dados {
+  grid-column: span 5 / span 5;
+}
+
+#infos {
+  grid-column: span 7 / span 7;
+  grid-column-start: 6;
+  align-content: center;
+}
+
+#tab {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+#cabelo_slider{
+  writing-mode: vertical-lr;
+  direction: ltr;
+  height: 23%;
+}
+
+.tipos {
+  grid-column: span 6 / span 6;
+  grid-column-start: 7;
+  display: grid;
+}
+
+.tipo_cabelo {
+  display: grid;
+  width: 2.5rem;
+  -moz-columns: 3;
+       columns: 3;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  align-content: space-around;
+  gap: 1.25rem;
+}
+
+#liso {
+  display: flex;
+}
+
+#liso input[type="radio"]{
+  width: 6vw;
+}
+
+.pro-lb {
+  grid-column: span 5 / span 5;
+}
+
+@media only screen and (max-width: 768px){
+  body {
+    --tw-bg-opacity: 1;
+    background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1));
+  }
+}
+
+@media only screen and (max-width: 512px){
+  body {
+    --tw-bg-opacity: 1;
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
+  }
 }
