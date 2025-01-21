@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 body{
-    @apply bg-gray-300;
+    max-width: 768px;
+    margin: 0 auto;
+    @apply bg-gray-300 grid justify-center;
 }
 
 header,article{
@@ -19,7 +21,7 @@ header a{
 }
 
 #logo{
-    @apply flex col-span-8;
+    @apply flex col-span-8 aspect-auto;
 }
 
 main{
