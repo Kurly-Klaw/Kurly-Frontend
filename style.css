@@ -589,12 +589,15 @@ header,article {
   gap: 0.25rem;
 }
 
-header a {
-  grid-column: span 2 / span 2;
-  display: flex;
-  aspect-ratio: 1 / 1;
-  justify-content: center;
-  align-self: center;
+/* header a{
+    @apply flex self-center justify-center col-span-2 aspect-square;
+} */
+
+header .barra{
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
 }
 
 #menu-lateral,#perfil {
@@ -605,6 +608,20 @@ header a {
   grid-column: span 8 / span 8;
   display: flex;
   aspect-ratio: auto;
+}
+
+nav{
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0px;
+  overflow-x: hidden;
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+  padding-top: 3.5rem;
+  transition-duration: 300ms;
 }
 
 main {

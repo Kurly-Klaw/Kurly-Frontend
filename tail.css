@@ -5,15 +5,22 @@
 body{
     max-width: 768px;
     margin: 0 auto;
-    @apply bg-gray-300 grid justify-center;
+    @apply grid justify-center bg-gray-300;
 }
 
 header,article{
     @apply grid grid-cols-12 gap-1;
 }
 
-header a{
+/* header a{
     @apply flex self-center justify-center col-span-2 aspect-square;
+} */
+
+header .barra{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
 }
 
 #menu-lateral,#perfil{
@@ -22,6 +29,11 @@ header a{
 
 #logo{
     @apply flex col-span-8 aspect-auto;
+}
+
+nav{
+    z-index: 1;
+    @apply fixed top-0 left-0 w-0 h-full overflow-x-hidden duration-300 bg-gray-700 pt-14;
 }
 
 main{
