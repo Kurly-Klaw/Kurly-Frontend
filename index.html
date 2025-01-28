@@ -1,24 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="/src/crow-512.png">
-    <title>Madrinhas</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Início</title>
+    <link rel="icon" type="image/x-icon" href="/src/crow-512.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-    <header></header>
-    <main id="conteudo">
+    <!-- Background preto -->
+    <header><h1>Madrinhas</h1></header>
+    <main>
       <section>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
+        <!--Imagem-->
+        <div class="w-full h-full overflow-hidden rounded-xl">
+          <img
+            src="/Tailwind/projeto/imagens/windows.svg"
+            alt="Imagem exemplo"
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <div class="flex flex-col mb-4 font-bold text-black">
+          <h2>Corte + tratamento da casa</h2>
+          <h3>R$ 200,00</h3>
+          <button><p>Agendar</p></button>
+        </div>
       </section>
-      <section>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
+
+      <!-- Retângulo inferior-->
+      <section name="serviços">
+        <h1>Serviços</h1>
+
+        <!-- Retângulo de serviço 01 -->
+        <article name="acrescimo" onmousedown="one.open = !one.open">
+            <details name="header" id="one">
+              <summary><img name="capa" src="src/crow-512.png" class="capa" /></summary>
+              <h3>Método Blend e Rodrigo Vizu.</h3>
+              <p>
+                Inclui análise para enten-der os fios e necessidades, lavagem
+                para limpar e hi-dratar, além da finalização com ajustes no
+                corte.
+              </p>
+            </details>
+          <summary>
+            <h2>Corte</h2>
+            <h3>R$120,00 • 1h30–2h</h3>
+          </summary>
+          <div class="button" name="button">
+            <button onmousedown=" console.log('Oi')"><p>Agendar</p></button>
+          </div>
+        </article>
       </section>
     </main>
-    <script src="/JS/scripts.js"></script>
+    <footer
+      class="fixed bottom-0 left-0 z-10 flex items-center justify-between w-full py-0 bg-white shadow-md"
+    >
+      <button
+        class="flex items-center justify-between w-full p-0 bg-transparent border-0"
+      >
+        <!-- Bloco da casa, mais para a esquerda do centro -->
+        <div class="flex flex-col items-center ml-20">
+          <img
+            src="/Tailwind/projeto/imagens/casa.svg"
+            alt="Imagem do botão"
+            class="w-10 h-8"
+          />
+          <h1 class="text-black">Início</h1>
+        </div>
+
+        <!-- Bloco do usuário, mais para a direita do centro -->
+        <div class="flex flex-col items-center mr-20">
+          <img
+            src="/Tailwind/projeto/imagens/user.svg"
+            alt="Imagem do botão"
+            class="w-10 h-8"
+          />
+          <h1 class="text-black">Perfil</h1>
+        </div>
+      </button>
+    </footer>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>

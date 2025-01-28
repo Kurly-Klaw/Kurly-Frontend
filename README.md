@@ -72,7 +72,7 @@ module.exports = {
 
 ├── scripts/ # Diretorio de scripts JavaScript
 
-├── pages/ #Diretorio de páginas
+├── index.html #Páginas
 
 ├── style.css # Arquivo CSS aplicado às páginas
 

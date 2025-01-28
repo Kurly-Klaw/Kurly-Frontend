@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["pages/*.{html,js}","/index.html"],
+  content: ["*.{html,js}"],
   theme: {
     extend: {
       colors:{
-        'teste':'#818181',
+        '81oito':'#818181',
+        'DADC':'#DADCE0',
+        'b1b1':'#B1B1B1',
+
       }
     },
   },

@@ -554,16 +554,64 @@ video {
   display: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-20 {
+  margin-left: 5rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
+}
+
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .h-full {
   height: 100%;
 }
 
-.w-4 {
-  width: 1rem;
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex-col {
@@ -574,141 +622,200 @@ video {
   align-items: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.border-0 {
+  border-width: 0px;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.no-underline {
+  text-decoration-line: none;
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
 body{
   max-width: 768px;
   margin: 0 auto;
-  display: grid;
-  justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
-}
-
-header,article {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 0.25rem;
-}
-
-/* header a{
-    @apply flex self-center justify-center col-span-2 aspect-square;
-} */
-
-header .barra{
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-}
-
-#menu-lateral,#perfil {
-  align-self: center;
-}
-
-#logo {
-  grid-column: span 8 / span 8;
-  display: flex;
-  aspect-ratio: auto;
-}
-
-nav{
-  z-index: 1;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 0px;
-  overflow-x: hidden;
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
-  padding-top: 3.5rem;
-  transition-duration: 300ms;
 }
 
 main {
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
 }
 
 section {
-  margin: 0px;
-  border-radius: 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(103 232 249 / var(--tw-bg-opacity, 1));
-  padding: 0.25rem;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 section:first-of-type {
+  margin-top: 0px;
+  height: -moz-fit-content;
+  height: fit-content;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  padding: 0.5rem;
+}
+
+article {
+  margin: 0.5rem;
+  display: grid;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  cursor: pointer;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: flex-start;
+  border-radius: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
-#dados img {
+article > img {
   aspect-ratio: 1 / 1;
-  border-radius: 9999px;
+  height: 100%;
+  width: 5rem;
 }
 
-#img-tab,#img-dados {
-  grid-column: span 5 / span 5;
+details {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding: 1rem;
 }
 
-#infos {
-  grid-column: span 7 / span 7;
-  grid-column-start: 6;
-  align-content: center;
+.button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-#tab {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-#cabelo_slider{
-  writing-mode: vertical-lr;
-  direction: ltr;
-  height: 23%;
-}
-
-.tipos {
-  grid-column: span 6 / span 6;
-  grid-column-start: 7;
-  display: grid;
-}
-
-.tipo_cabelo {
-  display: grid;
-  width: 2.5rem;
-  -moz-columns: 3;
-       columns: 3;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  align-content: space-around;
-  gap: 1.25rem;
-}
-
-#liso {
+button {
+  z-index: 10;
   display: flex;
+  height: 2.5rem;
+  align-items: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-#liso input[type="radio"]{
-  width: 6vw;
+.button p {
+  align-self: center;
 }
 
-.pro-lb {
-  grid-column: span 5 / span 5;
+.margem {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-@media only screen and (max-width: 768px){
-  body {
-    --tw-bg-opacity: 1;
-    background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1));
-  }
+h1,
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
-@media only screen and (max-width: 512px){
-  body {
-    --tw-bg-opacity: 1;
-    background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
-  }
+h2 {
+  text-align: left;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
 }

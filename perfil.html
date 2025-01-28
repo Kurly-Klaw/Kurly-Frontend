@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/src/crow-512.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/JS/scripts.js"></script>
+    <title>Perfil</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <article id="dados">
+          <img id="img-dados" src="/src/Fernanda_Carvalho.jpeg" />
+          <div id="infos">
+            <h1>Fernanda Carvalho</h1>
+            <p>(85) 91234-5678</p>
+            <a href="#historico">Historico</a>
+            <a href="#rotina">Rotina</a>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h1>Meu cabelo</h1>
+        <form id="formulario">
+          <article id="cabelo">
+            <div id="tamanho_cabelo">
+              <img id="img-tam" src="/src/Cabelos lisos.svg" />
+              <div class="flex flex-col items-center w-auto h-28">
+                <label for="cabelo_slider">^^</label>
+                <input
+                  type="range"
+                  name="cabelo_slider"
+                  value="0"
+                  id="cabelo_slider"
+                />
+                <label for="cabelo">^_^</label>
+              </div>
+            </div>
+            <div id="tipos_cabelo">
+              <div>
+                <input
+                  type="radio"
+                  name="curvatura"
+                  value="ondulado"
+                  id="ondulado"
+                />
+                <label for="ondulado">Ondulado</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="curvatura"
+                  value="cacheado"
+                  id="cacheado"
+                />
+                <label for="cacheado">Cacheado</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="curvatura"
+                  value="crespo"
+                  id="crespo"
+                /><label for="crespo">Crespo</label>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <div>
+                <input type="checkbox" name="problemas" value="porosidade" />
+                <label for="porosidade" class="pro-lb">Porosidade</label>
+              </div>
+              <div>
+              <input type="checkbox" name="problemas" value="quimica" />
+              <label for="quimica" class="pro-lb">Química</label>
+            </div>
+              <div>
+                <input type="checkbox" name="problemas" value="porosidade" />
+                <label for="ressecado" class="pro-lb">Ressecado</label>
+              </div>
+              <div>
+                <input type="checkbox" name="problemas" value="frizz" />
+                <label for="frizz" class="pro-lb">Frizz</label>
+              </div>
+            </div>
+          </article>
+        </form>
+      </section>
+      <section id="agendamento">
+        <h1>Proximo atendimento</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+          laboriosam repellendus quae et maiores error, odit dolorum dolores,
+          sed repellat pariatur fugit ut aperiam nostrum totam magni est
+          voluptatum eligendi.
+        </p>
+      </section>
+    </main>
+    <a name="historico"
+      ><p>
+        Cara? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Obcaecati laudantium dignissimos voluptatem ipsam provident. Assumenda
+        similique ex officia, commodi sunt quo molestiae libero quam, laborum
+        tempora, excepturi reiciendis quae saepe.
+      </p></a
+    >
+  </body>
+</html>
