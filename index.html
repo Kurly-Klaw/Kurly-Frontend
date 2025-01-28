@@ -1,27 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="/src/crow-512.png">
-    <title>Madrinhas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css"> 
 </head>
-  <body>
-    <header>
-      <a><img id="menu-lateral" src="./src/barras-512.png" class="btn"></a>
-      <a id="logo" href="/index.html"><img src="./src/logo-pre.png"></a>
-      <a href="/pages/perfil.html"><img id="perfil" src="./src/perfil-512.png" class="btn"></a>
-    </header>
-    <main>
-      <section>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
-      </section>
-      <section>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid doloremque vitae impedit odit minima esse quo omnis. Earum doloribus reiciendis aspernatur nihil et beatae similique, veritatis libero. Odit, aperiam voluptatum.</p>
-      </section>
-    </main>
-  </body>
+<body>
+  <!-- Background preto -->
+<div class="bg-black w-screen h-screen flex flex-col">
+    <div class="bg-gray-500 w-full h-[35%] rounded-b-2xl flex flex-col px-2">
+      <h1 class="text-black font-bold text-center text-2xl">Madrinhas</h1>
+      <!--Imagem-->
+      <div class="w-full h-full rounded-xl overflow-hidden">
+        <img src="/Tailwind/projeto/imagens/windows.svg" alt="Imagem exemplo" class="w-full h-full object-cover" />
+      </div>  
+      <div class="text-black font-bold mb-4 flex flex-col">
+          <h1>Corte + tratamento da casa</h1>
+          <h1>R$ 200,00</h1>
+        <button class="bg-black text-white px-4 py-1 rounded-full text-xs ml-auto">
+          Agendar
+        </button>
+      </div>
+    </div>
+
+   <!-- Retângulo inferior-->
+  <div class="bg-gray-500 w-full h-full rounded-t-2xl flex flex-col items-center mt-1">
+  <h1 class="text-black font-bold text-2xl">Serviços</h1>
+  
+  <!-- Retângulo de serviço 01 -->
+  <div id="retangulo-servico" class="bg-white w-[95%] h-[14%] rounded-xl mt-2 flex justify-center items-start cursor-pointer transition-all duration-300" onclick="expandirRetangulo()">
+    <img id="imagem-servico" src="/Tailwind/projeto/imagens/windows.svg" class="h-[108px] w-[108px] rounded-xl cursor-pointer transition-all duration-300" onclick="expandirImagem()"/>
+
+      <div class="text-black font-bold ml-2 flex flex-col justify-start mt-2">
+        <h1>Corte</h1> 
+        <h1 class="text-sm font-normal">R$120,00 • 1h30–2h </h1>
+      </div>
+      <button class="ml-auto my-auto mr-4 flex items-center bg-black text-white px-4 py-1 rounded-full text-xs">
+        Agendar
+      </button>
+  </div>
+
+  <!-- Retângulo de serviço 02 -->
+  <div class="bg-white w-[95%] h-[14%] rounded-xl mt-2 flex items-start">
+    <img src="/Tailwind/projeto/imagens/windows.svg" class="h-full rounded-xl"/>
+      <div class="text-black font-bold ml-2 flex flex-col justify-start mt-2">
+        <h1>Corte</h1> 
+        <h1 class="text-sm font-normal">R$120,00 • 1h30–2h </h1>
+      </div>
+      <button class="ml-auto my-auto mr-4 flex items-center bg-black text-white px-4 py-1 rounded-full text-xs">
+        Agendar
+      </button>
+  </div>
+
+  <!-- Retângulo de serviço 03 -->
+  <div class="bg-white w-[95%] h-[14%] rounded-xl mt-2 flex items-start">
+    <img src="/Tailwind/projeto/imagens/windows.svg" class="h-full rounded-xl"/>
+      <div class="text-black font-bold ml-2 flex flex-col justify-start mt-2">
+        <h1>Corte</h1> 
+        <h1 class="text-sm font-normal">R$120,00 • 1h30–2h </h1>
+      </div>
+      <button class="ml-auto my-auto mr-4 flex items-center bg-black text-white px-4 py-1 rounded-full text-xs">
+        Agendar
+      </button>
+  </div>
+
+  <!-- Retângulo de serviço 04 -->
+  <div class="bg-white w-[95%] h-[14%] rounded-xl mt-2 flex items-start">
+    <img src="/Tailwind/projeto/imagens/windows.svg" class="h-full rounded-xl"/>
+      <div class="text-black font-bold ml-2 flex flex-col justify-start mt-2">
+        <h1>Corte</h1> 
+        <h1 class="text-sm font-normal">R$120,00 • 1h30–2h </h1>
+      </div>
+      <button class="ml-auto my-auto mr-4 flex items-center bg-black text-white px-4 py-1 rounded-full text-xs">
+        Agendar
+      </button>
+  </div>
+
+</div>
+
+
+<footer class="bg-white py-0 shadow-md flex items-center justify-between w-full fixed bottom-0 left-0 z-10">
+  <button class="p-0 bg-transparent border-0 flex items-center w-full justify-between">
+    <!-- Bloco da casa, mais para a esquerda do centro -->
+    <div class="flex flex-col items-center ml-20">
+      <img src="/Tailwind/projeto/imagens/casa.svg" alt="Imagem do botão" class="w-10 h-8" />
+      <h1 class="text-black">Início</h1>
+    </div>
+    
+    <!-- Bloco do usuário, mais para a direita do centro -->
+    <div class="flex flex-col items-center mr-20">
+      <img src="/Tailwind/projeto/imagens/user.svg" alt="Imagem do botão" class="w-10 h-8"/>
+      <h1 class="text-black">Perfil</h1>
+    </div>
+  </button>
+</footer>
+
+</div>
+<script src="script.js"></script>
+</body>
 </html>
+
+
+
