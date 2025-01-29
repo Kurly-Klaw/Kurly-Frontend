@@ -6,6 +6,8 @@
     <title>Início</title>
     <link rel="icon" type="image/x-icon" href="/src/crow-512.png" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="layout.css" />
+
   </head>
   <body>
     <!-- Background preto -->
@@ -23,8 +25,9 @@
         <div class="flex flex-col mb-4 font-bold text-black">
           <h2>Corte + tratamento da casa</h2>
           <h3>R$ 200,00</h3>
-          <button><p>Agendar</p></button>
+          
         </div>
+        <button><p>+</p><p>Agendar</p></button>
       </section>
 
       <!-- Retângulo inferior-->
@@ -46,14 +49,16 @@
             <h2>Corte</h2>
             <h3>R$120,00 • 1h30–2h</h3>
           </summary>
-          <div class="button" name="button">
-            <button onmousedown=" console.log('Oi')"><p>Agendar</p></button>
-          </div>
+          <button onmousedown=" console.log('Oi')"><p>Agendar</p></button>
+        </article>
+        <article>
+          <h2>Corte</h2>
+          <h3>R$120,00 • 1h30–2h</h3>
         </article>
       </section>
     </main>
     <footer
-      class="fixed bottom-0 left-0 z-10 flex items-center justify-between w-full py-0 bg-white shadow-md"
+      class="bottom-0 left-0 z-10 flex items-center justify-between w-full py-0 bg-white shadow-md"
     >
       <button
         class="flex items-center justify-between w-full p-0 bg-transparent border-0"
