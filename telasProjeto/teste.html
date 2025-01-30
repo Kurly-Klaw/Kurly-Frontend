@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="lg:flex justify-center m-3">
+
+    <div class="bg-gray-400 w-full p-4 rounded-lg shadow-lg lg:max-w-sm ">
+        <h2 class="font-Inter font-bold text-2xl text-center mb-6">Acesse sua conta</h2>
+
+        <form action="cadastro.js" method="post" class="font-medium " >
+            <div class="relative pb-2">
+                <input type="text" id="iname" placeholder=" " required class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+
+                <label for="iname" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 pb-2 ">Nome</label>
+              </div>
+
+              <div class="relative pb-2">
+                <input type="email" id="iemail" placeholder=" " required class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+                <label for="iemail" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm pb-2">
+                  Email
+                </label>
+              </div>
+              
+
+              <div class="relative">
+                <input type="password" id="isenha" placeholder=" " required minlength="8" class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+
+                <label for="isenha" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm pb-2 ">Senha:</label>  
+              </div>
+              <p class="pb-2">*mínimo de 8 digitos</p>
+              
+
+              <div class="relative pb-2">
+                <input type="password" id="iconfsenha" placeholder=" " required minlength="8" class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+                <label for="iconfsenha" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm pb-2 ">Confirmar senha:</label>
+              </div>
+
+            <div class="text-center">
+                <button type="submit" class="w-[110px] h-[40px] py-2 bg-gray-900 text-white font-semibold rounded-[18px] hover:bg-gray-500 ">Cadastrar</button>
+            </div>  
+        </form>
+       
+        <p class="text-center mt-2 ">Já possuo conta</p>
+    </div>
+
+</body>
+</html>
