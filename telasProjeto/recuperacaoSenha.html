@@ -9,35 +9,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-400 flex items-center justify-center min-h-screen">
+<body class=" flex items-center justify-center min-h-screen">
 
-    <div class="w-full max-w-md p-6  rounded-lg shadow-lg m-3">
+    <div class=" bg-gray-400 w-full max-w-md p-6  rounded-lg shadow-lg m-3">
         <h2 class="font-Inter font-bold text-2xl text-center mb-6">Recuperação de senha</h2>
         <form action="" method="post" class="font-medium " >
             <div class="mb-4">
              
-            <div class="mb-4">
-                <label for="iemail" class="block text-sm font-medium ">E-mail:</label>
-                <input type="email" name="email" id="iemail" class="w-full p-1 border bg-gray-200 rounded-full mt-2" required>
-            </div>
-
+                <div class="relative pb-2">
+                    <input type="email" id="iemail" placeholder=" " required class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+                    <label for="iemail" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm pb-2">
+                      Email
+                    </label>
+                  </div>
            
 
-            <div class="mb-4">
-                <label for="isenha" class="block text-sm font-medium ">Senha:</label>
-                <input type="password" name="senha" id="isenha" min="8" class="w-full p-1 bg-gray-200 rounded-full mt-2" required>
-            </div>
+                  <div class="relative">
+                    <input type="password" id="isenha" placeholder=" " required minlength="8" class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+    
+                    <label for="isenha" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm pb-2 "> Nova senha:</label>  
+                  </div>
+                  <p class="pb-2">*mínimo de 8 digitos</p>
 
-          
+                  <div class="relative">
+                    <input type="password" id="isenha" placeholder=" " required minlength="8" class="peer border-2 rounded-t-md p-2 pt-5 pb-2 w-full text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+    
+                    <label for="isenha" class="absolute left-2 top-1/4 transform -translate-y-1/2 text-gray-500 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm pb-2 "> Confirmar senha:</label>  
+                  </div>
+               
 
-            <div class="text-center">
-                <button type="submit" class="w-[108px] h-[h52px] py-2 bg-gray-500 font-semibold rounded-[18px] hover:bg-gray-500 ">Entrar</button>
+            <div class="text-center pt-2">
+                <button type="submit" class="w-[130px] h-[h52px] py-2 bg-gray-500 font-semibold rounded-[18px] hover:bg-gray-500 "> Recuperar senha</button>
             </div>
         </form>
-
-        <p class="text-center mt-2"><a href="#" class="hover:cursor-pointer">Recuperar senha</a></p>
-        <hr class="border-gray-800 mt-5">
-        <p class="text-center mt-2">Não possui cadastro?<a href="teste.html" class="font-bold "> Criar conta</a></p>
     </div>
 
 </body>
