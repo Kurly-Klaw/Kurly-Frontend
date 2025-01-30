@@ -5,84 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Início</title>
     <link rel="icon" type="image/x-icon" href="/src/crow-512.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="layout.css" />
-
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/colors.css" />
+    <link rel="stylesheet" href="./CSS/layout.css" />
   </head>
   <body>
     <!-- Background preto -->
     <header><h1>Madrinhas</h1></header>
     <main>
-      <section>
-        <!--Imagem-->
-        <div class="w-full h-full overflow-hidden rounded-xl">
-          <img
-            src="/Tailwind/projeto/imagens/windows.svg"
-            alt="Imagem exemplo"
-            class="object-cover w-full h-full"
-          />
-        </div>
-        <div class="flex flex-col mb-4 font-bold text-black">
-          <h2>Corte + tratamento da casa</h2>
-          <h3>R$ 200,00</h3>
-          
-        </div>
-        <button><p>+</p><p>Agendar</p></button>
+      <section id="promos">
+        <figure class="carrossel">
+          <img />
+          <figcaption class="flex flex-row mb-4 text-black">
+            <div class="card-header">
+              <h2>Corte + tratamento da casa</h2>
+              <p>R$ 200,00</p>
+            </div>
+            <button class="card-button"><p>Agendar</p></button>
+          </figcaption>
+        </figure>
       </section>
-
-      <!-- Retângulo inferior-->
       <section name="serviços">
         <h1>Serviços</h1>
-
-        <!-- Retângulo de serviço 01 -->
-        <article name="acrescimo" onmousedown="one.open = !one.open">
-            <details name="header" id="one">
-              <summary><img name="capa" src="src/crow-512.png" class="capa" /></summary>
-              <h3>Método Blend e Rodrigo Vizu.</h3>
-              <p>
-                Inclui análise para enten-der os fios e necessidades, lavagem
-                para limpar e hi-dratar, além da finalização com ajustes no
-                corte.
-              </p>
-            </details>
-          <summary>
+        <article name="acrescimo">
+          <img name="capa" class="capa" />
+          <div>
             <h2>Corte</h2>
-            <h3>R$120,00 • 1h30–2h</h3>
-          </summary>
-          <button onmousedown=" console.log('Oi')"><p>Agendar</p></button>
-        </article>
-        <article>
-          <h2>Corte</h2>
-          <h3>R$120,00 • 1h30–2h</h3>
+            <p>R$120,00 • 1h30–2h</p>
+            <span class="descrit" id="desc-01"></span>
+          </div>
+          <button class="card-button"><p>Agendar</p></button>
         </article>
       </section>
     </main>
-    <footer
-      class="bottom-0 left-0 z-10 flex items-center justify-between w-full py-0 bg-white shadow-md"
-    >
-      <button
-        class="flex items-center justify-between w-full p-0 bg-transparent border-0"
-      >
-        <!-- Bloco da casa, mais para a esquerda do centro -->
-        <div class="flex flex-col items-center ml-20">
-          <img
-            src="/Tailwind/projeto/imagens/casa.svg"
-            alt="Imagem do botão"
-            class="w-10 h-8"
-          />
-          <h1 class="text-black">Início</h1>
-        </div>
-
-        <!-- Bloco do usuário, mais para a direita do centro -->
-        <div class="flex flex-col items-center mr-20">
-          <img
-            src="/Tailwind/projeto/imagens/user.svg"
-            alt="Imagem do botão"
-            class="w-10 h-8"
-          />
-          <h1 class="text-black">Perfil</h1>
-        </div>
-      </button>
+    <footer>
+      <h3 class="text-black">Início</h3>
+      <h3 class="text-black">Histórico</h3>
+      <h3 class="text-black">Perfil</h3>
     </footer>
     <!-- <script src="script.js"></script> -->
   </body>
