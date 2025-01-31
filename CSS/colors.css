@@ -4,6 +4,7 @@
   --terciaria: #502f2b;
 }
 
+
 img:not([src]),
 img[src=""] {
   display: inline-block;
