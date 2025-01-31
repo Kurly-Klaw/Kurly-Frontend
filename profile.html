@@ -10,7 +10,7 @@
     <title>Meu Perfil</title>
 </head>
 
-<body class="bg-[#cabab7] w-full md:flex mx-[auto] my-0 max-w-md flex-col"> 
+<body class="bg-[#252322] w-full md:flex mx-auto flex-col"></body> 
     
     <header class="w-full bg-[#c89e98] px-1 py-2 shadow">
         <nav class="flex items-center">
@@ -22,10 +22,10 @@
                 <img src="src/Edit.png" alt="Editar informações" class="aspect-square w-[24px]">
             </button>
         </nav>
-    </header>
+    </header> 
 
-    <main class="flex flex-col justify-center bg-[#c89e98] "> 
-        <section class="flex items-center">
+    <main class="flex flex-col justify-center gap-2 bg-[#c89e98] rounded-b-lg pb-2"> 
+        <section class="flex items-center">   
             <div class="px-4 py-2">
                 <img src="src/User-Icon.png" alt="Foto de perfil" class="aspect-square w-[50px] border rounded-full bg-white">
             </div>
@@ -34,9 +34,8 @@
                 <p class="text-sm">(85)91234-5678</p>
             </article>
         </section>
-
-        <section class="flex flex-col items-center gap-2 my-4">
-            <div class="flex w-full gap-2 px-4">
+        <section class="flex flex-col items-center gap-4 px-4">
+            <div class="flex w-full"> 
                 <div class="flex justify-center flex-1">
                     <img src="src/Cabelos.png" alt="Tipo de cabelo">
                 </div>
@@ -66,12 +65,12 @@
                     </div>
                 </div>
             </div>
-            <div class="grid justify-center w-full grid-cols-5 gap-2 px-4 py-2">  
+            <div class="grid justify-center w-full grid-cols-5 gap-2 px-4 -p-2 -mb-[5px]">  
                 <div class="flex justify-end">
                     <button id="decrease" class="w-12 h-12 bg-[#502f2b] text-white rounded-full justify-center hover:bg-[#3c231f]">-</button>
                 
                 </div>
-                 
+                    
                 <div class="col-span-3">   
                     <label for="hair-condition" class="sr-only">Problemas capilares</label>
                     <input id="hair-condition" type="range" class="slider-input" min="0" max="2" step="1">
@@ -79,10 +78,9 @@
                 
                 <button id="increase" class="w-12 aspect-square bg-[#502f2b] text-white rounded-full justify-center hover:bg-[#3c231f]">+</button>
             </div>
-        </section>
-
-        <section>
-            <div class="grid items-center w-full grid-cols-2 gap-2 p-4">
+        </section> 
+        <section class="flex flex-col gap-2 py-2"> 
+            <div class="grid items-center w-full grid-cols-2 gap-2 px-4"> 
                 <p class="col-span-2 text-base font-bold text-center">Problemas capilares</p>
 
                 <!-- Botão 1 -->
@@ -128,11 +126,10 @@
                 </label>
             </div>
         </section>
-
-
-        
-        <section class="p-4">
-           
+    </main>
+    <footer class="rounded-lg bg-[#c89e98] mt-2" > 
+        <section class="flex flex-col gap-2 px-4 py-2">  
+            <p class="text-base font-bold text-center">Agendamento atual</p>  
             <div class="card-expandable bg-[#a66159] rounded-xl shadow-lg w-full max-w-2xl mx-auto flex flex-col" onclick="toggleCard(event)">
         
                  <!-- Conteúdo principal -->
@@ -147,14 +144,8 @@
                             >Corte</h3> 
                             <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">R$120,00 • 1h30 – 2h</h3>
                         </div>
-                    </div>
-                    
-                   
-           
+                    </div>           
                 </div>
-
-          
-        
                 <!-- Conteúdo expansível -->
                 <div class="grid expandable-content">
                     <div class="overflow-hidden content-inner">
@@ -173,7 +164,6 @@
                                 </div>
                             </div>
                         </div>
-           
                     </div>
                     <!-- Conteúdo no final do card (botão e aumentador) -->
                     <div class="flex justify-end">
@@ -188,12 +178,10 @@
                     <div class="aumentador closed"> 
                         <p>▼</p>
                       </div>
-                      
                 </div>
             </div> 
         </section>
-    </main>
-
+    </footer>
     <script src="JS/script.js"></script>
 </body>
 
