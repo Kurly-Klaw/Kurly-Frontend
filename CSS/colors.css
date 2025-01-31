@@ -22,13 +22,14 @@ img[src=""] {
 
 
 header,footer{
-  background-color: var(--secundaria);
+  background-color: var(--primaria);
 }
 
 section{
   background-color: var(--primaria)
 }
 
-button{
+button, footer > a{
+  color: white;
   background-color: var(--terciaria)
 }
