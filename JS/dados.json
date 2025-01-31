@@ -1,0 +1,48 @@
+{
+    "promos": [
+        {
+            "id": 1,
+            "nome": "Combo 1",
+            "titulo":"Corte + tratamento da casa",
+            "duração": "1.5h",
+            "preco": 200,
+            "descrição": "Lorem",
+            "img": ""
+        },
+        {
+            "id": 2,
+            "nome": "Combo 2",
+            "titulo":"Corte + tratamento da casa",
+            "duração": "2.5h",
+            "preco": 320,
+            "descrição": "Lorena",
+            "img": ""
+        }
+    ],
+    "servicos": [
+        {
+            "id": 1,
+            "nome": "Corte",
+            "duração": "0.5h",
+            "preco": 20,
+            "descrição": "Lorem epsilonismo",
+            "img": "http://"
+        },
+        {
+            "id": 2,
+            "nome": "Lavagem",
+            "duração": "5h",
+            "preco": 3020,
+            "descrição": "Lorena",
+            "img": "http://"
+        }
+    ],
+    "cliente": {
+        "id": 1,
+        "nome": "Pedro",
+        "email": "example@gmail.com",
+        "telefone": "1234567890",
+        "endereço": "Rua 1, 123",
+        "img": "http://"
+    }
+}
