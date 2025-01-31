@@ -2,12 +2,12 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     radio.addEventListener('change', (e) => {
       // Reseta todos os ícones para "unchecked"
       document.querySelectorAll('.radio-icon').forEach((icon) => {
-        icon.src = "Imagens/Radio-unchecked.png";
+        icon.src = "src/Radio-unchecked.png";
       });
   
       // Atualiza o ícone do botão selecionado para "checked"
       const selectedLabel = e.target.closest('label'); // Encontra o label correspondente
-      selectedLabel.querySelector('.radio-icon').src = "Imagens/Radio-checked.png";
+      selectedLabel.querySelector('.radio-icon').src = "src/Radio-checked.png";
     });
   });
   
@@ -17,9 +17,9 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
       const icon = label.querySelector('.checkbox-icon');
   
       if (checkbox.checked) {
-        icon.src = "Imagens/Checkbox-checked.png"; // Define o ícone "checked"
+        icon.src = "src/Checkbox-checked.png"; // Define o ícone "checked"
       } else {
-        icon.src = "Imagens/Checkbox-unchecked.png"; // Retorna ao ícone "unchecked"
+        icon.src = "src/Checkbox-unchecked.png"; // Retorna ao ícone "unchecked"
       }
     });
   });
@@ -40,3 +40,22 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
       }
   }
 }
+
+// Acessando o slider e os botões
+const slider = document.getElementById("hair-condition");
+const decreaseButton = document.getElementById("decrease");
+const increaseButton = document.getElementById("increase");
+
+// Função para diminuir o valor do slider
+decreaseButton.addEventListener("click", () => {
+    if (slider.value > slider.min) {
+        slider.value -= 1;
+    }
+});
+
+// Função para aumentar o valor do slider
+increaseButton.addEventListener("click", () => {
+    if (slider.value < slider.max) {
+        slider.value = parseInt(slider.value) + 1;
+    }
+});

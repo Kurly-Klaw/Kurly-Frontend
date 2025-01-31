@@ -16,19 +16,20 @@ input[type=range] {
   overflow: hidden;
 }
 input[type=range][step] {
-    background-image: linear-gradient(to right, transparent 49.8%, black 49.5%, black 50.5%, transparent 50.2%);
+    background-image: linear-gradient(to right, transparent 49.8%, black 49.5%, black 50.5%, transparent 50%);
     background-repeat: no-repeat;
 }
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 0;
-  box-shadow: -20rem 0 0 20rem #502f2b;
+  box-shadow: -20rem 0 0 20rem #502f2bcc;
 }
 input[type=range]::-moz-range-thumb {
   border: none;
   width: 0;
   box-shadow: -20rem 0 0 20rem  #a66159;
+
 }
 
 

@@ -10,8 +10,8 @@
     <title>Meu Perfil</title>
 </head>
 
-<body class="bg-[#c89e98] h-auto">
-
+<body class="bg-[#cabab7] w-full md:flex mx-[auto] my-0 max-w-md flex-col"> 
+    
     <header class="w-full bg-[#c89e98] px-1 py-2 shadow">
         <nav class="flex items-center">
             <button class="p-3 mr-2" aria-label="Voltar">
@@ -24,7 +24,7 @@
         </nav>
     </header>
 
-    <main class="flex flex-col justify-center ">
+    <main class="flex flex-col justify-center bg-[#c89e98] "> 
         <section class="flex items-center">
             <div class="px-4 py-2">
                 <img src="src/User-Icon.png" alt="Foto de perfil" class="aspect-square w-[50px] border rounded-full bg-white">
@@ -66,9 +66,18 @@
                     </div>
                 </div>
             </div>
-            <div class="flex w-[60%]">
-                <label for="hair-condition" class="sr-only">Problemas capilares</label>
-                <input id="hair-condition" type="range" class="slider-input" min="0" max="2" step="1">
+            <div class="grid justify-center w-full grid-cols-5 gap-2 px-4 py-2">  
+                <div class="flex justify-end">
+                    <button id="decrease" class="w-12 h-12 bg-[#502f2b] text-white rounded-full justify-center hover:bg-[#3c231f]">-</button>
+                
+                </div>
+                 
+                <div class="col-span-3">   
+                    <label for="hair-condition" class="sr-only">Problemas capilares</label>
+                    <input id="hair-condition" type="range" class="slider-input" min="0" max="2" step="1">
+                </div>
+                
+                <button id="increase" class="w-12 aspect-square bg-[#502f2b] text-white rounded-full justify-center hover:bg-[#3c231f]">+</button>
             </div>
         </section>
 
@@ -156,7 +165,7 @@
                                 <img src="src/Cabelo.jpg" alt="Imagem" class="object-cover rounded-lg aspect-square">
                                  
                                 <!-- Texto expandido -->
-                                <div class="flex flex-col gap-2 pt-2"> 
+                                <div class="flex flex-col gap-2"> 
                                     
                                     <p class="mb-3 text-white font-bold  text-[14px]">Método Blend e Rodrigo Vizu.</p> 
                                     <p class="text-[14px] text-white text-justify ">Inclui análise para enten-der os fios e necessidades, lavagem para limpar e hi-dratar, além da finalização com ajustes no corte.</p> 
@@ -166,23 +175,26 @@
                         </div>
            
                     </div>
+                    <!-- Conteúdo no final do card (botão e aumentador) -->
                     <div class="flex justify-end">
-                        <!-- Botão Agendar (header) -->
-                        <button class="agendar-btn ml-4 px-6 mx-4 py-2 bg-[#502f2b] text-white rounded-full hover:bg-blue-700 transition-colors flex items-center"
+                        <!-- Botão editar) -->
+                        <button class="agendar-btn ml-4 px-6 mx-4 py-2 h-[40px] bg-[#502f2b] text-white text-[14px] rounded-full hover:bg-[#3c231f] transition-colors flex items-center"
+                        
                                 onclick="event.stopPropagation()">  
-                            Agendar 
+                            Editar   
                         </button> 
                         </div> 
-                    <div class="aumentador closed">
+                         <!-- Barra de affordance -->
+                    <div class="aumentador closed"> 
                         <p>▼</p>
                       </div>
                       
                 </div>
-            </div>
+            </div> 
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>
