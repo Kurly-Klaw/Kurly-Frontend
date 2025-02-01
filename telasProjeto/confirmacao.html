@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Pedido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+</head>
+<body class=" font-sans text-gray-800">
+
+<div class="bg-gray-400 max-w-md mx-auto my-8 p-4 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-semibold  mb-4">Resumo do serviço</h2>
+    <div class="flex items-center mb-6 space-x-4 h-[126px]">
+        <img src="Media.png" alt="Imagem do produto" class="w-[118px] h-[118px] object-cover rounded-lg">
+        <div class="flex-1">
+            <p class="text-lg font-medium" id="">Corte</p>
+            <p class="text-sm text-gray-600">R$120,00  • 1h30 – 2h.</p>
+            <p class="pt-2">Incluso: avaliação, lavagem e finalização.</p>
+        </div>  
+    </div>
+
+    <hr class="border-black">
+
+    <div class="flex items-center mb-6 space-x-4 pt-2">
+        <img src="Media.png" alt="Imagem do produto" class="w-20 h-20 object-cover rounded-lg">
+        <div class="flex-1">
+            <p class="text-lg font-medium">Ozonioterapia</p>
+            <p class="text-sm  ">+R$50,00</p>
+            <p class="pt-2">Terapia com ozônio para combater fungos e melhorar a saúde capilar e fortalecer os fios.</p>
+        </div>
+    </div>
+
+    <div class="flex items-center mb-6 space-x-4 pt-2">
+        <img src="Media.png" alt="Imagem do produto" class="w-20 h-20 object-cover rounded-lg">
+        <div class="flex-1">
+            <p class="text-lg font-medium">Umectação</p>
+            <p class="text-sm ">+R$50,00</p>
+            <p class="pt-2">Uso de óleos naturais para restaurar a umidade e a nutrição dos cabelos.</p>
+        </div>
+    </div>
+
+    <hr class="border-black">
+
+
+    <!-- Div para Total e Data/Hora -->
+    <div class="flex justify-between items-center mt-4 border-t pt-4 bg-gray-200 rounded-[16px] mb-4 h-[72px]">
+
+        <div class="text-xl font-semibold pl-2 pb-3 ">
+           Total: <span id="valortotal">R$ 220,00</span>
+        </div>
+        
+        <!-- Data, Hora e Ícone de Calendário -->
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-calendar-alt text-black"></i>
+            <div class="text-sm pr-2 pb-3">
+                <p >7:00 - 9:00</p>
+                <p >31/01/2025</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de confirmação -->
+    <div class="text-right h-[40px]">
+        <button class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            <i class="fas fa-chevron-right mr-2"></i>
+            Confirmar
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
