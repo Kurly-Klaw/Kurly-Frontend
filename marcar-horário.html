@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="marcar-horario.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+</head>
+<body class="bg-[#252322] w-full md:flex mx-auto flex-col max-w-md">
+    <nav class="w-full bg-[#c89e98] px-1 py-2 shadow sticky z-10 top-0">
+        <article class="flex items-center">
+            <button class="p-3 mr-2" aria-label="Voltar">
+                <img src="src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]">
+            </button>
+            <p class="text-[1.375rem] font-bold">Agendamento</p>
+        </article>
+    </nav>
+ 
+    <header class="p-4 w-full bg-[#c89e98] flex flex-col gap-2 rounded-b-lg mb-2">  
+        <p class="text-[1.375rem] font-semibold">Dia</p> 
+        <div class="flex gap-2">
+            <div class="px-4 py-3 bg-[#502f2b] rounded-lg flex flex-col items-center"> 
+                <p id="numero-do-dia"class="text-[1.5rem] text-white">1</p> 
+                <p class="text-[1.5rem] text-white">JAN</p>
+            </div>
+            <div class="overflow-hidden gap-2 relative w-full">  
+                <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#c89e98] to-transparent pointer-events-none z-10"></div> 
+                <p class="text-center font-bold">Janeiro</p>
+                <div class="scroll-container flex items-center overflow-x-auto scroll-pb-36">
+                    <div id="days-container" class="flex gap-4 w-max"></div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="p-4 w-full bg-[#c89e98] flex flex-col gap-2 rounded-lg">  
+
+        <p class="text-[1.375rem] font-semibold">Horários</p>  
+        <div id="time-container" class=" flex flex-col gap-2">
+        </div>
+    </main>
+    <script src="marcar-horario.js"></script> 
+</body>
+</html>
