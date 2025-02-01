@@ -32,11 +32,14 @@ input[type=range]::-moz-range-thumb {
 
 }
 
+.rotate-btn {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
 
 .card-expandable {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  position: relative;
 } 
 .main-content {
   height: 80px; /* Define uma altura fixa */  
@@ -54,19 +57,21 @@ input[type=range]::-moz-range-thumb {
   min-height: 0;
 }
 
-.main-content .agendar-btn,
 .main-content .header-image {
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.expanded .main-content .agendar-btn,
-.expanded .main-content .header-image,
-.expanded .main-content .aumentador {
+
+.expanded .main-content .header-image {
   opacity: 0;
   height: 0;
   margin: 0;
   pointer-events: none;
 }
+.expanded .main-content .rotate-btn{
+  transform:  rotate(180deg);
+  transition: all 0.3s ease-in-out;
+} 
 
 .expanded .main-content {
   justify-content: flex-start; /* Alinha o conteúdo à esquerda */
@@ -83,36 +88,7 @@ input[type=range]::-moz-range-thumb {
 .main-content h3 {
   transition: all 0.3s ease; /* Anima a transição do título */
 }
-.aumentador {
-  position: relative;
-  width: 100%; /* O aumenta para ocupar toda a largura */
-  left: 0; /* Alinha ao início do card */
-  height: 26px; /* Altura para parecer uma aba */
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  color: white; /* Deixa o texto visível */
-  cursor: pointer;
-  transition: all 0.3s ease; /* Suaviza a transição */
-  transform: translateY(0); /* Começa visível */
-}
-.aumentador.closed {
-  bottom: 0; /* Fica logo abaixo do card fechado */
-}
-.aumentador.open {
-  top: auto; /* Não depende do topo */
-  bottom: 0; /* Move para logo abaixo do card expandido */
-  transform: rotate(180deg); /* Gira a seta para cima */
-}
-.expanded .aumentador {
-  transform:  rotate(180deg); /* Gira a seta para cima */
-}
 
-@media (max-width: 375) {
-  #titulo-preço-1{
-    font-size:10px;
-  }
-  #texto-preço-1{
-    font-size: 8px;
-  }
-}
+
+
+
