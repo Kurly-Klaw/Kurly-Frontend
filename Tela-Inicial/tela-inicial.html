@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tela-inicial.js"></script>   
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-[#252322] w-full md:flex mx-auto flex-col max-w-md"> 
+ 
+    <!-- Background preto -->
+     <header class="mb-2"> 
+            <div class="bg-[#c89e98] w-full h-[35%] rounded-b-2xl flex flex-col px-2"> 
+                <h1 class="text-black font-bold text-center text-2xl">Madrinhas</h1>
+                <!--Imagem-->
+                <div class="w-full h-full rounded-xl overflow-hidden">
+                <img src="/Tailwind/projeto/imagens/windows.svg" alt="Imagem exemplo" class="w-full h-full object-cover" />
+                </div>  
+                <div class="text-black font-bold mb-4 flex flex-col">
+                    <h1 class="text-left text-l" >Corte + tratamento da casa</h1>
+                    <h1 class="text-left text-l" >R$ 200,00</h1>
+                <button class="bg-black text-white px-4 py-1 rounded-full text-xs ml-auto">
+                    Agendar
+                </button>
+                </div>
+            </div> 
+     </header>
+     <main class="flex flex-col gap-2 bg-[#c89e98] p-4 rounded-lg" > 
+    <p class="text-[1.375rem] font-semibold" >Serviços</p>
+     <div class=" bg-[#a66159] rounded-xl shadow-lg max-w-2xl flex flex-col" onclick="toggleCard(event)">
+        <!-- Conteúdo principal -->
+        <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+            <div class="flex">
+                <!-- Imagem (header) -->
+                <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+                
+                <!-- Título -->
+                <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
+                >Detox</h3> 
+                <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
+            </div>
+            <div class="p-2 rotate-btn h-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </div>
+        </div>           
+    </div>
+    <!-- Conteúdo expansível -->
+    <div class="grid expandable-content">
+        <div class="overflow-hidden content-inner">
+            <div class="px-4 pb-4 text-gray-600">
+                <!-- Grid interna -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Imagem interna -->
+                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem"  class="object-cover rounded-lg h-full aspect-[2/3]">
+                    <!-- Conteúdo interno -->
+                    <div class="flex flex-col gap-2"> 
+                        <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e desintoxicar o couro cabeludo.</p> 
+                        <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas, excesso de oleosidade e fortalece os fios.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conteúdo no final do card (botão e aumentador) -->
+        <div class="flex items-center justify-end px-4 py-2 "> 
+            <button class="agendar-btn px-6 py-2 h-[40px] bg-[#502f2b] text-white text-[14px] rounded-full hover:bg-[#3c231f] transition-colors flex items-center"
+            onclick="event.stopPropagation()">  
+             <span class="mr-2 material-icons">today</span>Adicionar</button>   
+                
+        </div> 
+    </div>
+    </div> 
+    <div class=" bg-[#a66159] rounded-xl shadow-lg max-w-2xl flex flex-col" onclick="toggleCard(event)">
+        <!-- Conteúdo principal -->
+        <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+            <div class="flex">
+                <!-- Imagem (header) -->
+                <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+                
+                <!-- Título -->
+                <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
+                >Detox</h3> 
+                <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
+            </div>
+            <div class="p-2 rotate-btn h-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </div>
+        </div>           
+    </div>
+    <!-- Conteúdo expansível -->
+    <div class="grid expandable-content">
+        <div class="overflow-hidden content-inner">
+            <div class="px-4 pb-4 text-gray-600">
+                <!-- Grid interna -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Imagem interna -->
+                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem"  class="object-cover rounded-lg h-full aspect-[2/3]">
+                    <!-- Conteúdo interno -->
+                    <div class="flex flex-col gap-2"> 
+                        <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e desintoxicar o couro cabeludo.</p> 
+                        <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas, excesso de oleosidade e fortalece os fios.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conteúdo no final do card (botão e aumentador) -->
+        <div class="flex items-center justify-end px-4 py-2 "> 
+            <button class="agendar-btn px-6 py-2 h-[40px] bg-[#502f2b] text-white text-[14px] rounded-full hover:bg-[#3c231f] transition-colors flex items-center"
+            onclick="event.stopPropagation()">  
+                Agendar</button> 
+        </div> 
+    </div>
+    </div> 
+    <div class=" bg-[#a66159] rounded-xl shadow-lg max-w-2xl flex flex-col" onclick="toggleCard(event)">
+        <!-- Conteúdo principal -->
+        <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+            <div class="flex">
+                <!-- Imagem (header) -->
+                <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+                
+                <!-- Título -->
+                <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
+                >Detox</h3> 
+                <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
+            </div>
+            <div class="p-2 rotate-btn h-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </div>
+        </div>           
+    </div>
+    <!-- Conteúdo expansível -->
+    <div class="grid expandable-content">
+        <div class="overflow-hidden content-inner">
+            <div class="px-4 pb-4 text-gray-600">
+                <!-- Grid interna -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Imagem interna -->
+                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem"  class="object-cover rounded-lg h-full aspect-[2/3]">
+                    <!-- Conteúdo interno -->
+                    <div class="flex flex-col gap-2"> 
+                        <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e desintoxicar o couro cabeludo.</p> 
+                        <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas, excesso de oleosidade e fortalece os fios.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conteúdo no final do card (botão e aumentador) -->
+        <div class="flex items-center justify-end px-4 py-2 "> 
+            <button class="agendar-btn px-6 py-2 h-[40px] bg-[#502f2b] text-white text-[14px] rounded-full hover:bg-[#3c231f] transition-colors flex items-center"
+            onclick="event.stopPropagation()">  
+                Agendar</button> 
+        </div> 
+    </div>
+    </div> 
+    <div class=" bg-[#a66159] rounded-xl shadow-lg max-w-2xl flex flex-col" onclick="toggleCard(event)">
+        <!-- Conteúdo principal -->
+        <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+            <div class="flex">
+                <!-- Imagem (header) -->
+                <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+                
+                <!-- Título -->
+                <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
+                >Detox</h3> 
+                <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
+            </div>
+            <div class="p-2 rotate-btn h-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </div>
+        </div>           
+    </div>
+    <!-- Conteúdo expansível -->
+    <div class="grid expandable-content">
+        <div class="overflow-hidden content-inner">
+            <div class="px-4 pb-4 text-gray-600">
+                <!-- Grid interna -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Imagem interna -->
+                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem"  class="object-cover rounded-lg h-full aspect-[2/3]">
+                    <!-- Conteúdo interno -->
+                    <div class="flex flex-col gap-2"> 
+                        <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e desintoxicar o couro cabeludo.</p> 
+                        <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas, excesso de oleosidade e fortalece os fios.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conteúdo no final do card (botão e aumentador) -->
+        <div class="flex items-center justify-end px-4 py-2 "> 
+            <button class="agendar-btn px-6 py-2 h-[40px] bg-[#502f2b] text-white text-[14px] rounded-full hover:bg-[#3c231f] transition-colors flex items-center"
+            onclick="event.stopPropagation()">  
+                Agendar</button> 
+        </div> 
+    </div>
+    </div> 
+    <div class=" bg-[#a66159] rounded-xl shadow-lg max-w-2xl flex flex-col" onclick="toggleCard(event)">
+        <!-- Conteúdo principal -->
+        <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+            <div class="flex">
+                <!-- Imagem (header) -->
+                <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+                
+                <!-- Título -->
+                <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
+                >Detox</h3> 
+                <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
+            </div>
+            <div class="p-2 rotate-btn h-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
+            </div>
+        </div>           
+    </div>
+    <!-- Conteúdo expansível -->
+    <div class="grid expandable-content">
+        <div class="overflow-hidden content-inner">
+            <div class="px-4 pb-4 text-gray-600">
+                <!-- Grid interna -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Imagem interna -->
+                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem"  class="object-cover rounded-lg h-full aspect-[2/3]">
+                    <!-- Conteúdo interno -->
+                    <div class="flex flex-col gap-2"> 
+                        <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e desintoxicar o couro cabeludo.</p> 
+                        <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas, excesso de oleosidade e fortalece os fios.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Conteúdo no final do card (botão e aumentador) -->
+        <div class="flex items-center justify-end px-4 py-2 "> 
+            <button class="agendar-btn px-6 py-2 h-[40px] bg-[#502f2b] text-white text-[14px] rounded-full hover:bg-[#3c231f] transition-colors flex items-center"
+            onclick="event.stopPropagation()">  
+                Agendar</button> 
+        </div> 
+    </div>
+    </div> 
+    </main>
+    <nav class="bg-[#c89e98]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
+        <!-- Botão 1 -->
+        <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
+            <input type="radio" name="nav" id="botao-1" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
+            </div>
+            <h1 class="text-black text-sm peer-checked:font-bold">Início</h1> 
+        </label>
+
+        <!-- Botão 2 -->
+        <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer">
+            <input type="radio" name="nav" id="botao-2" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
+            </div>
+            <h1 class="text-black text-sm peer-checked:font-bold">Perfil</h1> 
+        </label>
+    </nav> 
+</body>
+</html>
+
+
+
