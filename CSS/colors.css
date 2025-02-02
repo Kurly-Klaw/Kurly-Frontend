@@ -1,0 +1,32 @@
+:root {
+  --fundo: #252322;
+  --primaria: #a66159;
+  --secundaria: #c89e98;
+  --terciaria: #502f2b;
+}
+
+body {
+  background-color: var(--fundo);
+}
+
+main,
+nav,
+#infos,
+section {
+  background-color: var(--secundaria);
+}
+
+article {
+  background-color: var(--primaria)
+}
+
+button,
+.label-cabelo {
+  color: white;
+  background-color: var(--terciaria) !important;
+}
+
+button:hover,
+.label-cabelo:hover {
+  background-color: var(--fundo) !important;
+}

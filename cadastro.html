@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="CSS/colors.css">
+</head>
+
+<body class="justify-center m-3 lg:flex">
+
+  <main class="w-full p-4 rounded-lg shadow-lg lg:max-w-sm ">
+    <h2 class="mb-6 text-2xl font-bold text-center font-Inter">Crie sua conta</h2>
+    <section>
+      <form action="JS/cadastro.js" method="post" class="flex flex-col items-center font-medium ">
+        <div class="relative w-full pb-2">
+          <input type="text" id="idName" placeholder=" " required
+            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+
+          <label for="idName"
+            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 ">Nome</label>
+        </div>
+
+        <div class="relative w-full pb-2">
+          <input type="text" id="idTel" placeholder=" (00) 00000-0000" required
+            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+          <label for="idTel"
+            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm">
+            Telefone:
+          </label>
+        </div>
+
+        <div class="relative w-full pb-2">
+          <input type="email" id="idEmail" placeholder=" " required
+            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+          <label for="idEmail"
+            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm">
+            Email
+          </label>
+        </div>
+
+
+        <div class="relative w-full">
+          <input type="password" id="idSenha" placeholder=" " required minlength="8"
+            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+
+          <label for="idSenha"
+            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm ">Senha:</label>
+        </div>
+        <p class="pb-2">*mínimo de 8 digitos</p>
+
+
+        <div class="relative w-full pb-2">
+          <input type="password" id="idConfirmaSenha" placeholder=" " required minlength="8"
+            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+          <label for="idConfirmaSenha"
+            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm ">Confirmar
+            senha:</label>
+        </div>
+
+
+        <button type="submit"
+          class="py-2 px-4 text-white font-semibold rounded-[18px] ">Cadastrar</button>
+      </form>
+    </section>
+
+    <p class="mt-2 text-center "><a href="inicial.html">Já possuo cont</a>a</p>
+  </main>
+
+</body>
+
+</html>

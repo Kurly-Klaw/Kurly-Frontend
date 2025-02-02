@@ -72,8 +72,6 @@ module.exports = {
 
 ├── scripts/ # Diretorio de scripts JavaScript
 
-├── pages/ #Diretorio de páginas
-
 ├── style.css # Arquivo CSS aplicado às páginas
 
 ├── tail.css # Arquivo CSS necessário ao tailwind
