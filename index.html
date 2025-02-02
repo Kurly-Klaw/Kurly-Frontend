@@ -60,20 +60,26 @@
             </li> -->
         </ul>
     </main>
-    <footer>
-        <menu>
-            <li>
+    <nav class="bg-[#c89e98]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
+        <!-- Botão 1 -->
+        <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
+            <input type="radio" name="nav" id="botao-1" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
+            </div>
+            <h1 class="text-black text-sm peer-checked:font-bold">Início</h1> 
+        </label>
 
-                <label><a><span
-                            class="text-xl text-black material-icons peer-checked:text-gray-700">home</span></a>Início</label>
-            </li>
-            <li>
+        <!-- Botão 2 -->
+        <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer">
+            <input type="radio" name="nav" id="botao-2" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
+            </div>
+            <h1 class="text-black text-sm peer-checked:font-bold">Perfil</h1> 
+        </label>
+    </nav> 
 
-                <label><a><span
-                            class="text-black wtext-xl material-icons peer-checked:text-gray-700">person</span></a>Perfil</label>
-            </li>
-        </menu>
-    </footer>
 </body>
 
 </html>
