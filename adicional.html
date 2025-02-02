@@ -1,218 +1,263 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acréscimo</title>
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- layout geral da página -->
+    <link rel="stylesheet" href="CSS/wind.css">
+    <!-- animação dos elementos da página -->
     <link rel="stylesheet" href="CSS/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Tema do site -->
     <link rel="stylesheet" href="CSS/colors.css">
+    <!-- icon do site -->
+    <link rel="shortcut icon" href="src/crow-512.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="/JS/script.js"></script>
+    <script src="/JS/load-things.js"></script>
 </head>
-<body class="flex-col w-full max-w-md mx-auto md:flex"></body> 
-    <nav class="sticky top-0 z-10 w-full px-1 py-2 shadow">
-        <div class="flex items-center">
-            <a class="p-3 mr-2" aria-label="Voltar">
-                <img src="src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]">
-            </a>
-            <p class="text-[1.375rem] font-bold">Agendamento</p>
-        </div>
-    </nav> 
-    <section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg">
-        <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
-        <div class="grid grid-cols-3 gap-2">
-            <img src="src/Cabelo.jpg" alt="Pessoa cortando cabelo" class="object-cover rounded-lg aspect-square">
-            <div class="flex flex-col col-span-2 gap-2"> 
-                <div>
+
+<body class="flex-col w-full max-w-md mx-auto md:flex"></body>
+<header>
+    <nav class=" p-3"><a aria-label="Voltar">
+        <img src="src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]">
+    </a></nav>
+    <h1>Agendamento</h1>
+</header>
+<section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg">
+    <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
+    <div class="grid grid-cols-3 gap-2">
+        <img src="src/Cabelo.jpg" alt="Pessoa cortando cabelo" class="object-cover rounded-lg aspect-square">
+        <div class="flex flex-col col-span-2 gap-2">
+            <div>
                 <p class="font-bold">Corte</p>
                 <p class="text-sm">R$120,00 • 1h30 – 2h</p>
-                </div>
-                <p class="text-xs">Está incluso no corte: avaliação, lavagem e finalização.</p>
             </div>
+            <p class="text-xs">Está incluso no corte: avaliação, lavagem e finalização.</p>
         </div>
-    </section>
-    <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg"> 
-        <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
-        <div class="flex flex-col gap-2 py-2">  
-            <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-                <!-- Conteúdo principal -->
-                <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                   <div class="flex">
-                       <!-- Imagem (header) -->
-                       <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
-                                   
-                       <!-- Título -->
-                       <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                           <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
-                           >Detox</h3> 
-                           <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
-                       </div>
-                       <div class="p-2 rotate-btn h-fit">
-                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
-                       </div>
-                   </div>           
-               </div>
-               <!-- Conteúdo expansível -->
-               <div class="grid expandable-content">
-                   <div class="overflow-hidden content-inner">
-                       <div class="px-4 pb-4 text-gray-600">
-                           <!-- Grid da área expandida -->
-                           <div class="grid grid-cols-2 gap-4">
-                               <!-- Imagem expandida -->
-                               <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg" alt="Imagem"  class="object-cover rounded-lg h-full aspect-[2/3]">
-                               <!-- Texto expandido -->
-                               <div class="flex flex-col gap-2"> 
-                                   <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e desintoxicar o couro cabeludo.</p> 
-                                   <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas, excesso de oleosidade e fortalece os fios.</p> 
-   
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Conteúdo no final do card (botão e aumentador) -->
-                   <div class="flex items-center justify-end px-4 py-2 "> 
-                       <button class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                       onclick="event.stopPropagation()">  
+    </div>
+</section>
+<main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
+    <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
+    <ul id="lista-servicos"></ul>
+    <div class="p-2 rotate-btn h-fit">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+            fill="#FFFFFF">
+            <path d="M480-360 280-560h400L480-360Z" />
+        </svg>
+    </div>
+    <div class="flex flex-col gap-2 py-2">
+        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
+            <!-- Conteúdo principal -->
+            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+                <div class="flex">
+                    <!-- Imagem (header) -->
+                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg"
+                        alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+
+                    <!-- Título -->
+                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Detox</h3>
+                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
+                    </div>
+                    <div class="p-2 rotate-btn h-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#FFFFFF">
+                            <path d="M480-360 280-560h400L480-360Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Conteúdo expansível -->
+            <div class="grid expandable-content">
+                <div class="overflow-hidden content-inner">
+                    <div class="px-4 pb-4 text-gray-600">
+                        <!-- Grid da área expandida -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Imagem expandida -->
+                            <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg"
+                                alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
+                            <!-- Texto expandido -->
+                            <div class="flex flex-col gap-2">
+                                <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e
+                                    desintoxicar o couro cabeludo.</p>
+                                <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas,
+                                    excesso de oleosidade e fortalece os fios.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo no final do card (botão e aumentador) -->
+                <div class="flex items-center justify-end px-4 py-2 ">
+                    <button
+                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
+                        onclick="event.stopPropagation()">
                         <span class="mr-2 material-icons">add</span> Adicionar</button>
-                   </div> 
-               </div>
-            </article> 
-            <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-                <!-- Conteúdo principal -->
-                <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                   <div class="flex">
-                       <!-- Imagem (header) -->
-                       <img src="https://belezaesaude.com/i/730/9547/umectacao-capilar-oleos.jpg" alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
-                                   
-                       <!-- Título -->
-                       <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                           <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
-                           >Umectação</h3> 
-                           <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$50,00</h3>
-                       </div>
-                       <div class="p-2 rotate-btn h-fit">
-                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
-                       </div>
-                   </div>           
-               </div>
-               <!-- Conteúdo expansível -->
-               <div class="grid expandable-content">
-                   <div class="overflow-hidden content-inner">
-                       <div class="px-4 pb-4 text-gray-600">
-                           <!-- Grid da área expandida -->
-                           <div class="grid grid-cols-2 gap-4">
-                               <!-- Imagem expandida -->
-                               <img src="https://belezaesaude.com/i/730/9547/umectacao-capilar-oleos.jpg" alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
-                               <!-- Texto expandido -->
-                               <div class="flex flex-col gap-2"> 
-                                   <p class="mb-3 text-white font-bold  text-[14px]">Para quem deseja hidratar e nutrir profundamente os cabelos ressecados.</p> 
-                                   <p class="text-[14px] text-white text-justify ">Tratamento que repõe lipídios e vitaminas, deixando os fios macios e brilhosos.</p> 
-   
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Conteúdo no final do card (botão e aumentador) -->
-                   <div class="flex items-center justify-end px-4 py-2 "> 
-                       <button class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                       onclick="event.stopPropagation()">  
+                </div>
+            </div>
+        </article>
+        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
+            <!-- Conteúdo principal -->
+            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+                <div class="flex">
+                    <!-- Imagem (header) -->
+                    <img src="https://belezaesaude.com/i/730/9547/umectacao-capilar-oleos.jpg" alt="Imagem"
+                        class="object-cover w-20 h-20 rounded-lg header-image">
+
+                    <!-- Título -->
+                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Umectação</h3>
+                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$50,00</h3>
+                    </div>
+                    <div class="p-2 rotate-btn h-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#FFFFFF">
+                            <path d="M480-360 280-560h400L480-360Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Conteúdo expansível -->
+            <div class="grid expandable-content">
+                <div class="overflow-hidden content-inner">
+                    <div class="px-4 pb-4 text-gray-600">
+                        <!-- Grid da área expandida -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Imagem expandida -->
+                            <img src="https://belezaesaude.com/i/730/9547/umectacao-capilar-oleos.jpg" alt="Imagem"
+                                class="object-cover rounded-lg h-full aspect-[2/3]">
+                            <!-- Texto expandido -->
+                            <div class="flex flex-col gap-2">
+                                <p class="mb-3 text-white font-bold  text-[14px]">Para quem deseja hidratar e nutrir
+                                    profundamente os cabelos ressecados.</p>
+                                <p class="text-[14px] text-white text-justify ">Tratamento que repõe lipídios e
+                                    vitaminas, deixando os fios macios e brilhosos.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo no final do card (botão e aumentador) -->
+                <div class="flex items-center justify-end px-4 py-2 ">
+                    <button
+                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
+                        onclick="event.stopPropagation()">
                         <span class="mr-2 material-icons">add</span> Adicionar</button>
-                   </div> 
-               </div>
-            </article> 
-            <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-                <!-- Conteúdo principal -->
-                <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                   <div class="flex">
-                       <!-- Imagem (header) -->
-                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwAeW8X6cxxjpRrYRRL3nuuII6o4A86rP0CGwfudKfgAbgpfPUZHWxe94XWZUydTfhyA&usqp=CAU" alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
-                                   
-                       <!-- Título -->
-                       <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                           <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
-                           >Ozonioterapia</h3> 
-                           <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$50,00</h3>
-                       </div>
-                       <div class="p-2 rotate-btn h-fit">
-                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
-                       </div>
-                   </div>           
-               </div>
-               <!-- Conteúdo expansível -->
-               <div class="grid expandable-content">
-                   <div class="overflow-hidden content-inner">
-                       <div class="px-4 pb-4 text-gray-600">
-                           <!-- Grid da área expandida -->
-                           <div class="grid grid-cols-2 gap-4">
-                               <!-- Imagem expandida -->
-                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwAeW8X6cxxjpRrYRRL3nuuII6o4A86rP0CGwfudKfgAbgpfPUZHWxe94XWZUydTfhyA&usqp=CAU" alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
-                               <!-- Texto expandido -->
-                               <div class="flex flex-col gap-2"> 
-                                   <p class="mb-3 text-white font-bold text-justify text-[14px]">Para pessoas com queda de cabelo ou couro cabeludo com problemas.</p>   
-                                   <p class="text-[14px] text-white text-justify ">Tratamento com ozônio que estimula o crescimento capilar e combate a oleosidade.</p> 
-   
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Conteúdo no final do card (botão e aumentador) -->
-                   <div class="flex items-center justify-end px-4 py-2 "> 
-                       <button class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                       onclick="event.stopPropagation()">  
+                </div>
+            </div>
+        </article>
+        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
+            <!-- Conteúdo principal -->
+            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+                <div class="flex">
+                    <!-- Imagem (header) -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwAeW8X6cxxjpRrYRRL3nuuII6o4A86rP0CGwfudKfgAbgpfPUZHWxe94XWZUydTfhyA&usqp=CAU"
+                        alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
+
+                    <!-- Título -->
+                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Ozonioterapia</h3>
+                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$50,00</h3>
+                    </div>
+                    <div class="p-2 rotate-btn h-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#FFFFFF">
+                            <path d="M480-360 280-560h400L480-360Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Conteúdo expansível -->
+            <div class="grid expandable-content">
+                <div class="overflow-hidden content-inner">
+                    <div class="px-4 pb-4 text-gray-600">
+                        <!-- Grid da área expandida -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Imagem expandida -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwAeW8X6cxxjpRrYRRL3nuuII6o4A86rP0CGwfudKfgAbgpfPUZHWxe94XWZUydTfhyA&usqp=CAU"
+                                alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
+                            <!-- Texto expandido -->
+                            <div class="flex flex-col gap-2">
+                                <p class="mb-3 text-white font-bold text-justify text-[14px]">Para pessoas com queda de
+                                    cabelo ou couro cabeludo com problemas.</p>
+                                <p class="text-[14px] text-white text-justify ">Tratamento com ozônio que estimula o
+                                    crescimento capilar e combate a oleosidade.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo no final do card (botão e aumentador) -->
+                <div class="flex items-center justify-end px-4 py-2 ">
+                    <button
+                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
+                        onclick="event.stopPropagation()">
                         <span class="mr-2 material-icons">add</span> Adicionar</button>
-                   </div> 
-               </div>
-            </article> 
-            <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-                <!-- Conteúdo principal -->
-                <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                   <div class="flex">
-                       <!-- Imagem (header) -->
-                       <img src="https://blog.colombo.com.br/wp-content/uploads/2020/07/moca-lavando-cabelo-em-lavatorio.jpg" alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
-                                   
-                       <!-- Título -->
-                       <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                           <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
-                           >Acidificação</h3> 
-                           <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$40,00</h3>
-                       </div>
-                       <div class="p-2 rotate-btn h-fit">
-                           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360 280-560h400L480-360Z"/></svg>
-                       </div>
-                   </div>           
-               </div>
-               <!-- Conteúdo expansível -->
-               <div class="grid expandable-content">
-                   <div class="overflow-hidden content-inner">
-                       <div class="px-4 pb-4 text-gray-600">
-                           <!-- Grid da área expandida -->
-                           <div class="grid grid-cols-2 gap-4">
-                               <!-- Imagem expandida -->
-                               <img src="https://blog.colombo.com.br/wp-content/uploads/2020/07/moca-lavando-cabelo-em-lavatorio.jpg" alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
-                               <!-- Texto expandido -->
-                               <div class="flex flex-col gap-2"> 
-                                   <p class="mb-3 text-white font-bold  text-[14px]">Para quem deseja equilibrar o pH do cabelo e couro cabeludo.</p> 
-                                   <p class="text-[14px] text-white text-justify ">Tratamento que fecha as cutículas capilares e melhora a saúde dos fios.</p> 
-   
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Conteúdo no final do card (botão e aumentador) -->
-                   <div class="flex items-center justify-end px-4 py-2 "> 
-                       <button class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                       onclick="event.stopPropagation()">  
+                </div>
+            </div>
+        </article>
+        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
+            <!-- Conteúdo principal -->
+            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
+                <div class="flex">
+                    <!-- Imagem (header) -->
+                    <img src="https://blog.colombo.com.br/wp-content/uploads/2020/07/moca-lavando-cabelo-em-lavatorio.jpg"
+                        alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
+
+                    <!-- Título -->
+                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
+                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Acidificação</h3>
+                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$40,00</h3>
+                    </div>
+                    <div class="p-2 rotate-btn h-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#FFFFFF">
+                            <path d="M480-360 280-560h400L480-360Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Conteúdo expansível -->
+            <div class="grid expandable-content">
+                <div class="overflow-hidden content-inner">
+                    <div class="px-4 pb-4 text-gray-600">
+                        <!-- Grid da área expandida -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Imagem expandida -->
+                            <img src="https://blog.colombo.com.br/wp-content/uploads/2020/07/moca-lavando-cabelo-em-lavatorio.jpg"
+                                alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
+                            <!-- Texto expandido -->
+                            <div class="flex flex-col gap-2">
+                                <p class="mb-3 text-white font-bold  text-[14px]">Para quem deseja equilibrar o pH do
+                                    cabelo e couro cabeludo.</p>
+                                <p class="text-[14px] text-white text-justify ">Tratamento que fecha as cutículas
+                                    capilares e melhora a saúde dos fios.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo no final do card (botão e aumentador) -->
+                <div class="flex items-center justify-end px-4 py-2 ">
+                    <button
+                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
+                        onclick="event.stopPropagation()">
                         <span class="mr-2 material-icons">add</span> Adicionar</button>
-                   </div> 
-               </div>
-            </article> 
-            <div class="flex items-center justify-end px-4 py-2 "> 
-                <button class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                onclick="event.stopPropagation()">  
-                 <span class="mr-2 material-icons">chevron_right</span>Continuar</button> 
-            </div>  
+                </div>
+            </div>
+        </article>
+        <div class="flex items-center justify-end px-4 py-2 ">
+            <button
+                class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
+                onclick="event.stopPropagation()">
+                <span class="mr-2 material-icons">chevron_right</span>Continuar</button>
+        </div>
         <script src="JS/script-acrescimo.js"></script>
-    </main>
+</main>
 
 </body>
+
 </html>

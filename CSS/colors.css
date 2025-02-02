@@ -12,11 +12,11 @@ body {
 main,
 nav,
 #infos,
-section {
+section,header,footer {
   background-color: var(--secundaria);
 }
 
-article {
+article,.card {
   background-color: var(--primaria)
 }
 
