@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Serviço</title>
+    <script>
+        function selecionarServico(button) {
+            const serviceId = button.getAttribute('data-id'); // Captura o data-id do botão
+            localStorage.setItem('selectedService', serviceId);
+            window.location.href = 'servico.html'; // Redireciona para a página do serviço escolhido
+        }
+    </script>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Escolha um Serviço</h1>
+    <button class="btn" data-id="corte" onclick="selecionarServico(this)">Corte</button>
+    <button class="btn" data-id="barba" onclick="selecionarServico(this)">Barba</button>
+    <button class="btn" data-id="coloracao" onclick="selecionarServico(this)">Coloração</button>
+    <button class="btn" data-id="manicure" onclick="selecionarServico(this)">Manicure</button>
+    <button class="btn" data-id="sobrancelha" onclick="selecionarServico(this)">Design de Sobrancelha</button>
+</body>
+
+</html>

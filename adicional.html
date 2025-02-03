@@ -29,16 +29,84 @@
 <section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg">
     <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
     <div class="grid grid-cols-3 gap-2">
-        <img src="src/Cabelo.jpg" alt="Pessoa cortando cabelo" class="object-cover rounded-lg aspect-square">
+        <img id="service-image" src="src/Cabelo.jpg" alt="Pessoa cortando cabelo" class="object-cover rounded-lg aspect-square">
         <div class="flex flex-col col-span-2 gap-2">
             <div>
-                <p class="font-bold">Corte</p>
-                <p class="text-sm">R$120,00 • 1h30 – 2h</p>
+                <p id="service-title" class="font-bold">Corte</p>
+                <p id="service-price-duration" class="text-sm">R$120,00 • 1h30 – 2h</p>
             </div>
-            <p class="text-xs">Está incluso no corte: avaliação, lavagem e finalização.</p>
+            <p id="service-description" class="text-xs">Está incluso no corte: avaliação, lavagem e finalização.</p>
         </div>
     </div>
 </section>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceId = localStorage.getItem('servicoSelecionado');
+
+            const serviceMap = {
+                'servico-btn-1': 'corte',
+                'servico-btn-2': 'barba',
+                'servico-btn-3': 'coloração',
+                'servico-btn-4': 'manicure',
+                'servico-btn-5': 'sobrancelha',
+                'servico-btn-6': 'corte' // Adicionei um padrão para o ID 6
+            };
+
+            const services = {
+                corte: {
+                    title: 'Corte',
+                    price: 'R$120,00',
+                    duration: '1h30 – 2h',
+                    description: 'Está incluso no corte: avaliação, lavagem e finalização.',
+                    image: 'src/Cabelo.jpg',
+                    alt: 'Pessoa cortando cabelo'
+                },
+                barba: {
+                    title: 'Barba',
+                    price: 'R$80,00',
+                    duration: '45min – 1h',
+                    description: 'Inclui modelagem, hidratação e acabamento.',
+                    image: 'src/Barba.jpg',
+                    alt: 'Pessoa aparando a barba'
+                },
+                coloração: {
+                    title: 'Coloração',
+                    price: 'R$200,00',
+                    duration: '2h – 3h',
+                    description: 'Coloração completa com consultoria de tonalidade.',
+                    image: 'src/Coloracao.jpg',
+                    alt: 'Pessoa aplicando tintura no cabelo'
+                },
+                manicure: {
+                    title: 'Manicure',
+                    price: 'R$60,00',
+                    duration: '30min – 45min',
+                    description: 'Corte, lixamento, hidratação e esmaltação.',
+                    image: 'src/Manicure.jpg',
+                    alt: 'Pessoa fazendo as unhas'
+                },
+                sobrancelha: {
+                    title: 'Design de Sobrancelha',
+                    price: 'R$50,00',
+                    duration: '20min – 30min',
+                    description: 'Design personalizado com pinça e finalização com henna (opcional).',
+                    image: 'src/Sobrancelha.jpg',
+                    alt: 'Pessoa ajustando sobrancelha'
+                }
+            };
+
+            const serviceKey = serviceMap[serviceId] || 'corte'; // Padrão: Corte
+            const service = services[serviceKey];
+
+            document.getElementById('service-title').textContent = service.title;
+            document.getElementById('service-price-duration').textContent = `${service.price} • ${service.duration}`;
+            document.getElementById('service-description').textContent = service.description;
+            
+            const serviceImg = document.getElementById('service-image');
+            serviceImg.src = service.image;
+            serviceImg.alt = service.alt;
+        });
+    </script> -->
 <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
     <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
     <ul id="lista-servicos"></ul>

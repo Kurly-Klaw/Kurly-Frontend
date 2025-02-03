@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Destino</title>
+</head>
+<body>
+  <!-- Espaço onde a informação específica será exibida -->
+  <h1 id="tituloEspecifico"></h1>
+
+  <!-- Outras partes da página que serão populadas conforme a opção selecionada -->
+
+  <script>
+    // Recupera o id que foi salvo no localStorage
+    const idSelecionado = localStorage.getItem('idSelecionado');
+    
+    // Seleciona o elemento onde a informação deverá aparecer
+    const tituloEspecifico = document.getElementById('tituloEspecifico');
+    
+    // Dependendo do valor, você pode definir o conteúdo desejado
+    if (idSelecionado) {
+      switch(idSelecionado) {
+        case 'opcao1':
+          tituloEspecifico.textContent = 'Você selecionou a Opção 1';
+          break;
+        case 'opcao2':
+          tituloEspecifico.textContent = 'Você selecionou a Opção 2';
+          break;
+        case 'opcao3':
+          tituloEspecifico.textContent = 'Você selecionou a Opção 3';
+          break;
+        case 'opcao4':
+          tituloEspecifico.textContent = 'Você selecionou a Opção 4';
+          break;
+        case 'opcao5':
+          tituloEspecifico.textContent = 'Você selecionou a Opção 5';
+          break;
+        default:
+          tituloEspecifico.textContent = 'Opção não reconhecida';
+      }
+    } else {
+      // Caso não haja nenhum valor salvo
+      tituloEspecifico.textContent = 'Nenhuma opção foi selecionada';
+    }
+  </script>
+</body>
+</html>

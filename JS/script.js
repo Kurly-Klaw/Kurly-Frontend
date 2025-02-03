@@ -5,11 +5,11 @@ function toggleCard(event) {
   if (!isButton) {
     card.classList.toggle('expanded');
 
-    // setTimeout(() => {
-    //   card.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'center'
-    //   });
-    // }, 300);
+    setTimeout(() => {
+      card.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 300);
   }
 }

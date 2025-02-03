@@ -18,6 +18,7 @@
 
     <script src="JS/script.js"></script>
     <script src="JS/load-things.js"></script>
+    <script src="JS/localStorage.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,44 @@
     </header>
     <section class="h-fit">
         <div id="promos">
-            <!-- <figure>
+
+        </div>
+    </section>
+
+    <main id="servicos">
+        <h2 class="font-semibold">Serviços</h2>
+        <ul id="lista-servicos">
+
+        </ul>
+    </main>
+    <br>
+    <br>
+    <br>
+    <nav class="bg-[#c89e98]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
+        <!-- Botão 1 -->
+        <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
+            <input type="radio" name="nav" id="botao-1" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
+            </div>
+            <h1 class="text-black text-sm peer-checked:font-bold">Início</h1>
+        </label>
+
+        <!-- Botão 2 -->
+        <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer">
+            <input type="radio" name="nav" id="botao-2" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
+            </div>
+            <h1 class="text-black text-sm peer-checked:font-bold">Perfil</h1>
+        </label>
+    </nav>
+</body>
+
+</html>
+
+
+<!-- <figure>
                 <img src="src/Cabelo.jpg" alt="Imagem exemplo" class="promo-img" />
                 <figcaption class="w-1 d-promo">
                     <h3>Corte + tratamento da casa</h3>
@@ -36,13 +74,8 @@
                     Agendar
                 </button>
             </figure> -->
-        </div>
-    </section>
 
-    <main id="servicos">
-        <h2 class="font-semibold">Serviços</h2>
-        <ul id="lista-servicos">
-            <!-- <li>
+<!-- <li>
                 <article class="relative cursor-pointer card" onclick="toggleCard(event)">
                     <div class="absolute card-head">
                         <h3>Detox</h3>
@@ -58,28 +91,3 @@
                         alt="Imagem" class="flex aspect-square card-img">
                 </article>
             </li> -->
-        </ul>
-    </main>
-    <nav class="bg-[#c89e98]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
-        <!-- Botão 1 -->
-        <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
-            <input type="radio" name="nav" id="botao-1" class="hidden peer">
-            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-                <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
-            </div>
-            <h1 class="text-black text-sm peer-checked:font-bold">Início</h1> 
-        </label>
-
-        <!-- Botão 2 -->
-        <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer">
-            <input type="radio" name="nav" id="botao-2" class="hidden peer">
-            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-                <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
-            </div>
-            <h1 class="text-black text-sm peer-checked:font-bold">Perfil</h1> 
-        </label>
-    </nav> 
-
-</body>
-
-</html>

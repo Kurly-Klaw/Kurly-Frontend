@@ -36,8 +36,8 @@
             "id": 1,
             "nome": "Corte",
             "titulo": "Corte + tratamento da casa",
-            "detailText1": "Consultoria especial: suas histórias capilares são ouvidas com atenção para soluções personalizadas. Lavagem relaxante: um momento sublime de tranquilidade para dissipar o estresse. Finalização perfeita: seus cabelos saem prontos para arrasar!",
-			"detailText2": "Lorem epsilonismo",
+            "detailText1": "Consultoria especial. Lavagem relaxante: um momento sublime de tranquilidade para dissipar o estresse.",
+			"detailText2": " Finalização perfeita: seus cabelos saem prontos para arrasar!",
             "duracao": "0.5h",
             "preco": 20,
             "img": "/src/Cabelo.jpg"

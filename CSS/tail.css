@@ -40,7 +40,7 @@ main{
 }
 
 article{
-    @apply grid max-w-2xl text-white shadow-lg rounded-xl grid-flow-col;
+    @apply flex flex-col max-w-2xl text-white shadow-lg rounded-xl;
 }
 .card-img{
     @apply self-start object-cover object-top w-20 h-20 rounded-lg;
@@ -51,8 +51,12 @@ article{
 }
 
 
+
+
+
+
 button{
-    @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full;
+    @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full ;
 }
 
 
