@@ -10,7 +10,7 @@ function loadThings() {
       const listaServicos = document.getElementById("lista-servicos");
       const listaAdicionais = document.getElementById("lista-adicionais");
 
-      if (false) {z
+      if (false) {
 
       
 
@@ -140,7 +140,7 @@ function loadThings() {
             "relative",
             "cursor-pointer",
             "card",
-            "h-[80px]"
+            "h-[144px]"
           );
           li.classList.add("mb-2");
           dt1.classList.add("font-semibold", "text-sm");
