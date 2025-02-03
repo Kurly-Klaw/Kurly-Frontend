@@ -1,357 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acréscimo</title>
     <!-- layout geral da página -->
-    <link rel="stylesheet" href="CSS/wind.css">
+    <link rel="stylesheet" href="CSS/wind.css" />
     <!-- animação dos elementos da página -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css" />
     <!-- Tema do site -->
-    <link rel="stylesheet" href="CSS/colors.css">
+    <link rel="stylesheet" href="CSS/colors.css" />
     <!-- icon do site -->
-    <link rel="shortcut icon" href="src/crow-512.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link rel="shortcut icon" href="src/crow-512.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <script src="/JS/script.js"></script>
+    <script src="/JS/localStorage.js"></script>
     <script src="/JS/load-things.js"></script>
-</head>
+  </head>
 
-<body class="flex-col w-full max-w-md mx-auto md:flex"></body>
-<header>
-    <nav class=" p-3"><a aria-label="Voltar" href="index.html">
-        <img src="src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]">
-    </a></nav>
-    <h1>Agendamento</h1>
-</header>
-<section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg">
-    <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
-    <div class="grid grid-cols-3 gap-2">
-        <img id="service-image" src="src/Cabelo.jpg" alt="Pessoa cortando cabelo" class="object-cover rounded-lg aspect-square">
-        <div class="flex flex-col col-span-2 gap-2">
+  <body class="flex-col w-full max-w-md mx-auto md:flex">
+    <header>
+      <nav class="p-3">
+        <a aria-label="Voltar" href="index.html">
+          <img
+            src="src/Seta-volta.png"
+            alt="Seta para voltar"
+            class="aspect-square w-[24px]"
+          />
+        </a>
+      </nav>
+      <h1>Agendamento</h1>
+    </header>
+    
+    <section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg">
+      <h2 class="text-[1.375rem] font-semibold">Serviço Escolhido</h2>
+      <div id="servico-selecionado">
+        <img id="service-image" />
+        <div class="grid grid-cols-3 gap-2">
+          <img
+            id="service-image"
+            class="object-cover rounded-lg aspect-square"
+          />
+          <div class="flex flex-col col-span-2 gap-2">
             <div>
-                <p id="service-title" class="font-bold">Corte</p>
-                <p id="service-price-duration" class="text-sm">R$120,00 • 1h30 – 2h</p>
+              <p id="service-title" class="font-bold"></p>
+              <p id="service-price-duration" class="text-sm"></p>
             </div>
-            <p id="service-description" class="text-xs">Está incluso no corte: avaliação, lavagem e finalização.</p>
+            <p id="service-descriptions" class="text-xs"></p>
+          </div>
         </div>
-    </div>
-</section>
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const serviceId = localStorage.getItem('servicoSelecionado');
+      </div>
+    </section>
 
-            const serviceMap = {
-                'servico-btn-1': 'corte',
-                'servico-btn-2': 'barba',
-                'servico-btn-3': 'coloração',
-                'servico-btn-4': 'manicure',
-                'servico-btn-5': 'sobrancelha',
-                'servico-btn-6': 'corte' // Adicionei um padrão para o ID 6
-            };
-
-            const services = {
-                corte: {
-                    title: 'Corte',
-                    price: 'R$120,00',
-                    duration: '1h30 – 2h',
-                    description: 'Está incluso no corte: avaliação, lavagem e finalização.',
-                    image: 'src/Cabelo.jpg',
-                    alt: 'Pessoa cortando cabelo'
-                },
-                barba: {
-                    title: 'Barba',
-                    price: 'R$80,00',
-                    duration: '45min – 1h',
-                    description: 'Inclui modelagem, hidratação e acabamento.',
-                    image: 'src/Barba.jpg',
-                    alt: 'Pessoa aparando a barba'
-                },
-                coloração: {
-                    title: 'Coloração',
-                    price: 'R$200,00',
-                    duration: '2h – 3h',
-                    description: 'Coloração completa com consultoria de tonalidade.',
-                    image: 'src/Coloracao.jpg',
-                    alt: 'Pessoa aplicando tintura no cabelo'
-                },
-                manicure: {
-                    title: 'Manicure',
-                    price: 'R$60,00',
-                    duration: '30min – 45min',
-                    description: 'Corte, lixamento, hidratação e esmaltação.',
-                    image: 'src/Manicure.jpg',
-                    alt: 'Pessoa fazendo as unhas'
-                },
-                sobrancelha: {
-                    title: 'Design de Sobrancelha',
-                    price: 'R$50,00',
-                    duration: '20min – 30min',
-                    description: 'Design personalizado com pinça e finalização com henna (opcional).',
-                    image: 'src/Sobrancelha.jpg',
-                    alt: 'Pessoa ajustando sobrancelha'
-                }
-            };
-
-            const serviceKey = serviceMap[serviceId] || 'corte'; // Padrão: Corte
-            const service = services[serviceKey];
-
-            document.getElementById('service-title').textContent = service.title;
-            document.getElementById('service-price-duration').textContent = `${service.price} • ${service.duration}`;
-            document.getElementById('service-description').textContent = service.description;
-            
-            const serviceImg = document.getElementById('service-image');
-            serviceImg.src = service.image;
-            serviceImg.alt = service.alt;
-        });
-    </script> -->
-<main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
-    <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
-    <ul id="lista-servicos"></ul>
-    <div class="p-2 rotate-btn h-fit">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-            fill="#FFFFFF">
-            <path d="M480-360 280-560h400L480-360Z" />
+    <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
+      <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
+      <ul id="lista-servicos"></ul>
+      <div class="p-2 rotate-btn h-fit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#FFFFFF"
+        >
+          <path d="M480-360 280-560h400L480-360Z" />
         </svg>
-    </div>
-    <div class="flex flex-col gap-2 py-2">
-        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-            <!-- Conteúdo principal -->
-            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                <div class="flex">
-                    <!-- Imagem (header) -->
-                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg"
-                        alt="Imagem" class="object-cover object-top w-20 h-20 rounded-lg header-image">
+      </div>
+    </main>
 
-                    <!-- Título -->
-                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Detox</h3>
-                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$35,00</h3>
-                    </div>
-                    <div class="p-2 rotate-btn h-fit">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#FFFFFF">
-                            <path d="M480-360 280-560h400L480-360Z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <!-- Conteúdo expansível -->
-            <div class="grid expandable-content">
-                <div class="overflow-hidden content-inner">
-                    <div class="px-4 pb-4 text-gray-600">
-                        <!-- Grid da área expandida -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Imagem expandida -->
-                            <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg"
-                                alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
-                            <!-- Texto expandido -->
-                            <div class="flex flex-col gap-2">
-                                <p class="mb-3 text-white font-bold  text-[14px]">Para quem busca revitalizar os fios e
-                                    desintoxicar o couro cabeludo.</p>
-                                <p class="text-[14px] text-white text-justify ">Tratamento que elimina impurezas,
-                                    excesso de oleosidade e fortalece os fios.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Conteúdo no final do card (botão e aumentador) -->
-                <div class="flex items-center justify-end px-4 py-2 ">
-                    <button
-                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                        onclick="event.stopPropagation()">
-                        <span class="mr-2 material-icons">add</span> Adicionar</button>
-                </div>
-            </div>
-        </article>
-        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-            <!-- Conteúdo principal -->
-            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                <div class="flex">
-                    <!-- Imagem (header) -->
-                    <img src="https://belezaesaude.com/i/730/9547/umectacao-capilar-oleos.jpg" alt="Imagem"
-                        class="object-cover w-20 h-20 rounded-lg header-image">
-
-                    <!-- Título -->
-                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Umectação</h3>
-                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$50,00</h3>
-                    </div>
-                    <div class="p-2 rotate-btn h-fit">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#FFFFFF">
-                            <path d="M480-360 280-560h400L480-360Z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <!-- Conteúdo expansível -->
-            <div class="grid expandable-content">
-                <div class="overflow-hidden content-inner">
-                    <div class="px-4 pb-4 text-gray-600">
-                        <!-- Grid da área expandida -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Imagem expandida -->
-                            <img src="https://belezaesaude.com/i/730/9547/umectacao-capilar-oleos.jpg" alt="Imagem"
-                                class="object-cover rounded-lg h-full aspect-[2/3]">
-                            <!-- Texto expandido -->
-                            <div class="flex flex-col gap-2">
-                                <p class="mb-3 text-white font-bold  text-[14px]">Para quem deseja hidratar e nutrir
-                                    profundamente os cabelos ressecados.</p>
-                                <p class="text-[14px] text-white text-justify ">Tratamento que repõe lipídios e
-                                    vitaminas, deixando os fios macios e brilhosos.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Conteúdo no final do card (botão e aumentador) -->
-                <div class="flex items-center justify-end px-4 py-2 ">
-                    <button
-                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                        onclick="event.stopPropagation()">
-                        <span class="mr-2 material-icons">add</span> Adicionar</button>
-                </div>
-            </div>
-        </article>
-        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-            <!-- Conteúdo principal -->
-            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                <div class="flex">
-                    <!-- Imagem (header) -->
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwAeW8X6cxxjpRrYRRL3nuuII6o4A86rP0CGwfudKfgAbgpfPUZHWxe94XWZUydTfhyA&usqp=CAU"
-                        alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
-
-                    <!-- Título -->
-                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Ozonioterapia</h3>
-                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$50,00</h3>
-                    </div>
-                    <div class="p-2 rotate-btn h-fit">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#FFFFFF">
-                            <path d="M480-360 280-560h400L480-360Z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <!-- Conteúdo expansível -->
-            <div class="grid expandable-content">
-                <div class="overflow-hidden content-inner">
-                    <div class="px-4 pb-4 text-gray-600">
-                        <!-- Grid da área expandida -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Imagem expandida -->
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwAeW8X6cxxjpRrYRRL3nuuII6o4A86rP0CGwfudKfgAbgpfPUZHWxe94XWZUydTfhyA&usqp=CAU"
-                                alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
-                            <!-- Texto expandido -->
-                            <div class="flex flex-col gap-2">
-                                <p class="mb-3 text-white font-bold text-justify text-[14px]">Para pessoas com queda de
-                                    cabelo ou couro cabeludo com problemas.</p>
-                                <p class="text-[14px] text-white text-justify ">Tratamento com ozônio que estimula o
-                                    crescimento capilar e combate a oleosidade.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Conteúdo no final do card (botão e aumentador) -->
-                <div class="flex items-center justify-end px-4 py-2 ">
-                    <button
-                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                        onclick="event.stopPropagation()">
-                        <span class="mr-2 material-icons">add</span> Adicionar</button>
-                </div>
-            </div>
-        </article>
-        <article class="flex flex-col max-w-2xl shadow-lg rounded-xl" onclick="toggleCard(event)">
-            <!-- Conteúdo principal -->
-            <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                <div class="flex">
-                    <!-- Imagem (header) -->
-                    <img src="https://blog.colombo.com.br/wp-content/uploads/2020/07/moca-lavando-cabelo-em-lavatorio.jpg"
-                        alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
-
-                    <!-- Título -->
-                    <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                        <h3 class="text-base font-semibold text-white" id="titulo-preço-1">Acidificação</h3>
-                        <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">+R$40,00</h3>
-                    </div>
-                    <div class="p-2 rotate-btn h-fit">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#FFFFFF">
-                            <path d="M480-360 280-560h400L480-360Z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <!-- Conteúdo expansível -->
-            <div class="grid expandable-content">
-                <div class="overflow-hidden content-inner">
-                    <div class="px-4 pb-4 text-gray-600">
-                        <!-- Grid da área expandida -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Imagem expandida -->
-                            <img src="https://blog.colombo.com.br/wp-content/uploads/2020/07/moca-lavando-cabelo-em-lavatorio.jpg"
-                                alt="Imagem" class="object-cover rounded-lg h-full aspect-[2/3]">
-                            <!-- Texto expandido -->
-                            <div class="flex flex-col gap-2">
-                                <p class="mb-3 text-white font-bold  text-[14px]">Para quem deseja equilibrar o pH do
-                                    cabelo e couro cabeludo.</p>
-                                <p class="text-[14px] text-white text-justify ">Tratamento que fecha as cutículas
-                                    capilares e melhora a saúde dos fios.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Conteúdo no final do card (botão e aumentador) -->
-                <div class="flex items-center justify-end px-4 py-2 ">
-                    <button
-                        class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                        onclick="event.stopPropagation()">
-                        <span class="mr-2 material-icons">add</span> Adicionar</button>
-                </div>
-            </div>
-        </article>
-        <div class="flex items-center justify-end px-4 py-2 ">
-            <button
-                class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
-                onclick="event.stopPropagation()">
-                <a href="horario.html">
-                    <span class="mr-2 material-icons">chevron_right</span>Continuar</button>
-                </a>
+    <nav
+      class="bg-[#c89e98] py-4 w-full max-w-md flex justify-evenly fixed bottom-0"
+    >
+      <!-- Botão 1 -->
+      <label
+        for="botao-1"
+        class="flex flex-col items-center gap-1 cursor-pointer"
+      >
+        <input type="radio" name="nav" id="botao-1" class="hidden peer" />
+        <div
+          class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors"
+        >
+          <a href="index.html">
+            <span
+              class="text-xl text-black material-icons peer-checked:text-gray-700"
+              >home</span
+            >
+          </a>
         </div>
-        <script src="JS/script-acrescimo.js"></script>
-</main>
+        <h1 class="text-sm text-black peer-checked:font-bold">Início</h1>
+      </label>
 
-<nav class="bg-[#c89e98]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
-    <!-- Botão 1 -->
-    <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
-        <input type="radio" name="nav" id="botao-1" class="hidden peer">
-        <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-            <a href="index.html">
-                <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
-            </a>
+      <!-- Botão 2 -->
+      <label
+        for="botao-2"
+        class="flex flex-col items-center gap-1 cursor-pointer"
+      >
+        <input type="radio" name="nav" id="botao-2" class="hidden peer" />
+        <div
+          class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors"
+        >
+          <a href="profile.html">
+            <span
+              class="text-xl text-black material-icons peer-checked:text-gray-700"
+              >person</span
+            >
+          </a>
         </div>
-        <h1 class="text-black text-sm peer-checked:font-bold">Início</h1> 
-    </label>
-
-    <!-- Botão 2 -->
-    <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer">
-        <input type="radio" name="nav" id="botao-2" class="hidden peer">
-        <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors"> 
-            <a href="profile.html">
-                <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
-            </a>
-        </div>
-        <h1 class="text-black text-sm peer-checked:font-bold">Perfil</h1> 
-    </label>
-</nav> 
-
-</body>
-
+        <h1 class="text-sm text-black peer-checked:font-bold">Perfil</h1>
+      </label>
+    </nav>
+  </body>
 </html>
