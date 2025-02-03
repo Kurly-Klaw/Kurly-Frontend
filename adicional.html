@@ -21,7 +21,7 @@
 
 <body class="flex-col w-full max-w-md mx-auto md:flex"></body>
 <header>
-    <nav class=" p-3"><a aria-label="Voltar">
+    <nav class=" p-3"><a aria-label="Voltar" href="index.html">
         <img src="src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]">
     </a></nav>
     <h1>Agendamento</h1>
@@ -253,7 +253,9 @@
             <button
                 class="agendar-btn px-6 py-2 h-[40px]  text-white text-[14px] rounded-full  transition-colors flex items-center"
                 onclick="event.stopPropagation()">
-                <span class="mr-2 material-icons">chevron_right</span>Continuar</button>
+                <a href="horario.html">
+                    <span class="mr-2 material-icons">chevron_right</span>Continuar</button>
+                </a>
         </div>
         <script src="JS/script-acrescimo.js"></script>
 </main>
@@ -263,7 +265,9 @@
     <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
         <input type="radio" name="nav" id="botao-1" class="hidden peer">
         <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-            <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
+            <a href="index.html">
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">home</span>
+            </a>
         </div>
         <h1 class="text-black text-sm peer-checked:font-bold">Início</h1> 
     </label>
@@ -271,8 +275,10 @@
     <!-- Botão 2 -->
     <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer">
         <input type="radio" name="nav" id="botao-2" class="hidden peer">
-        <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-            <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
+        <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors"> 
+            <a href="profile.html">
+                <span class="material-icons text-xl text-black peer-checked:text-gray-700">person</span>
+            </a>
         </div>
         <h1 class="text-black text-sm peer-checked:font-bold">Perfil</h1> 
     </label>
