@@ -2,7 +2,7 @@
 function loadThings() {
     //carrega os serviços e promoções
 
-    fetch("JS/dados.json")
+    fetch("./JS/dados.json")
         .then((response) => response.json())
         .then((data) => {
             // Carrega promoções
