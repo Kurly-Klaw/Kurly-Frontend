@@ -38,50 +38,29 @@ button, footer > a{
 
 /* Gptélson */
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ddd;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-.carrossel-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 10px;
-  padding: 20px;
-  scroll-behavior: smooth;
-}
 
 .carrossel {
-  flex: 0 0 25%;
-  position: relative;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
+  flex: 0 0 30%;
   cursor: pointer;
-  overflow: hidden;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-grow: .5;
+  transition: all 0.3s ease-in-out;
 }
 
 .carrossel img {
   width: 100%;
-  border-radius: 10px 10px 0 0;
   display: block;
   flex-grow: 1; /* Mantém a imagem flexível e ocupando o topo */
 }
 
 .carrossel figcaption {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  position: relative;
   color: white;
-  padding: 15px;
+  left: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  flex-grow: 0; /* Evita que ele cresça */
+  
   opacity: 0; /* Esconde a legenda dos itens pequenos */
-  transform: translateY(10px);
+  transform: translateX(100%);
 }
 
 .carrossel.expanded {
@@ -91,4 +70,7 @@ body {
 .carrossel.expanded figcaption {
   opacity: 1; /* Exibe a legenda */
   transform: translateY(0);
+  position: absolute;
+  margin-left: 1rem;
 }
+

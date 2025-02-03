@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Início</title>
-    <link rel="icon" type="image/x-icon" href="/src/crow-512.png" />
-    <script src="JS/scripts.js"></script>
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/colors.css" />
-    <link rel="stylesheet" href="./CSS/layout.css" />
-  </head>
-  <body>
-    <header><h1>Madrinhas</h1></header>
-    <main>
-      <section id="promos">
-        <figure class="carrossel">
-          <img />
-          <figcaption class="flex flex-row mb-4 text-black">
-            <div class="card-header">
-              <h2>Corte + tratamento da casa</h2>
-              <p>R$ 200,00</p>
-            </div>
-            <button class="card-button"><p>Agendar</p></button>
-          </figcaption>
-        </figure>
-      </section>
-      <section name="serviços">
-        <h1>Serviços</h1>
-        <article name="acrescimo">
-          <img name="capa" class="capa" />
-          <div>
-            <h2>Corte</h2>
-            <p>R$120,00 • 1h30–2h</p>
-            <span class="descrit" id="desc-01"></span>
-          </div>
-          <button class="card-button"><p>Agendar</p></button>
-        </article>
-      </section>
-    </main>
-    <footer>
-      <h3 class="text-black">Início</h3>
-      <h3 class="text-black">Histórico</h3>
-      <h3 class="text-black">Perfil</h3>
-    </footer>
-    <!-- <script src="script.js"></script> -->
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Início</title>
+  <link rel="icon" type="image/x-icon" href="/src/crow-512.png" />
+  <script src="JS/scripts.js"></script>
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <link rel="stylesheet" href="./CSS/stylee.css" />
+  <link rel="stylesheet" href="./CSS/colors.css" />
+  <link rel="stylesheet" href="./CSS/layout.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Madrinhas</h1>
+  </header>
+  <main>
+    <section id="promos">
+      <h2>Promoções</h2>
+      <!-- Esttrutura padrão das promoções
+    <article id="promo-1">
+      <img src="" alt="Imagem do serviço Combo 1.">
+      <h3>Corte + tratamento da casa</?>
+      <p>200 • 1.5h</p>
+      <p>Lorem</p>
+      <button>Agendar</button>
+    </article>-->
+    </section>
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <!-- Estrutura padrão da lista de serviços
+      <ul> 
+        <li>
+          <img itemprop="img" alt="Icone do servicos">
+          <article>
+            <h3 itemprop="nome">Ozonioterapia</h3>
+            <p itemprop="preco">R$120,00 • 1h30–2h</p>
+            <h3 itemprop="titulo"></h3>
+            <p itemprop="descricao" class="descricao" id="desc-01"></p>
+          </article>
+          <button>Agendar</button>
+        </li>
+      </ul> -->
+    </section>
+  </main>
+  <footer>
+    <nav>
+      <a class="text-black">Início</a>
+      <a class="text-black">Histórico</a>
+      <a class="text-black">Perfil</a>
+    </nav>
+  </footer>
+</body>
+
 </html>

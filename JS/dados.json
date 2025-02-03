@@ -4,18 +4,18 @@
             "id": 1,
             "nome": "Combo 1",
             "titulo":"Corte + tratamento da casa",
-            "duração": "1.5h",
+            "duracao": "1.5h",
             "preco": 200,
-            "descrição": "Lorem",
+            "descricao": "Lorem",
             "img": ""
         },
         {
             "id": 2,
             "nome": "Combo 2",
             "titulo":"Corte + tratamento da casa",
-            "duração": "2.5h",
+            "duracao": "2.5h",
             "preco": 320,
-            "descrição": "Lorena",
+            "descricao": "Lorena",
             "img": ""
         }
     ],
@@ -23,18 +23,38 @@
         {
             "id": 1,
             "nome": "Corte",
-            "duração": "0.5h",
+            "titulo":"Corte + tratamento da casa",            
+            "descricao": "Lorem epsilonismo",
+            "duracao": "0.5h",
             "preco": 20,
-            "descrição": "Lorem epsilonismo",
-            "img": "http://"
+            "img": ""
         },
         {
             "id": 2,
-            "nome": "Lavagem",
-            "duração": "5h",
-            "preco": 3020,
-            "descrição": "Lorena",
-            "img": "http://"
+            "nome": "Corte",
+            "titulo":"Corte + tratamento da casa",            
+            "descricao": "Lorem epsilonismo",
+            "duracao": "0.5h",
+            "preco": 20,
+            "img": ""
+        },
+        {
+            "id": 3,
+            "nome": "Corte",
+            "titulo":"Corte + tratamento da casa",            
+            "descricao": "Lorem epsilonismo",
+            "duracao": "0.5h",
+            "preco": 20,
+            "img": ""
+        },
+        {
+            "id": 4,
+            "nome": "Corte",
+            "titulo":"Corte + tratamento da casa",            
+            "descricao": "Lorem epsilonismo",
+            "duracao": "0.5h",
+            "preco": 20,
+            "img": ""
         }
     ],
     "cliente": {

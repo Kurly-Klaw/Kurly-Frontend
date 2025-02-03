@@ -1,0 +1,12 @@
+/* Css para animar coisas */
+
+#promos article{
+    flex: 0 0 30%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+#promos article img{
+    height: 16rem;
+    width: 15rem;
+}
