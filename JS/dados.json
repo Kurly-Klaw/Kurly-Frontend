@@ -9,7 +9,7 @@
         "inclui": ["servico-1","servico-3"],
         "detailText1": "Principal pacote do nosso salão.",
         "detailText2": "Lorem epsilonismo",
-        "img": "/src/Media.png"
+        "img": "./src/Item-1.png"
       },
       "combo-2":{
         "id": 2,
@@ -19,17 +19,7 @@
         "preco": 600,
         "detailText1": "Pacote com 2 sessões de mechas no mês.",
         "detailText2": "Lorem epsilonismo",
-        "img": "/src/Fernanda_Carvalho.jpeg"
-      },
-      "combo-3":{
-        "id": 3,
-        "nome": "Combo 3",
-        "titulo": "Pacote master + presente",
-        "duracao": "4h",
-        "preco": 600,
-        "detailText1": "Pacote com 2 sessões de mechas no mês.",
-        "detailText2": "Lorem epsilonismo",
-        "img": "/src/Cabelos.png"
+        "img": "./src/Item-2.png"
       }
     },
     "servicos": {
@@ -41,7 +31,7 @@
         "detailText2": "Relaxante, tranquilo e atencioso.",
         "duracao": "0.5h",
         "preco": 50,
-        "img": "/src/Cabelos.png"
+        "img": "./src/corte.png"
       },
       "servico-2": {
         "id": 2,
@@ -51,7 +41,7 @@
         "detailText2": "Lorem epsilonismo",
         "duracao": "0.5h",
         "preco": 20,
-        "img": "/src/Cabelos.png"
+        "img": "./src/detox.png"
       },
       "servico-3": {
         "id": 3,
@@ -61,7 +51,7 @@
         "detailText2": "",
         "duracao": "0.5h",
         "preco": 20,
-        "img": "/src/Cabelos.png"
+        "img": "./src/ozonio.png"
       },
       "servico-4": {
         "id": 4,
@@ -71,7 +61,7 @@
         "detailText2": "Lorem ",
         "duracao": "0.5h",
         "preco": 50,
-        "img": "/src/Cabelos.png"
+        "img": "./src/umeccao.png"
       }
     },
     "cliente": {

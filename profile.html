@@ -4,36 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="input.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/colors.css">
+    
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/wind.css">
+    <link rel="stylesheet" href="./CSS/colors.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+    <script src="./JS/script.js"></script>
+    <script src="./JS/loadthings.js"></script>
+    <script src="./JS/localStorage.js"></script>
+    <script src=""></script>
     <title>Meu Perfil</title>
 </head>
+
 <body class="flex-col w-full max-w-md mx-auto md:flex">
     <nav class="w-full px-1 py-2 shadow">
         <div class="flex items-center">
-            <a class="p-3 mr-2" aria-label="Voltar" href="horario.html">
+            <a class="p-3 mr-2" aria-label="Voltar" href="./index.html">
                 <img src="src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]">
             </a>
             <p class="text-[1.375rem] font-bold">Meu perfil</p>
             <a class="p-3 ml-auto" aria-label="Editar perfil">
-                <img src="src/Edit.png" alt="Editar informações" class="aspect-square w-[24px]">
+                <img src="./src/Edit.png" alt="Editar informações" class="aspect-square w-[24px]">
             </a>
         </div>
-    </nav> 
-    <header class="flex items-center" id="infos">   
+    </nav>
+    <div class="flex items-center" id="infos">
         <div class="px-4 py-2">
-            <img src="src/User-Icon.png" alt="Foto de perfil" class="aspect-square w-[50px] border rounded-full bg-white">
+            <img src="src/User-Icon.png" alt="Foto de perfil"
+                class="aspect-square w-[50px] border rounded-full bg-white">
         </div>
         <div class="-mt-1">
             <p class="text-base font-bold">Fernanda Carvalho</p>
             <p class="text-sm">(85)91234-5678</p>
         </div>
-    </header>
-    <main class="flex flex-col justify-center gap-2 pb-2 rounded-b-lg">      
+    </div>
+    <main class="flex flex-col justify-center gap-2 pb-2 rounded-b-lg rounded-t-none">
         <section class="flex flex-col items-center gap-4 px-4">
-            <div class="flex w-full"> 
+            <div class="flex w-full">
                 <div class="flex justify-center flex-1">
                     <img src="src/Cabelos.png" alt="Tipo de cabelo">
                 </div>
@@ -41,21 +49,26 @@
                     <div class="flex flex-col items-center w-full h-full gap-2">
                         <p class="text-[1.375rem] font-semibold">Meu cabelo</p>
                         <!-- Botão 1 -->
-                        <label for="hair-type-ondulado" class="flex items-center gap-2  text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer  transition-all flex-1 label-cabelo">
-                            <input id="hair-type-ondulado" type="radio" name="hair-type" value="ondulado" class="hidden" />
+                        <label for="hair-type-ondulado"
+                            class="flex items-center gap-2  text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer  transition-all flex-1 label-cabelo label-tipo-cabelo">
+                            <input id="hair-type-ondulado" type="radio" name="hair-type" value="ondulado"
+                                class="hidden" />
                             <img src="src/Radio-unchecked.png" alt="Ícone" class="w-[18px] aspect-square radio-icon" />
                             Ondulado
                         </label>
 
                         <!-- Botão 2 -->
-                        <label for="hair-type-cacheado" class="flex items-center gap-2 label-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer  transition-all flex-1">
-                            <input id="hair-type-cacheado" type="radio" name="hair-type" value="cacheado" class="hidden" />
+                        <label for="hair-type-cacheado"
+                            class="flex items-center gap-2 label-cabelo label-tipo-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer  transition-all flex-1">
+                            <input id="hair-type-cacheado" type="radio" name="hair-type" value="cacheado"
+                                class="hidden" />
                             <img src="src/Radio-unchecked.png" alt="Ícone" class="w-[18px] aspect-square radio-icon" />
                             Cacheado
                         </label>
 
                         <!-- Botão 3 -->
-                        <label for="hair-type-crespo" class="flex items-center gap-2 label-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer  transition-all flex-1">
+                        <label for="hair-type-crespo"
+                            class="flex items-center gap-2 label-cabelo label-tipo-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer  transition-all flex-1">
                             <input id="hair-type-crespo" type="radio" name="hair-type" value="crespo" class="hidden" />
                             <img src="src/Radio-unchecked.png" alt="Ícone" class="w-[15px] aspect-square radio-icon" />
                             Crespo
@@ -63,122 +76,112 @@
                     </div>
                 </div>
             </div>
-            <div class="grid justify-center w-full grid-cols-5 gap-2 px-4 -p-2 -mb-[5px]">  
+            <div class="grid justify-center w-full grid-cols-5 gap-2 px-4 -p-2 -mb-[5px]">
                 <div class="flex justify-end">
-                    <button id="decrease" class="justify-center w-12 h-12 text-white rounded-full label-cabelo ">-</button>
-                
+                    <button id="decrease"
+                        class="justify-center w-12 h-12 text-white rounded-full label-cabelo ">-</button>
+
                 </div>
-                    
-                <div class="col-span-3">   
+
+                <div class="col-span-3">
                     <label for="hair-condition" class="sr-only">Problemas capilares</label>
                     <input id="hair-condition" type="range" class="slider-input" min="0" max="2" step="1">
                 </div>
-                
-                <button id="increase" class="justify-center w-12 text-white rounded-full aspect-square label-cabelo ">+</button>
+
+                <button id="increase"
+                    class="justify-center w-12 text-white rounded-full aspect-square label-cabelo ">+</button>
             </div>
-        </section> 
-        <section class="flex flex-col gap-2 py-2"> 
-            <div class="grid items-center w-full grid-cols-2 gap-2 px-4"> 
+        </section>
+        <section class="flex flex-col gap-2 py-2">
+            <div class="grid items-center w-full grid-cols-2 gap-2 px-4">
                 <p class="col-span-2 text-[1.375rem] font-semibold text-center">Problemas capilares</p>
 
                 <!-- Botão 1 -->
-                <label for="problem-ponta-dupla" class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
+                <label for="problem-ponta-dupla"
+                    class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
                     <input id="problem-ponta-dupla" type="checkbox" value="opcao1" class="hidden" />
                     <img src="src/Checkbox-unchecked.png" alt="Ícone" class="w-[18px] aspect-square checkbox-icon" />
                     Ponta duplas
                 </label>
 
                 <!-- Botão 2 -->
-                <label for="problem-quimica" class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
+                <label for="problem-quimica"
+                    class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
                     <input id="problem-quimica" type="checkbox" value="opcao2" class="hidden" />
                     <img src="src/Checkbox-unchecked.png" alt="Ícone" class="w-[18px] aspect-square checkbox-icon" />
                     Química
                 </label>
 
                 <!-- Botão 3 -->
-                <label for="problem-oleoso" class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
+                <label for="problem-oleoso"
+                    class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
                     <input id="problem-oleoso" type="checkbox" value="opcao3" class="hidden" />
                     <img src="src/Checkbox-unchecked.png" alt="Ícone" class="w-[18px] aspect-square checkbox-icon" />
                     Oleoso
                 </label>
 
                 <!-- Botão 4 -->
-                <label for="problem-ressecado" class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
+                <label for="problem-ressecado"
+                    class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
                     <input id="problem-ressecado" type="checkbox" value="opcao4" class="hidden" />
                     <img src="src/Checkbox-unchecked.png" alt="Ícone" class="w-[18px] aspect-square checkbox-icon" />
                     Ressecado
                 </label>
 
                 <!-- Botão 5 -->
-                <label for="problem-quebradico" class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
+                <label for="problem-quebradico"
+                    class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
                     <input id="problem-quebradico" type="checkbox" value="opcao5" class="hidden" />
                     <img src="src/Checkbox-unchecked.png" alt="Ícone" class="w-[18px] aspect-square checkbox-icon" />
                     Quebradiço
                 </label>
 
                 <!-- Botão 6 -->
-                <label for="problem-frizz" class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
+                <label for="problem-frizz"
+                    class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-lg cursor-pointer  transition-all">
                     <input id="problem-frizz" type="checkbox" value="opcao6" class="hidden" />
                     <img src="src/Checkbox-unchecked.png" alt="Ícone" class="w-5 h-5 checkbox-icon" />
                     Frizz
                 </label>
             </div>
         </section>
-    </main> 
-    <section class="mt-2 rounded-lg" > 
-        <div class="flex flex-col gap-2 px-4 py-2">  
-            <p class="text-[1.375rem] font-semibold text-center">Agendamento atual</p>  
-            <article class="flex flex-col w-full max-w-2xl mx-auto shadow-lg card-expandable rounded-xl" onclick="toggleCard(event)">
-                 <!-- Conteúdo principal -->
-                 <div class="flex flex-col justify-start pr-4 cursor-pointer main-content">
-                    <div class="flex">
-                        <!-- Imagem (header) -->
-                        <img src="src/Cabelo.jpg" alt="Imagem" class="object-cover w-20 h-20 rounded-lg header-image">
-                                    
-                        <!-- Título -->
-                        <div class="flex flex-col flex-grow h-auto gap-1 pt-2 ml-4">
-                            <h3 class="text-base font-semibold text-white" id="titulo-preço-1"
-                            >Corte</h3> 
-                            <h3 class="text-[14px] font-semibold text-white" id="texto-preço-1">R$120,00 • 1h30 – 2h</h3>
-                        </div>
-                    </div>           
-                </div>
-                <!-- Conteúdo expansível -->
-                <div class="grid expandable-content">
-                    <div class="overflow-hidden content-inner">
-                        <div class="px-4 pb-4 text-gray-600">
-                            <!-- Grid da área expandida -->
-                            <div class="grid grid-cols-2 gap-4">
-                                <!-- Imagem expandida -->
-                                <img src="src/Cabelo.jpg" alt="Imagem" class="object-cover rounded-lg aspect-square">
-                                 
-                                <!-- Texto expandido -->
-                                <div class="flex flex-col gap-2"> 
-                                    
-                                    <p class="mb-3 text-white font-bold  text-[14px]">Método Blend e Rodrigo Vizu.</p> 
-                                    <p class="text-[14px] text-white text-justify ">Inclui análise para enten-der os fios e necessidades, lavagem para limpar e hi-dratar, além da finalização com ajustes no corte.</p> 
-    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Conteúdo no final do card (botão e aumentador) -->
-                    <div class="flex justify-end">
-                        <!-- Botão editar) -->
-                        <button class="agendar-btn ml-4 px-6 mx-4 py-2 h-[40px] label-cabelo text-white text-[14px] rounded-full  transition-colors flex items-center"
+    </main>
+    <section class="mt-2 rounded-lg">
+        <div class="flex flex-col gap-2 px-4 py-2">
+            <h2 class="text-[1.375rem] font-semibold text-center">Agendamento atual</h2>
+            <ul class="">
+                <li class="mb-2 flex flex-col items-center">
+                    <h3 class="opacity-[.32]"> Sem agendamento marcado!</h3>
                         
-                                onclick="event.stopPropagation()">  
-                            Editar   
-                        </button> 
-                        </div> 
-                         <!-- Barra de affordance -->
-                    <div class="aumentador closed"> 
-                        <p>▼</p>
-                      </div>
-                </div>
-            </article> 
+                    </article>
+                </li>
+            </ul>
+            </article>
         </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <nav class="bg-[#d9d9d9]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
+        <!-- Botão 1 -->
+        <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer" onclick="window.location.href='index.html'">
+            <input type= "radio" name="nav" id="botao-1" class="hidden peer">
+            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
+                <span class="text-xl text-black material-icons peer-checked:text-gray-700">home</span>
+            </div>
+            <h1 class="text-sm text-black peer-checked:font-bold">Início</h1> 
+        </label>
+
+        <!-- Botão 2 -->
+        <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer" onclick="window.location.href='profile.html'">
+            <input type="radio" name="nav" id="botao-2" class="hidden peer">
+            <div class="px-5 pt-2 rounded-full bg-[#e0e0e0]">    
+                <span class="text-xl text-black material-icons peer-checked:text-gray-700">person</span>
+            </div>
+            <h1 class="text-sm text-black peer-checked:font-bold">Perfil</h1> 
+        </label> 
+    </nav>  
     <script src="JS/script-profile.js"></script>
 </body>
 

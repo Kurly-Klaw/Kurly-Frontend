@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/horario.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/wind.css">
     <link rel="stylesheet" href="CSS/colors.css">
 </head>
 </head>
@@ -19,15 +20,15 @@
         </div>
     </nav>
  
-    <section class="flex flex-col w-full gap-2 p-4 mb-2 rounded-b-lg">  
+    <section class="flex flex-col h-fit gap-2 p-4 mb-2 rounded-b-lg">  
         <p class="text-[1.375rem] font-semibold">Dia</p> 
         <div class="flex gap-2">
-            <div class="flex flex-col items-center px-4 py-3 rounded-lg"> 
+            <div class="flex flex-col items-center px-4 py-3 rounded-lg roxo"> 
                 <p id="numero-do-dia"class="text-[1.5rem] text-white">1</p> 
                 <p class="text-[1.5rem] text-white">JAN</p>
             </div>
-            <div class="relative w-full gap-2 overflow-hidden">  
-                <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#c89e98] to-transparent pointer-events-none z-10"></div> 
+            <div class="relative gap-2 overflow-hidden">  
+                <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#d9d9d9] to-transparent pointer-events-none z-10"></div> 
                 <p class="font-bold text-center">Janeiro</p>
                 <div class="flex items-center overflow-x-auto scroll-container scroll-pb-36">
                     <div id="days-container" class="flex gap-4 w-max"></div>
@@ -42,6 +43,7 @@
         <p class="text-[1.375rem] font-semibold">Horários</p>  
         <div id="time-container" class="flex flex-col gap-2 ">
         </div>
+        <a class="continuar" aria-label="Continuar" href="./confirmacao.html">Continuar</a>
     </main>
     <script src="JS/horario.js"></script> 
 </body>

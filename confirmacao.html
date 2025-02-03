@@ -1,77 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Pedido</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <link rel="stylesheet" href="CSS/colors.css">
+    <link rel="stylesheet" href="./CSS/colors.css">
+    <link rel="stylesheet" href="./CSS/wind.css">
 </head>
+
 <body class="font-sans ">
 
-<main class="max-w-md p-4 mx-auto my-8 rounded-lg shadow-lg">
-    <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
-    <div class="flex items-center mb-6 space-x-4 h-[126px]">
-        <img src="Media.png" alt="Imagem do produto" class="w-[118px] h-[118px] object-cover rounded-lg">
-        <div class="flex-1">
-            <p class="text-lg font-medium" id="">Corte</p>
-            <p class="text-sm text-gray-600">R$120,00  • 1h30 – 2h.</p>
-            <p class="pt-2">Incluso: avaliação, lavagem e finalização.</p>
-        </div>  
-    </div>
-
-    <hr class="border-black">
-
-    <div class="flex items-center pt-2 mb-6 space-x-4">
-        <img src="Media.png" alt="Imagem do produto" class="object-cover w-20 h-20 rounded-lg">
-        <div class="flex-1">
-            <p class="text-lg font-medium">Ozonioterapia</p>
-            <p class="text-sm ">+R$50,00</p>
-            <p class="pt-2">Terapia com ozônio para combater fungos e melhorar a saúde capilar e fortalecer os fios.</p>
-        </div>
-    </div>
-
-    <div class="flex items-center pt-2 mb-6 space-x-4">
-        <img src="Media.png" alt="Imagem do produto" class="object-cover w-20 h-20 rounded-lg">
-        <div class="flex-1">
-            <p class="text-lg font-medium">Umectação</p>
-            <p class="text-sm ">+R$50,00</p>
-            <p class="pt-2">Uso de óleos naturais para restaurar a umidade e a nutrição dos cabelos.</p>
-        </div>
-    </div>
-
-    <hr class="border-black">
-
-
-    <!-- Div para Total e Data/Hora -->
-    <div class="flex justify-between items-center mt-4 border-t pt-4 bg-gray-200 rounded-[16px] mb-4 h-[72px]">
-
-        <div class="pb-3 pl-2 text-xl font-semibold ">
-           Total: <span id="valortotal">R$ 220,00</span>
-        </div>
-        
-        <!-- Data, Hora e Ícone de Calendário -->
-        <div class="flex items-center space-x-2">
-            <i class="text-black fas fa-calendar-alt"></i>
-            <div class="pb-3 pr-2 text-sm">
-                <p >7:00 - 9:00</p>
-                <p >31/01/2025</p>
-                
+    <main class="max-w-md p-4 mx-auto my-8 rounded-lg shadow-lg">
+        <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
+        <div class="flex items-center mb-6 space-x-4 h-[126px]">
+            <img src="./src/corte.png" alt="Imagem do produto" class="w-[118px] h-[118px] object-cover rounded-lg">
+            <div class="flex-1">
+                <p class="text-lg font-medium" id="">Corte</p>
+                <p class="text-sm text-gray-600">R$120,00 • 1h30 – 2h.</p>
+                <p class="pt-2">Incluso: avaliação, lavagem e finalização.</p>
             </div>
         </div>
-    </div>
 
-    <!-- Botão de confirmação -->
-    <div class="text-right h-[40px]">
-        <a href="index.html">
-            <button class="px-4 py-2 text-white bg-black rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                <i class="mr-2 fas fa-chevron-right"></i>
-                Confirmar
-            </button>
-        </a>
-    </div>
-</main>
+
+
+
+        <!-- Div para Total e Data/Hora -->
+        <div class="flex justify-between items-center mt-4 border-t pt-4 bg-gray-200 rounded-[16px] mb-4 h-[72px]">
+
+            <div class="pb-3 pl-2 text-xl font-semibold ">
+                Total: <span id="valortotal">R$ 220,00</span>
+            </div>
+
+            <!-- Data, Hora e Ícone de Calendário -->
+            <div class="flex items-center space-x-2">
+                <i class="text-black fas fa-calendar-alt"></i>
+                <div class="pb-3 pr-2 text-sm">
+                    <p>7:00 - 9:00</p>
+                    <p>31/01/2025</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão de confirmação -->
+
+        <a href="index.html" class="continuar py-2 px-4">Confirmar</a>
+
+    </main>
 
 </body>
+
 </html>

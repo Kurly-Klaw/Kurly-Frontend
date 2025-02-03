@@ -55,7 +55,7 @@ article{
 
 
 
-button{
+button,a.continuar{
     @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full ;
 }
 

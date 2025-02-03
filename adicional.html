@@ -19,13 +19,13 @@
 
     <script src="/JS/script.js"></script>
     <script src="/JS/localStorage.js"></script>
-    <script src="/JS/load-things.js"></script>
+    <script src="/JS/loadthings.js"></script>
   </head>
 
   <body class="flex-col w-full max-w-md mx-auto md:flex">
     <header>
       <nav class="p-3">
-        <a aria-label="Voltar" href="index.html">
+        <a aria-label="Voltar" href="./index.html">
           <img
             src="src/Seta-volta.png"
             alt="Seta para voltar"
@@ -37,16 +37,14 @@
     </header>
     
     <section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg">
-      <h2 class="text-[1.375rem] font-semibold">Serviço Escolhido</h2>
+      <h2 class="titulo text-[1.375rem] font-semibold">Serviço Escolhido</h2>
       <div id="servico-selecionado">
-        <img id="service-image" />
-        <div class="grid grid-cols-3 gap-2">
-          <img
-            id="service-image"
-            class="object-cover rounded-lg aspect-square"
-          />
+        
+        <div class="grid grid-cols-3 gap-2 rounded-lg overflow-hidden">
+          <img id="service-image"  class="aspect-square"/>
           <div class="flex flex-col col-span-2 gap-2">
             <div>
+              
               <p id="service-title" class="font-bold"></p>
               <p id="service-price-duration" class="text-sm"></p>
             </div>
@@ -57,61 +55,37 @@
     </section>
 
     <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
-      <p class="text-[1.375rem] font-semibold">Serviço Escolhido</p>
-      <ul id="lista-servicos"></ul>
-      <div class="p-2 rotate-btn h-fit">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 -960 960 960"
-          width="24px"
-          fill="#FFFFFF"
-        >
-          <path d="M480-360 280-560h400L480-360Z" />
-        </svg>
-      </div>
+      <h2 class="titulo font-semibold">Acréscimos</h2>
+      <ul id="lista-adicionais"></ul>
+      
+    
+      <a class="continuar" aria-label="Continuar" href="./horario.html">Continuar</a>
     </main>
 
-    <nav
-      class="bg-[#c89e98] py-4 w-full max-w-md flex justify-evenly fixed bottom-0"
-    >
+    
+    <br/>
+    <br/>
+    <br/>
+    
+
+    <nav class="bg-[#d9d9d9]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
       <!-- Botão 1 -->
-      <label
-        for="botao-1"
-        class="flex flex-col items-center gap-1 cursor-pointer"
-      >
-        <input type="radio" name="nav" id="botao-1" class="hidden peer" />
-        <div
-          class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors"
-        >
-          <a href="index.html">
-            <span
-              class="text-xl text-black material-icons peer-checked:text-gray-700"
-              >home</span
-            >
-          </a>
-        </div>
-        <h1 class="text-sm text-black peer-checked:font-bold">Início</h1>
+      <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer" onclick="window.location.href='index.html'">
+          <input type= "radio" name="nav" id="botao-1" class="hidden peer">
+          <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
+              <span class="text-xl text-black material-icons peer-checked:text-gray-700">home</span>
+          </div>
+          <h1 class="text-sm text-black peer-checked:font-bold">Início</h1> 
       </label>
 
       <!-- Botão 2 -->
-      <label
-        for="botao-2"
-        class="flex flex-col items-center gap-1 cursor-pointer"
-      >
-        <input type="radio" name="nav" id="botao-2" class="hidden peer" />
-        <div
-          class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors"
-        >
-          <a href="profile.html">
-            <span
-              class="text-xl text-black material-icons peer-checked:text-gray-700"
-              >person</span
-            >
-          </a>
-        </div>
-        <h1 class="text-sm text-black peer-checked:font-bold">Perfil</h1>
-      </label>
-    </nav>
+      <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer" onclick="window.location.href='profile.html'">
+          <input type="radio" name="nav" id="botao-2" class="hidden peer">
+          <div class="px-5 pt-2 rounded-full bg-[#e0e0e0]">    
+              <span class="text-xl text-black material-icons peer-checked:text-gray-700">person</span>
+          </div>
+          <h1 class="text-sm text-black peer-checked:font-bold">Perfil</h1> 
+      </label> 
+  </nav>  
   </body>
 </html>

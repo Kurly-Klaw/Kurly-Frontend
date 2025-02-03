@@ -17,15 +17,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="./JS/script.js"></script>
-    <script src="./JS/load-things.js"></script>
+    <script src="./JS/loadthings.js"></script>
     <script src="./JS/localStorage.js"></script>
 </head>
 
-<body>
-    <header>
-        <h1 class="col-start-2">Madrinhas</h1>
+<br>
+    <header class="flex flex-col py-4 shadow-md">
+        <img class="h-[40px]" src="./src/Coroa-Madrinhas.png">
+        <h1 class="col-start-2">Madrinha's</h1>
     </header>
     <section class="h-fit">
+        <h2 class="titulo font-semibold">Promoções</h2>
         <div id="promos">
             <!-- <figure>
                 <img src="src/Cabelo.jpg" alt="Imagem exemplo" class="promo-img" />
@@ -41,7 +43,7 @@
     </section>
 
     <main id="servicos">
-        <h2 class="font-semibold">Serviços</h2>
+        <h2 class="titulo font-semibold">Serviços</h2>
         <ul id="lista-servicos">
             <!-- <li>
                 <article class="relative cursor-pointer card" onclick="toggleCard(event)">
@@ -61,7 +63,13 @@
             </li> -->
         </ul>
     </main>
-    <nav class="bg-[#c89e98]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <nav class="bg-[#d9d9d9]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
         <!-- Botão 1 -->
         <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
             <input type="radio" name="nav" id="botao-1" class="hidden peer">

@@ -1,8 +1,17 @@
 :root {
-  --fundo: #252322;
-  --primaria: #a66159;
-  --secundaria: #c89e98;
+  --fundo: #47061E;
+  --primaria: #EEEEEE;
+  --secundaria: #d9d9d9;
   --terciaria: #502f2b;
+  --btn: #A76C39;
+}
+
+*{
+  color: black;
+}
+
+.titulo{
+ color: var(--fundo);
 }
 
 body {
@@ -12,21 +21,46 @@ body {
 main,
 nav,
 #infos,
-section,header,footer {
+section,
+header,
+footer {
   background-color: var(--secundaria);
 }
 
-article,.card {
+article,
+.card {
   background-color: var(--primaria)
 }
 
-button,
+.btn-promo {
+  background-color: var(--fundo)
+}
+
+.btn-desabilitado{
+  opacity: 0.32;
+}
+
+button{
+  background-color: var(--btn);
+}
+
+
+.slider-input{
+ border: solid black 1px;
+ background-color: transparent;
+}
+#increase,#decrease{
+  background-color: black;
+}
 .label-cabelo {
   color: white;
-  background-color: var(--terciaria) !important;
+  background-color: var(--fundo)
+}
+.label-tipo-cabelo{
+  background-color: var(--btn)
 }
 
 button:hover,
-.label-cabelo:hover {
-  background-color: var(--fundo) !important;
+.label-cabelo:hover,a.continuar, .roxo {
+  background-color: var(--fundo)
 }

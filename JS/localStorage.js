@@ -64,9 +64,9 @@ function attachEventListeners() {
       try {
         // Salva no localStorage
         localStorage.setItem("servicoSelecionado", idSelecionado);
-        adicionarAoCarrinho(idSelecionado);
+        //adicionarAoCarrinho(idSelecionado);
 
-        //window.location.href = "adicional.html";
+        window.location.href = "adicional.html";
       } catch (error) {
         console.error(error);
       }

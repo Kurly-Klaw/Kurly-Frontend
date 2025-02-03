@@ -50,10 +50,10 @@ function toggleDisponibilidade(event) {
   
  // Aplica opacidade ao fundo e ao texto
  if (novoEstado) {
-    article.style.backgroundColor = '#a66159'; // Cor original
+    article.style.backgroundColor = '#EEEEEE'; // Cor original
     article.style.opacity = '1'; // Opacidade total
   } else {
-    article.style.backgroundColor = '#a66159'; // Mantém a cor, mas com opacidade
+    article.style.backgroundColor = '#EEEEEE'; // Mantém a cor, mas com opacidade
     article.style.opacity = '0.32'; // Opacidade 12%
   }
 }
@@ -65,7 +65,7 @@ for(let i = 0; i < 5; i++) {
   
   const timeArticle = document.createElement('article');
   timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors cursor-pointer';
-  timeArticle.style.backgroundColor = '#a66159';
+  timeArticle.style.backgroundColor = '#EEEEEE';
   timeArticle.setAttribute('data-disponivel', 'true');
   
   timeArticle.innerHTML = `
