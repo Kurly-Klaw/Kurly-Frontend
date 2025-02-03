@@ -152,7 +152,8 @@ function loadThings() {
             "items-start",
             "justify-end",
             "px-4",
-            "pt-2"
+            "pt-2",
+            "h-[64px]
           );
           cardimg.classList.add("flex", "aspect-square", "card-img", "pl-0");
           img.classList.add("object-cover", "rounded-lg");
