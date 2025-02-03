@@ -41,8 +41,7 @@ function loadThings() {
         let txtClass = "btn-agendar"
 
 
-
-        if (listaPromocoes) {
+        if (false) {
           Object.keys(data.promos).forEach((key) => {
             const promo = data.promos[key];
             
@@ -54,14 +53,14 @@ function loadThings() {
 
           })
         }
-        if (listaServicos) {
+        if (false) {
           Object.keys(data.servicos).forEach((key) => {
             const serv = data.servicos[key];
             img.src = serv.img;
             img.alt = `Imagem do serviço ${serv.nome}.`;
             title.textContent = serv.titulo;
             subtitle.textContent = `R$ ${serv.preco} • ${serv.duracao}`;
-            if (adicionais) { //SE tiver na lista de adicionais
+            if (false) { //SE tiver na lista de adicionais
               txtBtn = "Adicionar";
 
             }
@@ -164,7 +163,7 @@ function loadThings() {
           subtitle.textContent = `${serv.preco} • ${serv.duracao}`;
           dt1.textContent = serv.detailText1;
           dt2.textContent = serv.detailText2;
-          btn.textContent = "Adicionar";
+          btn.textContent = "Agendar";
 
           produto.id = `servico-card-${serv.id}`;
           btn.classList.add("btn-agendar");
