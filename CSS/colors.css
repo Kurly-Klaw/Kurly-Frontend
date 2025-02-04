@@ -11,6 +11,7 @@
 }
 
 .titulo{
+  font-weight: 600;
  color: var(--fundo);
 }
 
@@ -32,8 +33,12 @@ article,
   background-color: var(--primaria)
 }
 
-.btn-promo {
+.btn-promo{
   background-color: var(--fundo)
+}
+
+hr{
+  border-color: var(--fundo)
 }
 
 .btn-desabilitado{

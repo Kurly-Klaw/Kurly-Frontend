@@ -2,19 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply flex-col max-w-md mx-auto w-fit md:flex;
+body {
+    
+    @apply flex-col max-w-md mx-auto w-full md:flex;
 }
 
-header{
-    @apply pb-2 grid items-center justify-center grid-cols-3;
+.logo {
+    @apply h-[40px];
 }
 
-section{
+nav {
+    @apply flex flex-col py-4 shadow-md pb-2 items-center justify-center;
+}
+
+header {
     @apply flex flex-col w-full h-full px-2 mb-2 rounded-b-2xl;
 }
 
-#promos{
+#user-infos{
+    @apply flex items-center;
+}
+
+#promos {
     /* no-scrollbar */
     @apply flex p-4 space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory;
 }
@@ -23,72 +32,85 @@ section{
     display: none;
 }
 
-#promos figure{
+#promos figure {
     @apply min-w-[90%] h-full snap-start;
 }
 
+header,main {
+    @apply flex flex-col gap-2 p-4 rounded-b-lg;
+}
 main{
-    @apply flex flex-col gap-2 p-4 rounded-lg;
+    @apply rounded-lg;
 }
 
-.promo-img{
+.promo-img {
     @apply object-cover w-full h-full overflow-hidden rounded-xl;
 }
 
-.d-promo{
+.d-promo {
     @apply flex flex-col mb-4 text-black;
 }
 
-article{
+article {
     @apply flex flex-col max-w-2xl text-white shadow-lg rounded-xl;
 }
-.card-img{
+
+.card-img {
     @apply self-start object-cover object-top w-20 h-20 rounded-lg;
 }
 
-.card-detail{
+.card-detail {
     @apply w-0 overflow-hidden text-justify top-1/4;
 }
 
+#perfil-nav{
+    @apply h-fit pb-0 grid grid-cols-3 justify-items-center;
+}
+
+
+#perfil-nav img{
+    @apply h-2/3}
 
 
 
 
-
-button,a.continuar{
-    @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full ;
+button,
+a.continuar {
+    @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full;
 }
 
 
 footer{
-    @apply py-4 w-full max-w-md sticky mt-2 bottom-0 z-30 shadow-lg;
+    @apply flex flex-col fixed bottom-0 w-full max-w-md mx-auto md:flex;
+}
+.sub-nav{
+    @apply  py-4 w-full max-w-md flex flex-row justify-evenly top-0;
 }
 
-footer menu{
-    @apply flex flex-row justify-evenly;
+.nav-btn{
+    @apply flex flex-col items-center gap-1 cursor-pointer px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors;
 }
 
-footer menu li label{
-    @apply flex flex-col items-center gap-1 cursor-pointer;
+.home-icon {
+    @apply text-xl text-black peer-checked:text-gray-700;
 }
 
-svg{
-    @apply w-6;
-}
-
-h1{
-    @apply text-2xl font-bold text-center ;
+h1 {
+    @apply text-2xl font-bold text-center;
 }
 
 
-h1,h2,h3{
+h1,
+h2,
+h3 {
     @apply font-bold;
 }
 
-h2{
+h2 {
     @apply text-[1.375rem];
 }
 
-h2,.pd-promo{
+h2,
+.pd-promo {
     @apply text-left;
 }

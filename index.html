@@ -7,13 +7,13 @@
     <title>Início</title>
 
     <!-- layout geral da página -->
-    <link rel="stylesheet" href="CSS/wind.css">
+    <link rel="stylesheet" href="./CSS/wind.css">
     <!-- animação dos elementos da página -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <!-- Tema do site -->
-    <link rel="stylesheet" href="CSS/colors.css">
+    <link rel="stylesheet" href="./CSS/colors.css">
     <!-- icon do site -->
-    <link rel="shortcut icon" href="src/crow-512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/Coroa-Madrinhas.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="./JS/script.js"></script>
@@ -21,74 +21,36 @@
     <script src="./JS/localStorage.js"></script>
 </head>
 
-<br>
-    <header class="flex flex-col py-4 shadow-md">
-        <img class="h-[40px]" src="./src/Coroa-Madrinhas.png">
-        <h1 class="col-start-2">Madrinha's</h1>
-    </header>
-    <section class="h-fit">
-        <h2 class="titulo font-semibold">Promoções</h2>
-        <div id="promos">
-            <!-- <figure>
-                <img src="src/Cabelo.jpg" alt="Imagem exemplo" class="promo-img" />
-                <figcaption class="w-1 d-promo">
-                    <h3>Corte + tratamento da casa</h3>
-                    <p class="pd-promo">R$ 200,00</p>
-                </figcaption>
-                <button>
-                    Agendar
-                </button>
-            </figure> -->
-        </div>
-    </section>
+<body>
+    <nav class="sup-nav">
+        <img src="./src/Coroa-Madrinhas.png" class="logo">
+        <h1 class="page-title">Madrinha's</h1>
+    </nav>
+    <header>
+        <h2>Promoções</h2>
+        <div class="promo-list">
 
-    <main id="servicos">
-        <h2 class="titulo font-semibold">Serviços</h2>
-        <ul id="lista-servicos">
-            <!-- <li>
-                <article class="relative cursor-pointer card" onclick="toggleCard(event)">
-                    <div class="absolute card-head">
-                        <h3>Detox</h3>
-                        <p>+R$20</p>
-                    </div>
-                    <div class="absolute card-detail">
-                        <p>Para quem busca revitalizar os fios e
-                            desintoxicar o couro cabeludo.</p>
-                        <p>Tratamento que elimina impurezas,
-                            excesso de oleosidade e fortalece os fios.</p>
-                    </div>
-                    <img src="https://st4allthings4p4ci.blob.core.windows.net/allthingshair/allthingshair/wp-content/uploads/sites/2/2016/06/09181058/detox-capilar-caseiro-abre-377x566.jpg"
-                        alt="Imagem" class="flex aspect-square card-img">
-                </article>
-            </li> -->
-        </ul>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="list-title">Serviços</h2>
+        <hr>
+        <ul class="services-list"></ul>
     </main>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-
-    <nav class="bg-[#d9d9d9]  py-4 w-full max-w-md flex justify-evenly fixed bottom-0">
-        <!-- Botão 1 -->
-        <label for="botao-1" class="flex flex-col items-center gap-1 cursor-pointer">
-            <input type="radio" name="nav" id="botao-1" class="hidden peer">
-            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-                <span class="text-xl text-black material-icons peer-checked:text-gray-700">home</span>
-            </div>
-            <h1 class="text-sm text-black peer-checked:font-bold">Início</h1> 
-        </label>
-
-        <!-- Botão 2 -->
-        <label for="botao-2" class="flex flex-col items-center gap-1 cursor-pointer" onclick="window.location.href='profile.html'">
-            <input type="radio" name="nav" id="botao-2" class="hidden peer">
-            <div class="px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors">  
-                <span class="text-xl text-black material-icons peer-checked:text-gray-700">person</span>
-            </div>
-            <h1 class="text-sm text-black peer-checked:font-bold">Perfil</h1> 
-        </label>
-    </nav> 
-
+    <footer>
+        <nav class="sub-nav">
+            <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
+                <input type="radio" name="botao-nav-1" class="hidden peer">
+                <span class="home-icon material-icons">home</span>
+                <h4>Início</h4>
+            </label>
+            <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./profile.html'">
+                <input type="radio" name="botao-nav-1" class="hidden peer">
+                <span class="home-icon material-icons">person</span>
+                <h4>Perfil</h4>
+            </label>
+        </nav>
+    </footer>
 </body>
-
-</html>
