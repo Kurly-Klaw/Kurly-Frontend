@@ -1111,36 +1111,37 @@ header {
   align-items: center;
 }
 
-#promos {
+#promo-list{
   /* no-scrollbar */
   display: flex;
   scroll-snap-type: x var(--tw-scroll-snap-strictness);
   --tw-scroll-snap-strictness: mandatory;
 }
 
-#promos > :not([hidden]) ~ :not([hidden]) {
+#promo-list > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-#promos {
+#promo-list {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 1rem;
 }
 
-#promos::-webkit-scrollbar {
+#promo-list::-webkit-scrollbar {
   display: none;
 }
 
-#promos figure {
+#promo-list li {
   height: 100%;
   min-width: 90%;
   scroll-snap-align: start;
 }
 
-header,main {
+header,
+main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -1153,26 +1154,13 @@ main {
   border-radius: 0.5rem;
 }
 
-.promo-img {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.d-promo {
-  margin-bottom: 1rem;
+.produto {
+  position: relative;
+  margin-bottom: 0.5rem;
   display: flex;
-  flex-direction: column;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-
-article {
-  display: flex;
+  height: 144px;
   max-width: 42rem;
+  cursor: pointer;
   flex-direction: column;
   border-radius: 0.75rem;
   --tw-text-opacity: 1;
@@ -1182,7 +1170,13 @@ article {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.card-img {
+.produto .hdCard {
+  position: absolute;
+}
+
+.produto .imgCard {
+  display: flex;
+  aspect-ratio: 1 / 1;
   height: 5rem;
   width: 5rem;
   align-self: flex-start;
@@ -1191,13 +1185,31 @@ article {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+  padding-left: 0px;
 }
 
-.card-detail {
+.produto > .dtCard {
+  position: absolute;
   top: 25%;
-  width: 0px;
   overflow: hidden;
   text-align: justify;
+}
+
+.btnCard {
+  margin-left: auto;
+  display: flex;
+  height: 64px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+.imgProduto {
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #perfil-nav {

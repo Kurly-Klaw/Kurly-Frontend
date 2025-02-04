@@ -1,12 +1,12 @@
-.card{
+.produto{
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card.expanded{
+.produto.expanded{
   height: 21rem;
 }
 
-.expanded .card-img{
+.expanded .imgCard{
   object-fit: cover;
   border-radius: 25px;
   height: 67.5%;
@@ -17,26 +17,26 @@
   transform: scaleY(0.9)  translateY(4.5rem);
 }
 
-.card-head{
+.produto .hdCard{
   transform: translateX(5.5rem)
 }
-.expanded .card-head{
+.expanded .hdCard{
   position: absolute;
   transform: translateX(1rem)
 }
 
-.card-img,.card-head,.card-detail{
+.imgCard,.hdCard,.dtCard{
   transition: all 0.3s ease-in-out
 }
 
-.card-detail{
+.dtCard{
   opacity: 0;
   width: 50%;
   height: 0;
   transform: translateX(calc(80% + 1.5rem))
 }
 
-.expanded .card-detail{
+.expanded .dtCard{
   opacity: 1;
   height: fit-content;
 }

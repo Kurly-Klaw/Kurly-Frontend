@@ -1,5 +1,6 @@
 :root {
   --fundo: #47061E;
+  --fundo-mais: #25030f;
   --primaria: #EEEEEE;
   --secundaria: #d9d9d9;
   --terciaria: #502f2b;
@@ -28,13 +29,21 @@ footer {
   background-color: var(--secundaria);
 }
 
-article,
+article.produto,
 .card {
   background-color: var(--primaria)
 }
 
-.btn-promo{
+
+button{
+  background-color: var(--btn);
+}
+.btnPromo button{
   background-color: var(--fundo)
+}
+
+.btnPromo button:hover{
+  background-color: var(--fundo-mais)
 }
 
 hr{
@@ -45,9 +54,7 @@ hr{
   opacity: 0.32;
 }
 
-button{
-  background-color: var(--btn);
-}
+
 
 
 .slider-input{

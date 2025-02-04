@@ -3,114 +3,113 @@
 @tailwind utilities;
 
 body {
-    
-    @apply flex-col max-w-md mx-auto w-full md:flex;
+  @apply flex-col w-full max-w-md mx-auto md:flex;
 }
 
 .logo {
-    @apply h-[40px];
+  @apply h-[40px];
 }
 
 nav {
-    @apply flex flex-col py-4 shadow-md pb-2 items-center justify-center;
+  @apply flex flex-col items-center justify-center py-4 pb-2 shadow-md;
 }
 
 header {
-    @apply flex flex-col w-full h-full px-2 mb-2 rounded-b-2xl;
+  @apply flex flex-col w-full h-full px-2 mb-2 rounded-b-2xl;
 }
 
-#user-infos{
-    @apply flex items-center;
+#user-infos {
+  @apply flex items-center;
 }
 
-#promos {
-    /* no-scrollbar */
-    @apply flex p-4 space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory;
+#promo-list{
+  /* no-scrollbar */
+  @apply flex p-4 space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory;
 }
 
-#promos::-webkit-scrollbar {
-    display: none;
+#promo-list::-webkit-scrollbar {
+  display: none;
 }
 
-#promos figure {
-    @apply min-w-[90%] h-full snap-start;
+#promo-list li{
+  @apply min-w-[90%] h-full snap-start;
 }
 
-header,main {
-    @apply flex flex-col gap-2 p-4 rounded-b-lg;
+header,
+main {
+  @apply flex flex-col gap-2 p-4 rounded-b-lg;
 }
-main{
-    @apply rounded-lg;
-}
-
-.promo-img {
-    @apply object-cover w-full h-full overflow-hidden rounded-xl;
+main {
+  @apply rounded-lg;
 }
 
-.d-promo {
-    @apply flex flex-col mb-4 text-black;
+.produto {
+  @apply flex flex-col max-w-2xl mb-2 text-white shadow-lg rounded-xl relative cursor-pointer h-[144px];
 }
 
-article {
-    @apply flex flex-col max-w-2xl text-white shadow-lg rounded-xl;
+.produto .hdCard{
+    @apply absolute
 }
 
-.card-img {
-    @apply self-start object-cover object-top w-20 h-20 rounded-lg;
+.produto .imgCard {
+  @apply flex self-start object-cover object-top w-20 h-20 pl-0 rounded-lg aspect-square;
 }
 
-.card-detail {
-    @apply w-0 overflow-hidden text-justify top-1/4;
+.produto > .dtCard {
+  @apply absolute overflow-hidden text-justify top-1/4;
 }
 
-#perfil-nav{
-    @apply h-fit pb-0 grid grid-cols-3 justify-items-center;
+.btnCard {
+  @apply flex ml-auto items-start justify-end px-4 pt-2 h-[64px];
 }
 
+.imgProduto {
+  @apply object-cover rounded-lg;
+}
 
-#perfil-nav img{
-    @apply h-2/3}
+#perfil-nav {
+  @apply grid grid-cols-3 pb-0 h-fit justify-items-center;
+}
 
-
-
+#perfil-nav img {
+  @apply h-2/3;
+}
 
 button,
 a.continuar {
-    @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full;
+  @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full;
 }
 
-
-footer{
-    @apply flex flex-col fixed bottom-0 w-full max-w-md mx-auto md:flex;
+footer {
+  @apply fixed bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
 }
-.sub-nav{
-    @apply  py-4 w-full max-w-md flex flex-row justify-evenly top-0;
+.sub-nav {
+  @apply top-0 flex flex-row w-full max-w-md py-4 justify-evenly;
 }
 
-.nav-btn{
-    @apply flex flex-col items-center gap-1 cursor-pointer px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors;
+.nav-btn {
+  @apply flex flex-col items-center gap-1 cursor-pointer px-5 py-1 rounded-full peer-checked:bg-[#e0d2cf] transition-colors;
 }
 
 .home-icon {
-    @apply text-xl text-black peer-checked:text-gray-700;
+  @apply text-xl text-black peer-checked:text-gray-700;
 }
 
 h1 {
-    @apply text-2xl font-bold text-center;
+  @apply text-2xl font-bold text-center;
 }
-
 
 h1,
 h2,
 h3 {
-    @apply font-bold;
+  @apply font-bold;
 }
 
 h2 {
-    @apply text-[1.375rem];
+  @apply text-[1.375rem];
 }
 
 h2,
 .pd-promo {
-    @apply text-left;
+  @apply text-left;
 }

@@ -9,7 +9,7 @@
     <!-- layout geral da página -->
     <link rel="stylesheet" href="./CSS/wind.css">
     <!-- animação dos elementos da página -->
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/anima.css">
     <!-- Tema do site -->
     <link rel="stylesheet" href="./CSS/colors.css">
     <!-- icon do site -->
@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="./JS/script.js"></script>
-    <script src="./JS/loadthings.js"></script>
+    <script src="./JS/listServices.js"></script>
     <script src="./JS/localStorage.js"></script>
 </head>
 
@@ -28,18 +28,15 @@
     </nav>
     <header>
         <h2>Promoções</h2>
-        <div class="promo-list">
-
-        </div>
+        <ul id="promo-list">
+        </ul>
     </header>
 
     <main>
         <h2 class="list-title">Serviços</h2>
-        <hr>
-        <ul class="services-list"></ul>
+        <ul id="services-list"></ul>
     </main>
-
-    <footer>
+    <footer style="display: none;">
         <nav class="sub-nav">
             <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
                 <input type="radio" name="botao-nav-1" class="hidden peer">
