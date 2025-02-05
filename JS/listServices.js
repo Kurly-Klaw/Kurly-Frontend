@@ -44,7 +44,7 @@ function listServices() {
           const produto = document.createElement("li");
           const article = document.createElement("article");
           const img = document.createElement("img");
-          const container = document.createElement("div")
+          const container = document.createElement("div");
           const dtCard = document.createElement("div");
           const hdCard = document.createElement("div");
           const btnCard = document.createElement("div");
@@ -56,48 +56,60 @@ function listServices() {
           const btn = document.createElement("button");
 
           //adiciona classes aos elementos
-          if(isPromo)article.classList.add("promo");
+          if (isPromo) article.classList.add("promo");
           else {
-            article.classList.add("produto")
-           article.setAttribute("onclick", "toggleCard(event)"); 
+            article.classList.add("produto");
+            article.setAttribute("onclick", "toggleCard(event)");
           }
           img.classList.add("imgProduto");
-          imgCard.classList.add("imgCard")
+          imgCard.classList.add("imgCard");
           hdCard.classList.add("hdCard");
           dtCard.classList.add("dtCard");
-          container.classList.add("flex","flex-row")
-          if(isPromo) btnCard.classList.add("btnCard","btnPromo");
-            else btnCard.classList.add("btnCard");
+          container.classList.add("flex", "flex-row");
+          if (isPromo)btnCard.classList.add("btnCard", "btnPromo");
+          else btnCard.classList.add("btnCard");
+          if (!listaAdicionais) btn.classList.add("btnAgendar");
+          else btn.classList.add("btnAdicionar");
 
           //adiciona os dados dos elementos
-          img.src = item.img
-          img.alt = `Imagem do serviço ${item.nome}`
+          img.src = item.img;
+          img.alt = `Imagem do serviço ${item.nome}`;
           title.textContent = item.nome;
           subtitle.textContent = `${item.preco} • ${item.duracao}`;
           dt1.textContent = item.detailText1;
           dt2.textContent = item.detailText2;
           btn.textContent = btnText;
-          if (listaAdicionais){
-            btnText = "Adicionar" 
-            btn.textContent = btnText
+          if (listaAdicionais) {
+            btnText = "Adicionar";
+            btn.textContent = btnText;
           }
+          produto.id = `produto-${item.id}`;
+          if(isPromo){
+            btn.setAttribute("data-id", `promo-${item.id}`)
+            btn.setAttribute("data-includes", item.inclui)
+        }else btn.setAttribute("data-id", `service-${item.id}`)
+          
+
+          
 
           //adiciona os filhos ao produto
           hdCard.append(title, subtitle);
           imgCard.append(img);
           dtCard.append(dt1, dt2);
           btnCard.appendChild(btn);
-          container.append(hdCard,  btnCard)
-          if(isPromo) article.append(imgCard,container);
-          else article.append(hdCard, dtCard,imgCard, btnCard);
+          container.append(hdCard, btnCard);
+          if (isPromo) article.append(imgCard, container);
+          else article.append(hdCard, dtCard, imgCard, btnCard);
           produto.append(article);
 
+          
           if (isPromo && listaPromocoes) listaPromocoes.appendChild(produto);
           else if (listaServicos) listaServicos.appendChild(produto);
-          if (listaAdicionais) listaAdicionais.appendChild(produto);
-            
+          if (!isPromo && listaAdicionais) listaAdicionais.appendChild(produto);
         });
       }
+
+      btnEventListeners();
     });
 }
 
