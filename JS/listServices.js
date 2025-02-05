@@ -3,7 +3,8 @@ function listServices() {
   const listaPromocoes = document.getElementById("promo-list");
   const listaServicos = document.getElementById("services-list");
   const listaAdicionais = document.getElementById("more-list");
-
+  const carrinho = JSON.parse(localStorage.getItem("carrinho"))
+  //console.log(carrinho)
   //pega os dados para popular
   fetch("./JS/dados.json")
     .then((file) => file.json())
@@ -75,7 +76,8 @@ function listServices() {
           img.src = item.img;
           img.alt = `Imagem do serviço ${item.nome}`;
           title.textContent = item.nome;
-          subtitle.textContent = `${item.preco} • ${item.duracao}`;
+          if(listaAdicionais) subtitle.textContent = `+ R$ ${item.preco} • ${item.duracao}`;
+          else subtitle.textContent = `R$ ${item.preco} • ${item.duracao}`;
           dt1.textContent = item.detailText1;
           dt2.textContent = item.detailText2;
           btn.textContent = btnText;

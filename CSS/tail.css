@@ -35,6 +35,20 @@ header {
   @apply min-w-[90%] h-full snap-start;
 }
 
+
+#servico-selecionado{
+    @apply flex flex-row 
+
+}
+.selected-imgCard{
+    @apply flex h-36 w-36
+}
+.img-container img{
+    @apply aspect-square
+}
+.selected-card{
+    @apply ml-2
+}
 header,
 main {
   @apply flex flex-col gap-2 p-4 rounded-b-lg;

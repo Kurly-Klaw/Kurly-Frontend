@@ -24,8 +24,8 @@
       "detailText1": "Pacote com 2 sessões de mechas no mês.",
       "detailText2": "Lorem epsilonismo",
       "inclui": [
-        "servico-1",
-        "servico-3"
+        "service-1",
+        "service-3"
       ],
       "img": "./src/Item-2.png",
       "isPromo": true
@@ -41,7 +41,7 @@
       "img": "./src/corte.png",
       "isPromo": false
     },
-    "servico-2": {
+    "service-2": {
       "id": 2,
       "nome": "Detox",
       "titulo": "Corte + tratamento da casa",
@@ -52,7 +52,7 @@
       "img": "./src/detox.png",
       "isPromo": false
     },
-    "servico-3": {
+    "service-3": {
       "id": 3,
       "nome": "Ozonioterapia",
       "titulo": "Tratamento com ozônio",
@@ -63,7 +63,7 @@
       "img": "./src/ozonio.png",
       "isPromo": false
     },
-    "servico-4": {
+    "service-4": {
       "id": 4,
       "nome": "Umectação",
       "titulo": "Repõe lipidios e nutrientes ao cabelo.",
