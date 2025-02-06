@@ -50,7 +50,7 @@ button.btnAdicionar{
   color: var(--fundo);
   background-color: transparent
 }
-button.btnAdicionar:hover{
+button.btnAdicionar:hover,button.selected{
   color: black;
   background-color: var(--btn)
 }

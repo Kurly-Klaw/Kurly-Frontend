@@ -41,6 +41,9 @@ function listServices() {
           const item = data.items[key];
           const isPromo = item.isPromo;
 
+          const seta = document.createElement("div");
+          seta.innerHTML = "▲"
+          seta.classList.add("seta")
           const produto = document.createElement("li");
           const article = document.createElement("article");
           const img = document.createElement("img");
@@ -105,7 +108,7 @@ function listServices() {
           btnCard.appendChild(btn);
           container.append(hdCard, btnCard);
           if (isPromo) article.append(imgCard, container);
-          else article.append(hdCard, dtCard, imgCard, btnCard);
+          else article.append(hdCard, dtCard, imgCard, btnCard, seta);
           produto.append(article);
 
           

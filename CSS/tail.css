@@ -77,6 +77,13 @@ main {
     @apply absolute
 }
 
+.seta{
+  @apply absolute mr-12 right-0
+}
+.seta.invertido{
+  @apply rotate-180
+}
+
 .produto .imgCard {
   @apply flex self-start object-cover object-top w-20 h-20 pl-0 rounded-lg aspect-square;
 }
@@ -136,6 +143,8 @@ footer {
 .home-icon {
   @apply text-xl text-black peer-checked:text-gray-700;
 }
+
+
 
 h1 {
   @apply text-2xl font-bold text-center;
