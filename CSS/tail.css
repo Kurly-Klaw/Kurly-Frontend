@@ -53,6 +53,18 @@ header,
 main {
   @apply flex flex-col gap-2 p-4 rounded-b-lg;
 }
+nav.select-service{
+    @apply flex-row
+
+}
+
+nav.select-service a{
+    @apply ml-0 mr-auto
+}
+nav.select-service h1{
+    @apply mx-auto absolute
+}
+
 main {
   @apply rounded-lg;
 }
@@ -80,6 +92,22 @@ main {
 .imgProduto {
   @apply object-cover rounded-lg;
 }
+
+#select-service{
+    @apply grid grid-cols-3  gap-x-2
+}
+
+#selected-service .imgCard{
+    @apply col-start-1 row-start-1 row-span-2
+}
+
+.select-service-text{
+    @apply col-start-2  col-span-3 flex flex-col
+}
+.select-service-text .dtCard{
+    @apply row-start-2 col-span-2
+}
+
 
 #perfil-nav {
   @apply grid grid-cols-3 pb-0 h-fit justify-items-center;

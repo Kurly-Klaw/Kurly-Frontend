@@ -1105,6 +1105,21 @@ main {
   padding: 1rem;
 }
 
+nav.select-service {
+  flex-direction: row;
+}
+
+nav.select-service a {
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+nav.select-service h1 {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 main {
   border-radius: 0.5rem;
 }
@@ -1165,6 +1180,31 @@ main {
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#select-service {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+#selected-service .imgCard {
+  grid-column-start: 1;
+  grid-row: span 2 / span 2;
+  grid-row-start: 1;
+}
+
+.select-service-text {
+  grid-column: span 3 / span 3;
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-service-text .dtCard {
+  grid-column: span 2 / span 2;
+  grid-row-start: 2;
 }
 
 #perfil-nav {

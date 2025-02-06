@@ -38,6 +38,23 @@ article.produto,
 button{
   background-color: var(--btn);
 }
+
+button:hover,
+.label-cabelo:hover,a.continuar, .roxo {
+  background-color: var(--fundo)
+}
+
+button.btnAdicionar{
+  border-color: var(--btn);
+  border-width: 1px;
+  color: var(--fundo);
+  background-color: transparent
+}
+button.btnAdicionar:hover{
+  color: black;
+  background-color: var(--btn)
+}
+
 .btnPromo button{
   background-color: var(--fundo)
 }
@@ -72,7 +89,3 @@ hr{
   background-color: var(--btn)
 }
 
-button:hover,
-.label-cabelo:hover,a.continuar, .roxo {
-  background-color: var(--fundo)
-}

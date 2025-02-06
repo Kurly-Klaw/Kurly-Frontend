@@ -24,7 +24,7 @@
   </head>
 
   <body class="flex-col w-full max-w-md mx-auto md:flex">
-    <nav class="p-3">
+    <nav class="select-service">
       <a aria-label="Voltar" href="./index.html">
         <img
           src="./src/Seta-volta.png"
@@ -32,12 +32,21 @@
           class="aspect-square w-[24px]"
         />
       </a>
-      <h1>Agendamento</h1>
+      <h1>Adicionar acréscimo</h1>
     </nav>
 
     <header>
-      <h2 class="titulo">Serviço selecionado</h2>
-      <div id="servico-selecionado"></div>
+      <h2 class="titulo">Serviço escolhido</h2>
+      <div id="select-service">
+        <div class="imgCard"><img id="select-service-img"></div>
+        <div class="select-service-text">
+        <div class="hdCard">
+          <h3 id="select-service-title"></h3>
+          <p id="select-service-price"></p>
+      </div>
+      <div class="dtCard">
+        <p id="select-service-details"></p>
+      </div></div>
     </header>
 
     <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">

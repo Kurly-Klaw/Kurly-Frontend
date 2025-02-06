@@ -1,18 +1,17 @@
 function listServices() {
   //Definie quais serão os pais dos elementos
-  const listaPromocoes = document.getElementById("promo-list");
-  const listaServicos = document.getElementById("services-list");
-  const listaAdicionais = document.getElementById("more-list");
+  const promoList = document.getElementById("promo-list");
+  const servicesList = document.getElementById("services-list");
+  const moreList = document.getElementById("more-list");
+  const serviceDiv = document.getElementById("select-service");
   const carrinho = JSON.parse(localStorage.getItem("carrinho"))
-  //console.log(carrinho)
+
   //pega os dados para popular
   fetch("./JS/dados.json")
     .then((file) => file.json())
     .then((data) => {
       //verifica se existem os elementos pai na página
-      //console.warn(listaPromocoes, listaServicos);
-
-      if (listaPromocoes || listaServicos || listaAdicionais) {
+      if (promoList || servicesList || moreList) {
         /*
         Estrutura do produto
         <li>
@@ -55,9 +54,12 @@ function listServices() {
           const dt1 = document.createElement("p");
           const dt2 = document.createElement("p");
           const btn = document.createElement("button");
+          const resume = document.createElement("div");
 
           //adiciona classes aos elementos
-          if (isPromo) article.classList.add("promo");
+          
+          
+          if (isPromo) article.classList.add("promo")
           else {
             article.classList.add("produto");
             article.setAttribute("onclick", "toggleCard(event)");
@@ -69,19 +71,21 @@ function listServices() {
           container.classList.add("flex", "flex-row");
           if (isPromo)btnCard.classList.add("btnCard", "btnPromo");
           else btnCard.classList.add("btnCard");
-          if (!listaAdicionais) btn.classList.add("btnAgendar");
-          else btn.classList.add("btnAdicionar");
+          if (!moreList) btn.classList.add("btnAgendar");
+          else {btn.classList.add("btnAdicionar")
+            btn.setAttribute("onclick", "addServicePlus(event)")
+          };
 
           //adiciona os dados dos elementos
           img.src = item.img;
           img.alt = `Imagem do serviço ${item.nome}`;
           title.textContent = item.nome;
-          if(listaAdicionais) subtitle.textContent = `+ R$ ${item.preco} • ${item.duracao}`;
+          if(moreList) subtitle.textContent = `+ R$ ${item.preco} • ${item.duracao}`;
           else subtitle.textContent = `R$ ${item.preco} • ${item.duracao}`;
           dt1.textContent = item.detailText1;
           dt2.textContent = item.detailText2;
           btn.textContent = btnText;
-          if (listaAdicionais) {
+          if (moreList) {
             btnText = "Adicionar";
             btn.textContent = btnText;
           }
@@ -105,9 +109,18 @@ function listServices() {
           produto.append(article);
 
           
-          if (isPromo && listaPromocoes) listaPromocoes.appendChild(produto);
-          else if (listaServicos) listaServicos.appendChild(produto);
-          if (!isPromo && listaAdicionais) listaAdicionais.appendChild(produto);
+          if (serviceDiv && carrinho.servicoSelecionado === key){
+            document.getElementById("select-service-img").src = item.img
+            document.getElementById("select-service-title").textContent = title.textContent        
+            document.getElementById("select-service-price").textContent = subtitle.textContent        
+            document.getElementById("select-service-details").textContent = dt1.textContent
+          }
+
+
+          
+          if (isPromo && promoList) promoList.appendChild(produto);
+          else if (servicesList) servicesList.appendChild(produto);
+          if (!isPromo && moreList) moreList.appendChild(produto);
         });
       }
 

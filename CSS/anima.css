@@ -36,6 +36,13 @@
   transform: translateX(calc(80% + 1.5rem))
 }
 
+.select-service-text .dtCard{
+  opacity: 1;
+  width: auto;
+  height: fit-content;
+  transform: translateX(0)
+}
+
 .expanded .dtCard{
   opacity: 1;
   height: fit-content;
