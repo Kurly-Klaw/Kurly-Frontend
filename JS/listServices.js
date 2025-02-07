@@ -160,10 +160,7 @@ function listServices() {
           else if (servicesList) servicesList.appendChild(produto);
           if (!isPromo && moreList) {
 
-            if ((produto.classList.contains('included')) && (carrinho.adicionais.length > 0)) {
-              comboList.append(produto);
-            }
-            else moreList.appendChild(produto);
+             moreList.appendChild(produto);
           }
 
         });
