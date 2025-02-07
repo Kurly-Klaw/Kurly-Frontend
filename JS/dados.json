@@ -12,7 +12,7 @@
         "service-1",
         "service-3"
       ],
-      "img": "./src/Item-1.png",
+      "img": "../src/Item-1.png",
       "isPromo": true
     },
     "promo-2": {

@@ -34,6 +34,9 @@ article.produto,
 .card {
   background-color: var(--primaria)
 }
+article.produto.selected{
+  background-color: transparent
+}
 
 
 button{
@@ -55,6 +58,11 @@ button.btnAdicionar:hover,button.selected,button.included{
   color: black;
   fill-opacity: 0;
   background-color: var(--btnA)
+}
+.btnAdicionar:hover{
+  
+  content:"Remover" !important;
+  background-color: red !important;
 }
 button.included{
   opacity: .4;

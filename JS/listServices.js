@@ -3,6 +3,7 @@ function listServices() {
   const promoList = document.getElementById("promo-list");
   const servicesList = document.getElementById("services-list");
   const moreList = document.getElementById("more-list");
+  const comboList = document.getElementById("combo-list");
   const serviceDiv = document.getElementById("select-service");
   const carrinho = JSON.parse(localStorage.getItem("carrinho"));
 
@@ -12,38 +13,57 @@ function listServices() {
     .then((data) => {
       //verifica se existem os elementos pai na página
       if (promoList || servicesList || moreList) {
-        /*
-        Estrutura do produto
-        <li>
-        <article>
-        <div class="imgCard">
-        <img src="" alt="">
-        </div>
-        <div class="hdCard">
-        <h3></h3>
-        <p></p>
-        </div>
-        <div class="dtCard">
-        <p></p>
-        <p></p>
-        </div>
-        <div class="btnCard">
-        <button></button>
-        </div>
-        </article>
-        </li>
-        
-        */
-
         let btnText = "Agendar";
 
         Object.keys(data.items).forEach((key) => {
           const item = data.items[key];
           const isPromo = item.isPromo;
+          const teste = document.createElement("li")
+          
+          let subtitulo 
+          if (moreList)
+            subtitulo  = `+ R$ ${item.preco} • ${item.duracao}`;
+          else subtitulo  = `R$ ${item.preco} • ${item.duracao}`;
+          let data_id,data_includes
+          if(isPromo){
+            data_id = `promo-${item.id}`
+            data_includes = `[${item.inclui}]`
+            
+          }else {data_id = `service-${item.id}`
+          data_includes = data_id
+        }
+          teste.innerHTML =
+
+            `
+        <li>
+        <article>
+        <div class="imgCard">
+        <img src="${item.img}" alt="Imagem do serviço ${item.nome}.">
+        </div>
+        <div class="hdCard">
+        <h3>${item.nome}</h3>
+        <p>${subtitulo}</p>
+        </div>
+        <div class="dtCard">
+        <p>${item.detailText1}</p>
+        <p>${item.detailText2}</p>
+        </div>
+        <div class="btnCard">
+        <button data-id=""></button>
+        </div>
+        </article>
+        </li>
+       `
+
+
+
+          
+          
 
           const seta = document.createElement("div");
           seta.innerHTML = "▲";
           seta.classList.add("seta");
+          const hr = document.createElement("hr")
           const produto = document.createElement("li");
           const article = document.createElement("article");
           const img = document.createElement("img");
@@ -68,7 +88,7 @@ function listServices() {
           }
           img.classList.add("imgProduto");
           imgCard.classList.add("imgCard");
-          if(isPromo) imgCard.setAttribute("onclick", "slidePromo(event)");
+          if (isPromo) imgCard.setAttribute("onclick", "slidePromo(event)");
           hdCard.classList.add("hdCard");
           dtCard.classList.add("dtCard");
           container.classList.add("flex", "flex-row");
@@ -122,26 +142,30 @@ function listServices() {
             document.getElementById("select-service-details").textContent =
               dt1.textContent;
           }
-          if (serviceDiv){
-          if (carrinho.adicionais.indexOf(key) != -1) {
-            console.error(carrinho);
-            btn.classList.add("included");
-            produto.classList.add("included")
-            btn.textContent = "Já incluso";
-            btn.disabled = true;
+          if (serviceDiv) {
+            if (carrinho.adicionais.indexOf(key) != -1) {
+              console.error(carrinho);
+              btn.classList.add("included");
+              produto.classList.add("included")
+              btn.textContent = "Já incluso";
+              btn.disabled = true;
+            }
+            if (carrinho.selection.indexOf(key) != -1) {
+              btn.classList.add("selected");
+              btn.textContent = "Adicionado";
+            }
           }
-          if (carrinho.selection.indexOf(key) != -1){
-            btn.classList.add("selected");
-            btn.textContent = "Selecionado";
-           }}
 
           if (isPromo && promoList) promoList.appendChild(produto);
           else if (servicesList) servicesList.appendChild(produto);
-          if (!isPromo && moreList){
-            if(produto.classList.contains('included')){
-                moreList.prepend(produto);
+          if (!isPromo && moreList) {
+
+            if ((produto.classList.contains('included')) && (carrinho.adicionais.length > 0)) {
+              comboList.append(produto);
             }
-            else moreList.appendChild(produto);}
+            else moreList.appendChild(produto);
+          }
+
         });
       }
 

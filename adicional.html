@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acréscimo</title>
-    <!-- layout geral da página -->
-    <link rel="stylesheet" href="./CSS/wind.css" />
-    <!-- animação dos elementos da página -->
-    <link rel="stylesheet" href="./CSS/anima.css" />
-    <!-- Tema do site -->
-    <link rel="stylesheet" href="./CSS/colors.css" />
-    <!-- icon do site -->
-    <link rel="shortcut icon" href="./src/crow-512.png" type="image/x-icon" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
 
-    <script src="./JS/script.js"></script>
-    <script src="./JS/localStorage.js"></script>
-    <script src="./JS/listServices.js"></script>
-    <script src="./JS/getSelectedService.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acréscimo</title>
+  <!-- layout geral da página -->
+  <link rel="stylesheet" href="./CSS/wind.css" />
+  <!-- animação dos elementos da página -->
+  <link rel="stylesheet" href="./CSS/anima.css" />
+  <!-- Tema do site -->
+  <link rel="stylesheet" href="./CSS/colors.css" />
+  <!-- icon do site -->
+  <link rel="shortcut icon" href="./src/crow-512.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-  <body class="flex-col w-full max-w-md mx-auto md:flex">
-    <nav class="select-service">
-      <a aria-label="Voltar" href="./index.html">
-        <img
-          src="./src/Seta-volta.png"
-          alt="Seta para voltar"
-          class="aspect-square w-[24px]"
-        />
-      </a>
-      <h1>Adicionar acréscimo</h1>
-    </nav>
+  <script src="./JS/script.js"></script>
+  <script src="./JS/localStorage.js"></script>
+  <script src="./JS/listServices.js"></script>
+  <script src="./JS/getSelectedService.js"></script>
+</head>
 
-    <header>
-      <h2 class="titulo">Serviço escolhido</h2>
-      <div id="select-service">
-        <div class="imgCard"><img id="select-service-img"></div>
-        <div class="select-service-text">
+<body class="flex-col w-full max-w-md mx-auto md:flex">
+  <nav class="select-service">
+    <a aria-label="Voltar" href="./index.html">
+      <img src="./src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
+    </a>
+    <h1>Adicionar acréscimo</h1>
+  </nav>
+
+  <header>
+    <h2 class="titulo">Serviço escolhido</h2>
+    <div id="select-service">
+      <div class="imgCard"><img id="select-service-img"></div>
+      <div class="select-service-text">
         <div class="hdCard">
           <h3 id="select-service-title"></h3>
           <p id="select-service-price"></p>
+        </div>
+        <div class="dtCard">
+          <p id="select-service-details"></p>
+        </div>
       </div>
-      <div class="dtCard">
-        <p id="select-service-details"></p>
-      </div></div>
-    </header>
+    </div>
+    <hr>
+    <div id="combo-list"></div>
+  </header>
 
-    <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
-      <h2 class="font-semibold titulo">Acréscimos</h2>
-      <ul id="more-list"></ul>
 
-      <a class="continuar" aria-label="Continuar" href="./horario.html"
-        >Continuar</a
-      >
-    </main>
+  <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
+    <h2 class="font-semibold titulo">Acréscimos</h2>
+    <ul id="more-list"></ul>
 
-  </body>
+    <a class="continuar" aria-label="Continuar" href="./horario.html">Continuar</a>
+  </main>
+ 
+
+</body>
+
 </html>

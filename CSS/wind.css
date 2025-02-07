@@ -1047,8 +1047,7 @@ header {
   align-items: center;
 }
 
-#promo-list{
-  /* no-scrollbar */
+#promo-list {
   display: flex;
   scroll-snap-type: x var(--tw-scroll-snap-strictness);
   --tw-scroll-snap-strictness: mandatory;
@@ -1074,6 +1073,10 @@ header {
   height: 100%;
   min-width: 90%;
   scroll-snap-align: start;
+}
+
+li {
+  list-style-type: none;
 }
 
 #servico-selecionado {
