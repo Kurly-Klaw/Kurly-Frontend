@@ -5,6 +5,7 @@
   --secundaria: #d9d9d9;
   --terciaria: #502f2b;
   --btn: #A76C39;
+  --btnA: #a76c3963;
 }
 
 *{
@@ -36,7 +37,7 @@ article.produto,
 
 
 button{
-  background-color: var(--btn);
+  background-color:var(--fundo);
 }
 
 button:hover,
@@ -45,14 +46,18 @@ button:hover,
 }
 
 button.btnAdicionar{
-  border-color: var(--btn);
+  border-color: var(--btnA);
   border-width: 1px;
   color: var(--fundo);
   background-color: transparent
 }
-button.btnAdicionar:hover,button.selected{
+button.btnAdicionar:hover,button.selected,button.included{
   color: black;
-  background-color: var(--btn)
+  fill-opacity: 0;
+  background-color: var(--btnA)
+}
+button.included{
+  opacity: .4;
 }
 
 .btnPromo button{
@@ -71,6 +76,15 @@ hr{
   opacity: 0.32;
 }
 
+/* Estilo quando o radio está selecionado */
+.day-radio:checked ~ .day-number {
+  background-color: #502f2b;
+  border-color: black;
+}
+
+.day-radio:checked ~ .day-number p {
+  color: white;
+}
 
 
 

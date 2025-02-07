@@ -14,3 +14,19 @@ function toggleCard(event) {
     }, 300);
   }
 }
+
+function slidePromo(event){
+  const promo = event.currentTarget;
+  const isButton = event.target.closest('button');
+  if (!isButton) {
+    promo.scrollIntoView({behavior: 'smooth',
+        block: 'center'})
+  }
+}
+
+
+function load() {
+  listServices();
+}
+
+document.addEventListener("DOMContentLoaded", load);

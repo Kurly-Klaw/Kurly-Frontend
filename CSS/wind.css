@@ -1331,6 +1331,22 @@ h2,
   text-align: left;
 }
 
+.scroll-container {
+  -ms-overflow-style: none;
+  /* IE e Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari e Opera */
+}
+
+.day-radio {
+  display: none;
+}
+
 .hover\:bg-gray-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
@@ -1395,3 +1411,4 @@ h2,
     max-width: 24rem;
   }
 }
+  

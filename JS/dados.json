@@ -9,8 +9,8 @@
       "detailText1": "Principal pacote do nosso salão.",
       "detailText2": "Lorem epsilonismo",
       "inclui": [
-        "servico-1",
-        "servico-3"
+        "service-1",
+        "service-3"
       ],
       "img": "./src/Item-1.png",
       "isPromo": true
@@ -20,12 +20,13 @@
       "nome": "Combo Caro",
       "titulo": "Pacote premium",
       "duracao": "4h",
-      "preco": 600,
+      "preco": 1600,
       "detailText1": "Pacote com 2 sessões de mechas no mês.",
       "detailText2": "Lorem epsilonismo",
       "inclui": [
-        "service-1",
-        "service-3"
+        "service-2",
+        "service-3",
+        "service-4"
       ],
       "img": "./src/Item-2.png",
       "isPromo": true

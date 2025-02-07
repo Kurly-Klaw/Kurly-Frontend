@@ -14,9 +14,8 @@ function btnEventListeners() {
       console.warn(`Agendando o pedido ${idSelecionado}`);
       try {
         carrinho.servicoSelecionado = idSelecionado;
-        if (includes) carrinho.adicionais = includes
-        
-        
+        carrinho.adicionais = includes.replace(/[\[\]]/g, "").split(",")
+        carrinho.selection = []
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
         console.log(localStorage.getItem("carrinho"));
         window.location.href = "adicional.html";
@@ -34,8 +33,23 @@ function defineCarrinho() {
     JSON.stringify({
       servicoSelecionado: null,
       adicionais: [],
+      selection:[],
       total: 0,
       data: new Date().toISOString(),
     })
   );
+}
+
+function addServiceCart(cart,dataId){
+    let index = cart.adicionais.indexOf(dataId)
+    if(index == -1){
+        cart.selection.push(dataId);
+    }
+}
+
+function rmvServiceCart(cart,dataId){
+    let index = cart.adicionais.indexOf(dataId)
+    if(index == -1){
+        cart.selection.splice(cart.selection.indexOf(dataId),1);
+    }
 }

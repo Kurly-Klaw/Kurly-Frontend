@@ -164,3 +164,17 @@ h2,
 .pd-promo {
   @apply text-left;
 }
+
+
+.scroll-container {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+  }
+  .day-radio {
+    display: none;
+  }
+  
