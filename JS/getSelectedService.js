@@ -12,6 +12,11 @@ function setSelected(event) {
     rmvServiceCart(a, thing.dataset.id);
     thing.textContent = "Adicionar";
   }
-
+  aaaa()
   localStorage.setItem("carrinho", JSON.stringify(a));
+}
+
+function aaaa(){
+  
+  console.warn(JSON.parse(localStorage.getItem("carrinho")))
 }

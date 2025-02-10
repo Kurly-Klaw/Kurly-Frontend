@@ -43,7 +43,7 @@ module.exports = {
 }
 </pre>
 - Após isso, inicie o framework
-<pre><code>npx tailwindcss -i css/tail.css -o css/wild.css --watch</code> 
+<pre><code>npx tailwindcss -i css/tail.css -o css/wind.css --watch</code> 
 </pre>
 
 

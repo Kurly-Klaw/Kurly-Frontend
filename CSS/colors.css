@@ -5,7 +5,7 @@
   --secundaria: #d9d9d9;
   --terciaria: #502f2b;
   --btn: #A76C39;
-  --btnA: #a76c3963;
+  --btnA: hsla(28, 49%, 44%, 0.388);
 }
 
 *{
@@ -20,7 +20,6 @@
 body {
   background-color: var(--fundo);
 }
-
 main,
 nav,
 #infos,
@@ -30,6 +29,9 @@ footer {
   background-color: var(--secundaria);
 }
 
+.btn-login{
+  background-color: transparent;
+}
 article.produto,
 .card {
   background-color: var(--primaria)
@@ -59,14 +61,7 @@ button.btnAdicionar:hover,button.selected,button.included{
   fill-opacity: 0;
   background-color: var(--btnA)
 }
-.btnAdicionar:hover{
-  
-  content:"Remover" !important;
-  background-color: red !important;
-}
-button.included{
-  opacity: .4;
-}
+
 
 .btnPromo button{
   background-color: var(--fundo)
@@ -80,7 +75,7 @@ hr{
   border-color: var(--fundo)
 }
 
-.btn-desabilitado{
+.btn-desabilitado,button.included{
   opacity: 0.32;
 }
 
@@ -92,6 +87,26 @@ hr{
 
 .day-radio:checked ~ .day-number p {
   color: white;
+}
+
+.dtCard{
+  background-color: #d83c73;
+}
+
+
+/* Track */
+#promo-list::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+#promo-list::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+#promo-list::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 

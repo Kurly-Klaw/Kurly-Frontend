@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 body {
-  @apply flex-col w-full max-w-md mx-auto md:flex;
+
+  @apply flex flex-col w-full max-w-md mx-auto md:flex;
 }
+
 
 .logo {
   @apply h-[40px];
@@ -18,52 +20,61 @@ header {
   @apply flex flex-col w-full h-full px-2 mb-2 rounded-b-2xl;
 }
 
+header,
+main {
+  flex: 1;
+  @apply flex flex-col gap-2 p-4 rounded-b-lg mb-2;
+}
+
+
 #user-infos {
   @apply flex items-center;
 }
 
-#promo-list{
-  @apply flex p-4 space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory;
+#promo-list {
+  @apply flex p-4 h-fit space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory;
 }
 
 #promo-list::-webkit-scrollbar {
-  display: none;
+
+  height: 2px;
 }
 
-#promo-list li{
+#promo-list li {
   @apply min-w-[90%] h-full snap-start;
 }
-li{
+
+li {
   @apply list-none
 }
 
-#servico-selecionado{
-    @apply flex flex-row 
-
-}
-.selected-imgCard{
-    @apply flex h-36 w-36
-}
-.img-container img{
-    @apply aspect-square
-}
-.selected-card{
-    @apply ml-2
-}
-header,
-main {
-  @apply flex flex-col gap-2 p-4 rounded-b-lg;
-}
-nav.select-service{
-    @apply flex-row
-
+#servico-selecionado {
+  @apply flex flex-row
 }
 
-nav.select-service a{
-    @apply ml-0 mr-auto
+.selected-imgCard {
+  @apply flex h-36 w-36
 }
-nav.select-service h1{
-    @apply mx-auto absolute
+
+.img-container img {
+  @apply aspect-square
+}
+
+.selected-card {
+  @apply ml-2
+}
+
+
+nav.select-service {
+  @apply flex-row
+}
+
+nav.select-service a {
+  @apply ml-0 mr-auto
+}
+
+nav.select-service h1 {
+  @apply mx-auto absolute
 }
 
 main {
@@ -74,45 +85,62 @@ main {
   @apply flex flex-col max-w-2xl mb-2 text-white shadow-lg rounded-xl relative cursor-pointer h-[144px];
 }
 
-.produto .hdCard{
-    @apply absolute
+.produto>.hdCard {
+  @apply absolute pt-2;
 }
 
-.seta{
-  @apply absolute mr-12 right-0
+.seta {
+  @apply absolute mr-12 right-0 py-2
 }
-.seta.invertido{
+
+.seta.invertido {
   @apply rotate-180
 }
 
+#promo-list .seta{
+  @apply hidden
+}
+
+.txtcontainer{
+  @apply grid grid-cols-2;
+}
 .produto .imgCard {
   @apply flex self-start object-cover object-top w-20 h-20 pl-0 rounded-lg aspect-square;
 }
 
-.produto > .dtCard {
-  @apply absolute overflow-hidden text-justify top-1/4;
+.promo .imgCard img{
+  @apply w-[345px] h-[224px] 
+}
+
+#promo-list .dtCard{
+  @apply hidden
+}
+.produto>.dtCard {
+  @apply block absolute overflow-hidden text-justify top-1/4 row-start-2;
 }
 
 .btnCard {
-  @apply flex ml-auto items-start justify-end px-4 pt-2 h-[64px];
+  @apply flex items-start justify-end px-4 pt-2 h-[64px] row-start-1 col-start-2;
 }
 
 .imgProduto {
   @apply object-cover rounded-lg;
 }
 
-#select-service{
-    @apply grid grid-cols-3  gap-x-2
+#select-service {
+  @apply grid grid-cols-3 gap-x-2
 }
 
-#selected-service .imgCard{
-    @apply col-start-1 row-start-1 row-span-2
+#selected-service .imgCard {
+  @apply col-start-1 row-start-1 row-span-2
 }
-.select-service-text{
-    @apply col-start-2  col-span-3 flex flex-col
+
+.select-service-text {
+  @apply col-start-2 col-span-3 flex flex-col
 }
-.select-service-text .dtCard{
-    @apply row-start-2 col-span-2
+
+.select-service-text .dtCard {
+  @apply row-start-2 col-span-2 block
 }
 
 
@@ -124,16 +152,18 @@ main {
   @apply h-2/3;
 }
 
+footer {
+  @apply sticky bottom-0 flex flex-col w-full mx-auto md:flex;
+}
+
+.sub-nav {
+  @apply flex flex-row w-full py-4 justify-evenly;
+}
+
+
 button,
 a.continuar {
   @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full;
-}
-
-footer {
-  @apply fixed bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
-}
-.sub-nav {
-  @apply top-0 flex flex-row w-full max-w-md py-4 justify-evenly;
 }
 
 .nav-btn {
@@ -167,14 +197,17 @@ h2,
 
 
 .scroll-container {
-    -ms-overflow-style: none; /* IE e Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  .scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari e Opera */
-  }
-  .day-radio {
-    display: none;
-  }
-  
+  -ms-overflow-style: none;
+  /* IE e Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari e Opera */
+}
+
+.day-radio {
+  display: none;
+}

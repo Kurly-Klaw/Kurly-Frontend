@@ -1,31 +1,13 @@
-import api from '../services/api'
-
+import api from './api.js';
 
 export function createUser(payload) {
-    api.post('/users', payload)
-        .then(function (response) {
-            if (response.status === 201) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
-};
+    return api.post('/users', payload);
+}
 
 export function getUser(user_id) {
-    const userUrl = `/users/${user_id}`
-
-    api.get(userUrl, payload)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
-};
+    const userUrl = `/users/${user_id}`;
+    return api.get(userUrl) 
+}
 
 export function updateUser(payload, user_id) {
     const headers = {
@@ -34,16 +16,8 @@ export function updateUser(payload, user_id) {
         }
     };
 
-    api.put('/users', payload, headers)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
-};
+    return api.put('/users', payload, headers)  // Retorna a promessa
+}
 
 export function deleteUser(payload, user_id) {
     const headers = {
@@ -52,14 +26,5 @@ export function deleteUser(payload, user_id) {
         }
     };
 
-    api.delete('/users', payload, headers)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
-};
-
+    return api.delete('/users', payload, headers) 
+}

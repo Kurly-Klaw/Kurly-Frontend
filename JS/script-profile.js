@@ -59,3 +59,8 @@ increaseButton.addEventListener("click", () => {
         slider.value = parseInt(slider.value) + 1;
     }
 });
+
+
+function proximaPagina(){
+  window.location.href = "login.html"
+}

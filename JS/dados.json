@@ -1,8 +1,8 @@
 {
   "items": {
-    "promo-1":{
+    "combo-1":{
       "id": 1,
-      "nome": "Combo 1",
+      "nome": "Corte + Tratamento da nobreza",
       "titulo": "Corte + tratamento da casa",
       "duracao": "1.5h",
       "preco": 200,
@@ -15,18 +15,19 @@
       "img": "./src/Item-1.png",
       "isPromo": true
     },
-    "promo-2": {
+    "combo-2": {
       "id": 2,
-      "nome": "Combo Caro",
+      "nome": "Tratamento da nobreza + Ozonioterapia",
       "titulo": "Pacote premium",
       "duracao": "4h",
       "preco": 1600,
-      "detailText1": "Pacote com 2 sessões de mechas no mês.",
+      "detailText1": "Pacote com 2 sessões de mechas no mês. Lorem EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
       "detailText2": "Lorem epsilonismo",
       "inclui": [
         "service-2",
         "service-3",
-        "service-4"
+        "opcional-1",
+        "opcional-3"
       ],
       "img": "./src/Item-2.png",
       "isPromo": true
@@ -34,46 +35,64 @@
     "service-1": {
       "id": 1,
       "nome": "Corte",
-      "titulo": "Corte em camadas.",
-      "detailText1": "Inclui consultoria, lavagem e finalização.",
-      "detailText2": "Relaxante, tranquilo e atencioso.",
-      "duracao": "0.5h",
-      "preco": 50,
+      "titulo": "O serviço de corte inclui:",
+      "detailText1": "O serviço de corte inclui:",
+      "detailText2": "Consultoria especial: suas histórias capilares são ouvidas para solu-ções personalizadas. Lavagem relaxante: um momento sublime de tranquilidade para dis-sipar o estresse Finalizaçao perfeita: seus cabelos saem prontos para arrasar",
+      "duracao": "1h30 – 2h",
+      "preco": 120,
       "img": "./src/corte.png",
-      "isPromo": false
+      "isPromo": true
     },
     "service-2": {
       "id": 2,
-      "nome": "Detox",
+      "nome": "Tratamento da nobreza",
       "titulo": "Corte + tratamento da casa",
-      "detailText1": "Lorem epsilonismo",
-      "detailText2": "Lorem epsilonismo",
-      "duracao": "0.5h",
-      "preco": 20,
+      "detailText1": "Um “up” para cabelos que precisam de um toque es-pecial!",
+      "detailText2": "Consiste em um trata-mento básico com linhas nacionais! Inclui: Lavagem relaxante Protocolo customizado para necessidades bási-cas Secagem e estilização",
+      "duracao": "1h30 – 2h",
+      "preco": 160,
       "img": "./src/detox.png",
       "isPromo": false
     },
     "service-3": {
       "id": 3,
-      "nome": "Ozonioterapia",
+      "nome": "Tratamento da Impetriz",
       "titulo": "Tratamento com ozônio",
-      "detailText1": "Remove sugidades e contaminantes dos fios sem agredir.",
-      "detailText2": "",
-      "duracao": "0.5h",
+      "detailText1": "Tratamento naturalista",
+      "detailText2": "Ideal para cabelos poro-sos e resistentes a tratamentos comuns Detox profundo para  remover  resíduos Protocolo com óleos e manteigas naturais para renovar, nutrir e selar as cutículas. Seu cabelo será renovado, com saúde e brilho",
+      "duracao": "1h30 – 2h",
       "preco": 20,
       "img": "./src/ozonio.png",
       "isPromo": false
+    }
+  },
+  "acrescimos":{
+	  "opcional-1": {
+      "id": 1,
+      "nome": "Detox",
+      "titulo": "Repõe lipidios e nutrientes ao cabelo.",
+      "detailText1": "Melhora o aspecto geral e de saude do cabelo.",
+      "detailText2": "",
+      "preco": 50,
+      "img": "./src/detox.png"
     },
-    "service-4": {
-      "id": 4,
+	"opcional-2": {
+      "id": 2,
       "nome": "Umectação",
       "titulo": "Repõe lipidios e nutrientes ao cabelo.",
       "detailText1": "Melhora o aspecto geral e de saude do cabelo.",
-      "detailText2": "Lorem ",
-      "duracao": "0.5h",
+      "detailText2": "",
       "preco": 50,
-      "img": "./src/umeccao.png",
-      "isPromo": false
+      "img": "./src/umeccao.png"
+    },
+	"opcional-3": {
+      "id": 3,
+      "nome": "Ozonioterapia",
+      "titulo": "Repõe lipidios e nutrientes ao cabelo.",
+      "detailText1": "Melhora o aspecto geral e de saude do cabelo.",
+      "detailText2": "",
+      "preco": 50,
+      "img": "./src/ozonio.png"
     }
   },
   "cliente": {

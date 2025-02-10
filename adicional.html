@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,6 +17,7 @@
 
   <script src="./JS/script.js"></script>
   <script src="./JS/localStorage.js"></script>
+  <script src="./JS/sessionStorage.js"></script>
   <script src="./JS/listServices.js"></script>
   <script src="./JS/getSelectedService.js"></script>
 </head>
@@ -43,8 +44,6 @@
         </div>
       </div>
     </div>
-    <hr>
-    <div id="combo-list"></div>
   </header>
 
 
@@ -54,7 +53,20 @@
 
     <a class="continuar" aria-label="Continuar" href="./horario.html">Continuar</a>
   </main>
- 
+  <footer>
+    <nav class="sub-nav">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
+        <input type="radio" name="botao-nav-1" class="hidden peer">
+        <span class="home-icon material-icons">home</span>
+        <h4>Início</h4>
+      </label>
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./profile.html'">
+        <input type="radio" name="botao-nav-1" class="hidden peer">
+        <span class="home-icon material-icons">person</span>
+        <h4>Perfil</h4>
+      </label>
+    </nav>
+  </footer>
 
 </body>
 

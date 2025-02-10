@@ -1,5 +1,4 @@
-import api from '../services/api'
-
+import api from './api.js';
 
 export function createSchedule(payload) {
     api.post('/schedule', payload)
@@ -22,14 +21,6 @@ export function getSchedule(start_date, end_date) {
     };
 
     api.get('/schedule', headers)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
 };
 
 export function updateSchedule(payload, start_date, end_date) {

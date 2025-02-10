@@ -1,4 +1,4 @@
-function btnEventListeners() {
+function btnEventListener() {
   const carrinho = JSON.parse(localStorage.getItem("carrinho"));
 
   if (!carrinho) {
@@ -9,15 +9,15 @@ function btnEventListeners() {
 
   btnAgendar.forEach((btn) => {
     btn.addEventListener("click", function () {
-      const includes = this.getAttribute("data-includes");
+      const isPromo = this.parentNode.parentNode.getAttribute("class") == "promo";
+      let includes
+      if(isPromo) includes  = this.getAttribute("data-includes");
       const idSelecionado = this.getAttribute("data-id");
-      console.warn(`Agendando o pedido ${idSelecionado}`);
       try {
         carrinho.servicoSelecionado = idSelecionado;
-        carrinho.adicionais = includes.replace(/[\[\]]/g, "").split(",")
+        if(isPromo)carrinho.adicionais = includes.replace(/[\[\]]/g, "").split(",")
         carrinho.selection = []
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
-        console.log(localStorage.getItem("carrinho"));
         window.location.href = "adicional.html";
       } catch (error) {
         
