@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link
+      rel="shortcut icon"
+      href="./src/Coroa-Madrinhas.png"
+      type="image/x-icon"
+    />
+    <!-- Comentario -->
+    <link rel="stylesheet" href="./CSS/wind.css" />
+    <link rel="stylesheet" href="./CSS/colors.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-    rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="CSS/colors.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="justify-center m-3 lg:flex">
+  <body>
+    <main>
+      <h1>Crie sua conta</h1>
+      <section>
+        <form
+          method="post"
+          class="flex flex-col items-center font-medium"
+          id="cadastrar"
+        >
+          <div class="login-input-div">
+            <input
+              type="text"
+              id="idName"
+              placeholder=" "
+              required
+              class="peer"
+            />
 
-  <main class="w-full p-4 rounded-lg shadow-lg lg:max-w-sm ">
-    <h2 class="mb-6 text-2xl font-bold text-center font-Inter">Crie sua conta</h2>
-    <section>
-      <form method="post" class="flex flex-col items-center font-medium " id="cadastrar">
-        <div class="relative w-full pb-2">
-          <input type="text" id="idName" placeholder=" " required
-            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:border-b-4 focus:border-b-purple-500">
+            <label for="idName">Nome</label>
+          </div>
 
-          <label for="idName"
-            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 ">Nome</label>
-        </div>
+          <div class="login-input-div">
+            <input
+              type="text"
+              id="idTel"
+              placeholder=" (85) 98765-4321"
+              required
+              class="peer"
+              maxlength="15"
+            />
+            <label for="idTel"> Telefone: </label>
+          </div>
 
-        <div class="relative w-full pb-2">
-          <input type="text" id="idTel" placeholder=" (00) 00000-0000" required
-            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:border-b-4 focus:border-b-purple-500">
-          <label for="idTel"
-            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm">
-            Telefone:
-          </label>
-        </div>
+          <div class="login-input-div">
+            <input
+              type="email"
+              id="idEmail"
+              placeholder=" "
+              required
+              class="peer"
+            />
+            <label for="idEmail"> Email </label>
+          </div>
 
-        <div class="relative w-full pb-2">
-          <input type="email" id="idEmail" placeholder=" " required
-            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:border-b-4 focus:border-b-purple-500">
-          <label for="idEmail"
-            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm">
-            Email
-          </label>
-        </div>
+          <div class="login-input-div">
+            <input
+              type="password"
+              id="idSenha"
+              placeholder=" "
+              required
+              minlength="8"
+              class="peer"
+            />
 
+            <label for="idSenha">Senha:</label>
+          </div>
+          <p class="pb-2">*mínimo de 8 digitos</p>
 
-        <div class="relative w-full">
-          <input type="password" id="idSenha" placeholder=" " required minlength="8"
-            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
+          <div class="login-input-div">
+            <input
+              type="password"
+              id="idConfirmaSenha"
+              placeholder=" "
+              required
+              minlength="8"
+              class="peer"
+            />
+            <label for="idConfirmaSenha">Confirmar senha:</label>
+          </div>
 
-          <label for="idSenha"
-            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm ">Senha:</label>
-        </div>
-        <p class="pb-2">*mínimo de 8 digitos</p>
+          <a href="login.html">
+            <button type="submit">Cadastrar</button>
+          </a>
+        </form>
+      </section>
 
+      <p class="line-align"><a href="login.html">Já possuo conta</a></p>
+    </main>
 
-        <div class="relative w-full pb-2">
-          <input type="password" id="idConfirmaSenha" placeholder=" " required minlength="8"
-            class="w-full p-2 pt-5 pb-2 text-gray-900 border-2 peer rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-b-4 focus:border-b-purple-500">
-          <label for="idConfirmaSenha"
-            class="absolute pb-2 text-gray-500 transform -translate-y-1/2 left-2 top-1/4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:text-sm ">Confirmar
-            senha:</label>
-        </div>
-
-        <a href="login.html">
-          <button type="submit" class="py-2 px-4 text-white font-semibold rounded-[18px]">
-            Cadastrar
-          </button>
-        </a>
-      </form>
-    </section>
-
-    <p class="mt-2 text-center "><a href="login.html">Já possuo cont</a>a</p>
-  </main>
-
-    <script src="JS/script-register.js"  type="module"></script>
-</body>
-
+    <script src="./JS/script-phone.js"></script>
+    <script src="./JS/script-register.js" type="module"></script>
+  </body>
 </html>

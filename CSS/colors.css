@@ -5,6 +5,7 @@
   --secundaria: #d9d9d9;
   --terciaria: #502f2b;
   --btn: #A76C39;
+  --btnd: #682c1d;
   --btnA: hsla(28, 49%, 44%, 0.388);
 }
 
@@ -43,6 +44,12 @@ article.produto.selected{
 
 button{
   background-color:var(--fundo);
+}
+.btn-login{
+  background-color:var(--btn);
+}
+.btn-login:hover{
+  background-color:var(--btnd);
 }
 
 button:hover,

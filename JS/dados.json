@@ -41,7 +41,7 @@
       "duracao": "1h30 – 2h",
       "preco": 120,
       "img": "./src/corte.png",
-      "isPromo": true
+      "isPromo": false
     },
     "service-2": {
       "id": 2,

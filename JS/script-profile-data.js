@@ -1,6 +1,6 @@
 import { getUser } from '../routes/UserRoutes.js'
 const infos = document.getElementById("infos")
-const botaoLogin = document.getElementById("btn-login-btn")
+const botaoLogin = document.getElementById("btn-login")
 document.addEventListener("DOMContentLoaded",async (e) => {
     e.preventDefault();
     const userId = sessionStorage.getItem('user_id');
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded",async (e) => {
     const mainElement = document.getElementById("main");
     
     if (!userId) {
-        mainElement.style.display = "none";
+        //mainElement.style.display = "none";
         infos.classList.add("rounded-b-lg")
     } else {
         mainElement.style.display = "block";
