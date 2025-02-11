@@ -76,7 +76,7 @@ function btnProductPressed(event) {
     editCarrinho("selectedKey", idSelected)
     if (includeSelected) editCarrinho("comboService", includeSelected.replace(/[\[\]]/g, "").split(","))
     else editCarrinho("comboService", [])
-    //window.location.href = "adicional.html";
+    window.location.href = "./opcionais";
 }
 
 

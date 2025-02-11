@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
-
-    <!-- layout geral da página -->
-    <link rel="stylesheet" href="./CSS/wind.css">
-    <!-- animação dos elementos da página -->
-    <link rel="stylesheet" href="./CSS/anima.css">
-    <!-- Tema do site -->
-    <link rel="stylesheet" href="./CSS/colors.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmação</title>
     <!-- icon do site -->
-    <link rel="shortcut icon" href="./src/Coroa-Madrinhas.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <script src="./JS/script.js"></script>
-    <script src="./JS/listServices.js"></script>
-    <script src="./JS/localStorage.js"></script>
-    
-</head>
-
-<body class="font-sans ">
-
+    <link
+      rel="shortcut icon"
+      href="../assets/src/logo/Coroa-Madrinhas.png"
+      type="image/x-icon"
+    />
+    <!-- Estilos  -->
+    <link rel="stylesheet" href="../assets/css/wind.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/colors.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <nav>
+    <div class="flex items-center">
+      <a class="p-3 mr-2" aria-label="Voltar" href="../horario">
+        <img
+          src="../assets/src/icons/Seta-volta.png"
+          alt="Seta para voltar"
+          class="aspect-square w-[24px]"
+        />
+      </a>
+      <p class="text-[1.375rem] font-bold">Agendamento</p>
+    </div>
+  </nav>
+  <body class="font-sans">
     <main class="max-w-md p-4 mx-auto my-8 rounded-lg shadow-lg">
-        <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
-        <div class="flex items-center mb-6 space-x-4 h-[126px]">
-            <img src="./src/corte.png" alt="Imagem do produto" class="w-[118px] h-[118px] object-cover rounded-lg">
-            <div class="flex-1">
-                <p class="text-lg font-medium" id="">Corte</p>
-                <p class="text-sm text-gray-600">R$120,00 • 1h30 – 2h.</p>
-                <p class="pt-2">Incluso: avaliação, lavagem e finalização.</p>
-            </div>
+      <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
+      <div class="flex items-center mb-6 space-x-4 h-[126px]">
+        <img
+          src="../assets/src/services/corte.png"
+          alt="Imagem do produto"
+          class="w-[118px] h-[118px] object-cover rounded-lg"
+        />
+        <div class="flex-1">
+          <p class="text-lg font-medium" id="">Corte</p>
+          <p class="text-sm text-gray-600">R$120,00 • 1h30 – 2h.</p>
+          <p class="pt-2">Incluso: avaliação, lavagem e finalização.</p>
+        </div>
+      </div>
+
+      <!-- Div para Total e Data/Hora -->
+      <div
+        class="flex justify-between items-center mt-4 border-t pt-4 bg-gray-200 rounded-[16px] mb-4 h-[72px]"
+      >
+        <div class="pb-3 pl-2 text-xl font-semibold">
+          Total: <span id="valortotal">R$ 220,00</span>
         </div>
 
-
-
-
-        <!-- Div para Total e Data/Hora -->
-        <div class="flex justify-between items-center mt-4 border-t pt-4 bg-gray-200 rounded-[16px] mb-4 h-[72px]">
-
-            <div class="pb-3 pl-2 text-xl font-semibold ">
-                Total: <span id="valortotal">R$ 220,00</span>
-            </div>
-
-            <!-- Data, Hora e Ícone de Calendário -->
-            <div class="flex items-center space-x-2">
-                <i class="text-black fas fa-calendar-alt"></i>
-                <div class="pb-3 pr-2 text-sm">
-                    <p>7:00 - 9:00</p>
-                    <p>31/01/2025</p>
-
-                </div>
-            </div>
+        <!-- Data, Hora e Ícone de Calendário -->
+        <div class="flex items-center space-x-2">
+          <i class="text-black fas fa-calendar-alt"></i>
+          <div class="pb-3 pr-2 text-sm">
+            <p>7:00 - 9:00</p>
+            <p>31/01/2025</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Botão de confirmação -->
+      <!-- Botão de confirmação -->
 
-        <a href="index.html" class="px-4 py-2 continuar">Confirmar</a>
-
+      <a href="../" class="px-4 py-2 continuar">Confirmar</a>
     </main>
-
-</body>
-
+  </body>
 </html>

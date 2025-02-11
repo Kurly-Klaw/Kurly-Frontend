@@ -33,7 +33,7 @@
   </nav>
 
 
-  <main style="display: none" class="rounded-t-none" id="profile">
+  <main style="display: block" class="rounded-t-none" id="profile">
     <article id="infos" onclick="toggleCard(event)">
       <div class="usuario">
         <div class="px-4 py-2">
@@ -49,7 +49,7 @@
           </div>
         </div>
 
-        <div class="mr-1 ml-auto right-0"><a class="setas">▲</a></div>
+        <div class="right-0 ml-auto mr-1"><a class="setas">▲</a></div>
       </div>
     </article>
     <form id="formulario">
@@ -117,7 +117,7 @@
 
           <!-- Botão 1 -->
           <label for="problem-ponta-dupla"
-            class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all">
+            class="hair-issue label-cabelo">
             <input disabled id="problem-ponta-dupla" name="issues" type="checkbox" value="Ponta duplas"
               class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
@@ -127,7 +127,7 @@
 
           <!-- Botão 2 -->
           <label for="problem-quimica"
-            class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all">
+            class="label-cabelo hair-issue">
             <input disabled id="problem-quimica" name="issues" type="checkbox" value="Química" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -136,7 +136,7 @@
 
           <!-- Botão 3 -->
           <label for="problem-oleoso"
-            class="flex items-center h-[44px] gap-1 label-cabelo text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all">
+            class="label-cabelo hair-issue">
             <input disabled id="problem-oleoso" name="issues" type="checkbox" value="Oleoso" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -145,7 +145,7 @@
 
           <!-- Botão 4 -->
           <label for="problem-ressecado"
-            class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all">
+            class="label-cabelo hair-issue">
             <input disabled id="problem-ressecado" name="issues" type="checkbox" value="Ressecado" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -154,7 +154,7 @@
 
           <!-- Botão 5 -->
           <label for="problem-quebradico"
-            class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all">
+            class="label-cabelo hair-issue">
             <input disabled id="problem-quebradico" name="issues" type="checkbox" value="Quebradiço" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -163,7 +163,7 @@
 
           <!-- Botão 6 -->
           <label for="problem-frizz"
-            class="flex items-center h-[44px] gap-2 label-cabelo text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all">
+            class="hair-issue label-cabelo">
             <input disabled id="problem-frizz" name="issues" type="checkbox" value="Frizz" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone" class="w-5 h-5 checkbox-icon" />
             Frizz
@@ -178,7 +178,7 @@
         </h2>
         <ul class="">
           <li class="flex flex-col items-center mb-2">
-            <h3 class="opacity-[.32]">Sem agendamento marcado!</h3>
+            <span class="opacity-[.32]">Sem agendamento marcado!</span>
           </li>
         </ul>
       </div>
@@ -191,12 +191,12 @@
   </div>
   <footer>
     <nav class="sub-nav">
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">
         <span class="home-icon material-icons">home</span>
         <h4>Início</h4>
       </label>
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./profile.html'">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">
         <span class="home-icon material-icons">person</span>
         <h4>Perfil</h4>

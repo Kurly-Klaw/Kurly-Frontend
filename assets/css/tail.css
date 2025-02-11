@@ -4,7 +4,7 @@
 
 /* Layout global */
 body {
-  @apply flex flex-col w-full max-w-md mx-auto md:flex;
+  @apply flex flex-col w-full max-w-md mx-auto md:flex ;
 }
 
 body::-webkit-scrollbar {
@@ -32,7 +32,10 @@ main {
 
 
 section {
-  @apply flex flex-col items-center w-full gap-4;
+  @apply flex flex-col items-center w-full gap-4 p-4 mb-3 rounded-lg;
+}
+section:first-of-type{
+  @apply rounded-t-none
 }
 
 footer {
@@ -42,8 +45,13 @@ footer {
 /* Layout do profile */
 
 article#infos{
-  @apply h-fit flex flex-col cursor-pointer;
+  @apply flex flex-col cursor-pointer h-fit;
 }
+
+.hair-issue{
+  @apply flex items-center h-[44px] gap-2 text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all
+}
+
 
 /* article#infos > *{
   @apply overflow-hidden
@@ -121,7 +129,7 @@ nav.select-service h1 {
 }
 
 /* Lista de promoções */
-#promo-list {
+#promo-list,scroll-container {
   @apply flex p-4 space-x-4 overflow-x-auto h-fit scroll-smooth snap-x snap-mandatory;
 }
 
@@ -250,6 +258,10 @@ button.btn-login {
 }
 
 /* Elementos de formulários */
+
+
+
+
 .scroll-container {
   -ms-overflow-style: none;
   /* IE e Edge */

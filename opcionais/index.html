@@ -5,27 +5,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acréscimo</title>
-  <!-- layout geral da página -->
-  <link rel="stylesheet" href="./CSS/wind.css" />
-  <!-- animação dos elementos da página -->
-  <link rel="stylesheet" href="./CSS/anima.css" />
-  <!-- Tema do site -->
-  <link rel="stylesheet" href="./CSS/colors.css" />
-  <!-- icon do site -->
-  <link rel="shortcut icon" href="./src/crow-512.png" type="image/x-icon" />
+    <!-- icon do site -->
+    <link
+      rel="shortcut icon"
+      href="../assets/src/logo/Coroa-Madrinhas.png"
+      type="image/x-icon"
+    />
+    <!-- Estilos  -->
+    <link rel="stylesheet" href="../assets/css/wind.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/colors.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-  <script src="./JS/script.js"></script>
-  <script src="./JS/localStorage.js"></script>
-  <script src="./JS/sessionStorage.js"></script>
-  <script src="./JS/listServices.js"></script>
-  <script src="./JS/getSelectedService.js"></script>
+  <script src="../assets/js/listServices.js"></script>
+
 </head>
 
 <body class="flex-col w-full max-w-md mx-auto md:flex">
   <nav class="select-service">
-    <a aria-label="Voltar" href="./index.html">
-      <img src="./src/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
+    <a aria-label="Voltar" href="../">
+      <img src="../assets/src/icons/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
     </a>
     <h1>Adicionar acréscimo</h1>
   </nav>
@@ -51,16 +50,16 @@
     <h2 class="font-semibold titulo">Acréscimos</h2>
     <ul id="more-list"></ul>
 
-    <a class="continuar" aria-label="Continuar" href="./horario.html">Continuar</a>
+    <a class="continuar" aria-label="Continuar" href="../horario">Continuar</a>
   </main>
   <footer>
     <nav class="sub-nav">
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../'">
         <input type="radio" name="botao-nav-1" class="hidden peer">
         <span class="home-icon material-icons">home</span>
         <h4>Início</h4>
       </label>
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./profile.html'">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
         <input type="radio" name="botao-nav-1" class="hidden peer">
         <span class="home-icon material-icons">person</span>
         <h4>Perfil</h4>
