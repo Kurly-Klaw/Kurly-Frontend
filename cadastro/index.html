@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro</title>
+  <!-- icon do site -->
+  <link rel="shortcut icon" href="../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon">
+  <!-- Estilos  -->
+  <link rel="stylesheet" href="../assets/css/wind.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/colors.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <main class="pt-10">
+    <h1>Crie sua conta</h1>
+    <section>
+      <form method="post" class="flex flex-col items-center font-medium" id="cadastrar">
+        <div class="login-input-div">
+          <input type="text" id="idName" placeholder=" " required class="peer" />
+
+          <label for="idName">Nome</label>
+        </div>
+
+        <div class="login-input-div">
+          <input type="text" id="idTel" placeholder=" (85) 98765-4321" required class="peer" maxlength="15" />
+          <label for="idTel"> Telefone: </label>
+        </div>
+
+        <div class="login-input-div">
+          <input type="email" id="idEmail" placeholder=" " required class="peer" />
+          <label for="idEmail"> Email </label>
+        </div>
+
+        <div class="login-input-div">
+          <input type="password" id="idSenha" placeholder=" " required minlength="8" class="peer" />
+
+          <label for="idSenha">Senha:</label>
+        </div>
+        <p class="pb-2">*mínimo de 8 digitos</p>
+
+        <div class="login-input-div">
+          <input type="password" id="idConfirmaSenha" placeholder=" " required minlength="8" class="peer" />
+          <label for="idConfirmaSenha">Confirmar senha:</label>
+        </div>
+
+        <a href="login.html">
+          <button type="submit">Cadastrar</button>
+        </a>
+      </form>
+    </section>
+
+    <p class="line-align"><a href="login.html">Já possuo conta</a></p>
+  </main>
+
+  <script src="./script-phone.js"></script>
+  <script src="./script-register.js" type="module"></script>
+</body>
+
+</html>

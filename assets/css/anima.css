@@ -1,0 +1,152 @@
+.produto{
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+article{
+  transition: all 0.4s ease-in-out;
+}
+
+.produto.expanded{
+  height: 21rem;
+}
+.escondido{
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.expanded .imgCard{
+  object-fit: cover;
+  border-radius: 25px;
+  height: 67.5%;
+  width: 45%;
+  padding-left: 1rem;
+  aspect-ratio:2/3;
+  margin-bottom: 3.25rem;
+  transform: scaleY(0.9)  translateY(4.5rem);
+}
+
+.produto .hdCard{
+  transform: translateX(5.5rem)
+}
+.expanded .hdCard{
+  position: absolute;
+  transform: translateX(1rem)
+}
+
+
+.imgCard,.hdCard,.dtCard{
+  transition: all 0.3s ease-in-out
+}
+
+.dtCard{
+  opacity: 0;
+  width: 50%;
+  height: 0;
+  transform: translateX(calc(80% + 1.5rem))
+}
+
+.select-service-text .dtCard{
+  opacity: 1;
+  width: auto;
+  height: fit-content;
+  transform: translateX(0)
+}
+
+.expanded .dtCard{
+  opacity: 1;
+  height: fit-content;
+}
+
+
+
+
+.slider-input {
+  position: relative;
+  height: 3rem;
+  width: 100%;
+}
+input[type=range] { 
+ -webkit-appearance: none; 
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 3rem;
+
+  border-radius: 100rem; 
+  overflow: hidden;
+}
+input[type=range][step] {
+    background-image: linear-gradient(to right, transparent 49.8%, black 49.5%, black 50.5%, transparent 50%);
+    background-repeat: no-repeat;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  box-shadow: -20rem 0 0 20rem black;
+}
+input[type=range]::-moz-range-thumb {
+  border: none;
+  width: 0;
+  box-shadow: -20rem 0 0 20rem  #a66159;
+
+}
+
+.rotate-btn {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-expandable {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+} 
+.main-content {
+  height: 80px; /* Define uma altura fixa */  
+}
+.expandable-content {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expanded .expandable-content {
+  grid-template-rows: 1fr;
+}
+
+.content-inner {
+  min-height: 0;
+}
+
+.main-content .header-image {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expanded .main-content .header-image {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.expanded .main-content .rotate-btn{
+  transform:  rotate(180deg);
+  transition: all 0.3s ease-in-out;
+} 
+
+.expanded .main-content {
+  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.expanded .main-content h3 {
+  margin-left: 0; /* Remove a margem que afastava o título */
+}
+
+.expanded .main-content .header-image {
+  display: none; /* Garante que a imagem desapareça completamente */
+}
+
+.main-content h3 {
+  transition: all 0.3s ease; /* Anima a transição do título */
+}
+
+
+
+

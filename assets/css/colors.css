@@ -1,0 +1,159 @@
+:root {
+  --fundo: #47061E;
+  --fundo-mais: #25030f;
+  --primaria: #EEEEEE;
+  --secundaria: #d9d9d9;
+  --terciaria: #502f2b;
+  --btn: #A76C39;
+  --btnd: #682c1d;
+  --btnA: hsla(28, 49%, 44%, 0.388);
+  --inputOk: #59881c;
+}
+
+* {
+  color: black;
+}
+
+.titulo {
+  font-weight: 600;
+  color: var(--fundo);
+}
+
+body {
+  background-color: var(--fundo);
+}
+
+main,
+nav,
+#infos,
+section,
+header,
+footer {
+  background-color: var(--secundaria);
+}
+
+.btn-login {
+  background-color: transparent;
+}
+
+article.produto,
+.card {
+  background-color: var(--primaria)
+}
+
+article.produto.selected {
+  background-color: transparent
+}
+
+
+button {
+  background-color: var(--fundo);
+}
+
+.btn-login {
+  background-color: var(--btn);
+}
+
+.btn-login:hover {
+  background-color: var(--btnd);
+}
+
+button:hover,
+.label-cabelo:hover,
+a.continuar,
+.roxo {
+  background-color: var(--fundo)
+}
+
+button.btnAdicionar {
+  border-color: var(--btnA);
+  border-width: 1px;
+  color: var(--fundo);
+  background-color: transparent
+}
+
+button.btnAdicionar:hover,
+button.selected,
+button.included {
+  color: black;
+  fill-opacity: 0;
+  background-color: var(--btnA)
+}
+
+
+.btnPromo button {
+  background-color: var(--fundo)
+}
+
+.btnPromo button:hover {
+  background-color: var(--fundo-mais)
+}
+
+hr {
+  border-color: var(--fundo)
+}
+
+.btn-desabilitado,
+button.included {
+  opacity: 0.32;
+}
+
+/* Estilo quando o radio está selecionado */
+.day-radio:checked~.day-number {
+  background-color: #502f2b;
+  border-color: black;
+}
+
+.day-radio:checked~.day-number p {
+  color: white;
+}
+
+.dtCard {
+  background-color: #d83c73;
+}
+
+
+/* Track */
+#promo-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+#promo-list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+#promo-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+.slider-input {
+  border: solid black 1px;
+  background-color: transparent;
+}
+
+#infos{
+  background: #fafafa;
+}
+
+#increase,
+#decrease {
+  background-color: black;
+}
+
+.label-cabelo {
+  color: white;
+  background-color: var(--fundo)
+}
+
+.label-tipo-cabelo {
+  background-color: var(--btn)
+}
+
+
+input:valid {
+  border-color: var(--inputOk);
+}
