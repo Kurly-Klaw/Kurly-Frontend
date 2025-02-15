@@ -13,26 +13,32 @@ class Fetch {
     }
 
     // Método GET para fazer uma requisição
-    async get(path, headers = {}) {
+    async get(path, headers = {}, params = {}) {
         const response = await fetch(`${this.baseURL}${path}`, {
             method: 'GET',
             headers: {
                 ...this.headers,
                 ...headers
-            }
+            },
+            params :{
+                ...params
+            },
         });
         const data = await response.json();
         return data;
     }
 
     // Método POST com suporte para headers adicionais
-    async post(path, body, headers = {}) {
+    async post(path, body, headers = {}, params = {}) {
         const response = await fetch(`${this.baseURL}${path}`, {
             method: 'POST',
             headers: {
                 ...this.headers,
                 ...headers,
                 'Content-Type': 'application/json'  // Garante que o Content-Type esteja presente
+            },
+            params :{
+                ...params
             },
             body: JSON.stringify(body), // Corpo da requisição convertido para JSON
         });
@@ -42,13 +48,16 @@ class Fetch {
     }
 
     // Método PUT com suporte para headers adicionais
-    async put(path, body, headers = {}) {
+    async put(path, body, headers = {}, params = {}) {
         const response = await fetch(`${this.baseURL}${path}`, {
             method: 'PUT',
             headers: {
                 ...this.headers,
                 ...headers,
                 'Content-Type': 'application/json'  // Garante que o Content-Type esteja presente
+            },
+            params :{
+                ...params
             },
             body: JSON.stringify(body), // Corpo da requisição convertido para JSON
         });
@@ -58,13 +67,16 @@ class Fetch {
     }
 
     // Método DELETE com suporte para headers adicionais
-    async delete(path, headers = {}) {
+    async delete(path, headers = {}, params = {}) {
         const response = await fetch(`${this.baseURL}${path}`, {
             method: 'DELETE',
             headers: {
                 ...this.headers,
                 ...headers
-            }
+            },
+            params :{
+                ...params
+            },
         });
 
         const data = await response.json();

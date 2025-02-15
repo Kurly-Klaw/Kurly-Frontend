@@ -6,25 +6,21 @@ export function createUser(payload) {
 
 export function getUser(user_id) {
     const userUrl = `/users/${user_id}`;
-    return api.get(userUrl) 
+
+    return api.get(userUrl);
 }
 
 export function updateUser(payload, user_id) {
     const headers = {
-        headers: {
-            user_id: user_id
-        }
+        user_id: user_id
     };
-
-    return api.put('/users', payload, headers)  // Retorna a promessa
+    return api.put('/users', payload, headers);  
 }
 
 export function deleteUser(payload, user_id) {
     const headers = {
-        headers: {
-            user_id: user_id
-        }
+        user_id: user_id
     };
 
-    return api.delete('/users', payload, headers) 
+    return api.delete('/users', payload, headers);
 }
