@@ -53,6 +53,9 @@ article.produto,
 .card {
   background-color: var(--primaria)
 }
+article.produto.resume{
+  background-color: transparent;
+}
 
 article.produto.selected {
   background-color: transparent

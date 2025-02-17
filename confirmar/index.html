@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <nav>
-  <div class="flex items-center">
+  <div class="flex items-center w-full">
     <a class="p-3 mr-2" aria-label="Voltar" href="../horario">
       <img src="../assets/src/icons/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
     </a>
@@ -23,38 +23,38 @@
 </nav>
 
 <body class="font-sans">
-  <main class="max-w-md p-4 my-8 rounded-lg shadow-lg">
+  <main id="main-confirmar" class="max-w-md p-4 shadow-lg">
     <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
-    <div id="select-service" class="flex items-center mb-6 space-x-4 h-[126px]">
-      <div class="imgCard">
-        <img id="select-service-img" alt="Imagem do serviço" class="w-[118px] h-[118px] object-cover rounded-lg">
+    <div id="select-service" class="grid grid-cols-3 gap-4 items-start h-fit">
+      <div class=" h-full">
+        <img id="select-service-img" alt="Imagem do serviço" class="w-full h-full aspect-square object-cover rounded-lg">
       </div>
 
-      <div class="flex-1 lect-service-text">
+      <div class="select-service-text col-span-2">
         <h3 id="select-service-title" class="text-lg font-medium" id="">Corte</h3>
         <p id="select-service-price" class="text-sm text-gray-600">R$120,00 • 1h30 – 2h.</p>
-        <p id="select-service-details" class="pt-2">Incluso: avaliação, lavagem e finalização.</p>
+        <p id="select-service-details" class="detalhe pt-2">Incluso: avaliação, lavagem e finalização.</p>
       </div>
     </div>
+    
     <ul id="additionalSelection"></ul>
 
-    <!-- Div para Total e Data/Hora -->
-    <div class="flex justify-between items-center mt-4 border-t pt-4 bg-gray-200 rounded-[16px] mb-4 h-[72px]">
-      <div class="pb-3 pl-2 text-xl font-semibold">
+    <div class="flex justify-between items-center my-4 border-t bg-gray-200 rounded-lg p-4"> 
+      <div class="text-xl font-semibold">
         Total: <span id="valortotal">R$ 220,00</span>
       </div>
 
-      <!-- Data, Hora e Ícone de Calendário -->
-      <div class="flex items-center space-x-2">
+    
+      <div class="flex items-center space-x-2 ">
         <i class="text-black fas fa-calendar-alt"></i>
-        <div class="pb-3 pr-2 text-sm">
+        <div class="flex flex-col text-sm items-center">
           <p id="selected-schedule">7:00 - 9:00</p>
           <p id="selected-date">31/01/2025</p>
         </div>
       </div>
     </div>
 
-    <!-- Botão de confirmação -->
+
 
     <a id="btnConfirmar" class="px-4 py-2 continuar" href="../">Confirmar</a>
   </main>

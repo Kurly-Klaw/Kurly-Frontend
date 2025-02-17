@@ -46,18 +46,20 @@ function createItem(key, item) {
     let subtitulo = `R$ ${item.preco} • ${item.duracao}`;
 
     produto.innerHTML = `
-            <article class="produto selected" id="${key}">
-                <div class="imgCard">
+            <article class="produto resume" id="${key}">
+                <div class="imgCard resume">
                     <img src="${item.img}" alt="Imagem do serviço ${item.nome}">
                 </div>
 
-            <div class="hdCard">
+            <div class=" flex flex-col gap-2 col-span-3">
+                <div class="hdCard resume">
                 <h3>${item.nome}</h3>
                 <p>${subtitulo}</p>
             </div>
-            <div class="dtCard">
-                <p>${item.detailText1}</p>
-                <p>${item.detailText2}</p>
+            <div class="dtCard resume">
+
+            <p class="detalhe">${item.resumo}</p>
+            </div>
             </div>
             </article>
         `;

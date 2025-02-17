@@ -25,6 +25,9 @@ main {
   margin-bottom: 6.25rem;
   @apply rounded-lg;
 }
+#main-confirmar{
+  @apply gap-0 px-4 py-0 rounded-b-lg rounded-t-none
+}
 
 #profile {
   @apply rounded-t-none
@@ -78,7 +81,7 @@ article#infos {
 
 /* Navegação */
 nav {
-  @apply flex flex-col items-center justify-center py-4 pb-2 shadow-md;
+  @apply flex flex-col items-center py-4 pb-2 shadow-md;
 }
 
 nav.profile-nav {
@@ -233,8 +236,33 @@ scroll-container {
   @apply w-full h-auto aspect-square object-cover rounded-xl
 }
 
+/* Confirmação */
+
+article.produto.resume{
+  @apply grid grid-cols-4 gap-4 shadow-none h-fit
+}
+
+.imgCard.resume, .imgCard.resume img{
+  @apply w-full h-auto aspect-square
+} 
+
+
+
+.hdCard.resume, .dtCard.resume{
+  @apply relative
+}
+
+.hdCard.resume{
+  @apply col-span-3
+}
+
 
 /* Texto e tipografia */
+
+hr{
+  @apply my-4
+}
+
 h1 {
   @apply text-2xl font-bold text-center;
 }
@@ -256,6 +284,10 @@ h2,
 
 p {
   @apply text-sm;
+}
+
+p.detalhe{
+  @apply text-xs text-justify
 }
 
 /* Botões e links */
