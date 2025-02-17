@@ -11,7 +11,6 @@
   <!-- Estilos  -->
   <link rel="stylesheet" href="../assets/css/wind.css" />
   <link rel="stylesheet" href="../assets/css/anima.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/colors.css" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -22,7 +21,7 @@
 </head>
 
 <body>
-  <nav class="sup-nav profile-nav">
+  <nav class="sup-nav profile-nav p-4">
     <a class="back-arrow" aria-label="Voltar" href="../index.html">
       <img src="../assets/src/icons/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
     </a>
@@ -33,7 +32,7 @@
   </nav>
 
 
-  <main style="display: block" class="rounded-t-none" id="profile">
+  <main style="display: none" class="rounded-t-none" id="profile">
     <article id="infos" onclick="toggleCard(event)">
       <div class="usuario">
         <div class="px-4 py-2">
@@ -92,21 +91,11 @@
         </div>
         <div class="grid justify-center w-full grid-cols-5 gap-2 px-4 -p-2 -mb-[5px]">
           <div class="flex justify-end">
-            <input disabled type="button" id="decrease"
-              class="justify-center w-12 h-12 text-white rounded-full label-cabelo">
-            -
-            </input>
           </div>
-
           <div class="col-span-3">
             <label for="hair-size" class="sr-only">Problemas capilares</label>
             <input disabled id="hair-size" type="range" class="slider-input" min="0" max="2" step="1" />
           </div>
-
-          <input disabled type="button" id="increase"
-            class="justify-center w-12 text-white rounded-full aspect-square label-cabelo">
-          +
-          </input>
         </div>
       </section>
       <section class="flex flex-col gap-2 py-2">
@@ -116,8 +105,7 @@
           </p>
 
           <!-- Botão 1 -->
-          <label for="problem-ponta-dupla"
-            class="hair-issue label-cabelo">
+          <label for="problem-ponta-dupla" class="hair-issue label-cabelo">
             <input disabled id="problem-ponta-dupla" name="issues" type="checkbox" value="Ponta duplas"
               class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
@@ -126,8 +114,7 @@
           </label>
 
           <!-- Botão 2 -->
-          <label for="problem-quimica"
-            class="label-cabelo hair-issue">
+          <label for="problem-quimica" class="label-cabelo hair-issue">
             <input disabled id="problem-quimica" name="issues" type="checkbox" value="Química" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -135,8 +122,7 @@
           </label>
 
           <!-- Botão 3 -->
-          <label for="problem-oleoso"
-            class="label-cabelo hair-issue">
+          <label for="problem-oleoso" class="label-cabelo hair-issue">
             <input disabled id="problem-oleoso" name="issues" type="checkbox" value="Oleoso" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -144,8 +130,7 @@
           </label>
 
           <!-- Botão 4 -->
-          <label for="problem-ressecado"
-            class="label-cabelo hair-issue">
+          <label for="problem-ressecado" class="label-cabelo hair-issue">
             <input disabled id="problem-ressecado" name="issues" type="checkbox" value="Ressecado" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -153,8 +138,7 @@
           </label>
 
           <!-- Botão 5 -->
-          <label for="problem-quebradico"
-            class="label-cabelo hair-issue">
+          <label for="problem-quebradico" class="label-cabelo hair-issue">
             <input disabled id="problem-quebradico" name="issues" type="checkbox" value="Quebradiço" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
               class="w-[18px] aspect-square checkbox-icon" />
@@ -162,8 +146,7 @@
           </label>
 
           <!-- Botão 6 -->
-          <label for="problem-frizz"
-            class="hair-issue label-cabelo">
+          <label for="problem-frizz" class="hair-issue label-cabelo">
             <input disabled id="problem-frizz" name="issues" type="checkbox" value="Frizz" class="hidden" />
             <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone" class="w-5 h-5 checkbox-icon" />
             Frizz
@@ -176,7 +159,7 @@
         <h2 class="text-[1.375rem] font-semibold text-center">
           Agendamento atual
         </h2>
-        <ul class="">
+        <ul id="user-schedules" class="">
           <li class="flex flex-col items-center mb-2">
             <span class="opacity-[.32]">Sem agendamento marcado!</span>
           </li>
@@ -206,6 +189,7 @@
 
   <script src="./script-profile.js"></script>
   <script src="./script-profile-data.js" type="module"></script>
+  <script src="./script-profile-schedule.js" type="module"></script>
 </body>
 
 </html>

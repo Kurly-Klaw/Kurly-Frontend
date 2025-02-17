@@ -1,16 +1,17 @@
 const daysContainer = document.getElementById('days-container');
 const numeroDoDia = document.getElementById('numero-do-dia');
 const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']; // Domingo a Sábado
+const data = new Date().toISOString()
+
 
 // Gerar 31 dias
 for (let day = 1; day <= 31; day++) {
-    const date = new Date();
-    date.setDate(day);
-    const weekDayIndex = date.getDay(); // 0 (Domingo) a 6 (Sábado)
-
-    const dayElement = document.createElement('label');
-    dayElement.className = 'flex flex-col items-center cursor-pointer flex-shrink-0';
-    dayElement.innerHTML = `
+  const date = new Date();
+  date.setDate(day);
+  const weekDayIndex = date.getDay(); // 0 (Domingo) a 6 (Sábado)
+  const dayElement = document.createElement('label');
+  dayElement.className = 'flex flex-col items-center cursor-pointer flex-shrink-0';
+  dayElement.innerHTML = `
         <input type="radio" name="day" class="day-radio" ${day === 1 ? 'checked' : ''}>
         <p class="text-sm font-medium mb-1">${weekDays[weekDayIndex]}</p>
         <div class="day-number aspect-square w-7 border-black border rounded-full flex items-center justify-center">
@@ -18,15 +19,15 @@ for (let day = 1; day <= 31; day++) {
         </div>
     `;
 
-    // Selecionar o input radio e adicionar evento de change
-    const radioInput = dayElement.querySelector('input');
-    radioInput.addEventListener('change', () => {
-        if (radioInput.checked) {
-            numeroDoDia.textContent = day; // Atualiza o número do dia
-        }
-    });
+  // Selecionar o input radio e adicionar evento de change
+  const radioInput = dayElement.querySelector('input');
+  radioInput.addEventListener('change', () => {
+    if (radioInput.checked) {
+      numeroDoDia.textContent = day; // Atualiza o número do dia
+    }
+  });
 
-    daysContainer.appendChild(dayElement);
+  daysContainer.appendChild(dayElement);
 }
 
 // Inicializa o número do dia com o valor 1 (já que o dia 1 começa selecionado)
@@ -38,18 +39,18 @@ let startHour = 7;
 function toggleDisponibilidade(event) {
   const article = event.currentTarget;
   const disponivel = article.getAttribute('data-disponivel') === 'true';
-  
+
   // Alterna estado
   const novoEstado = !disponivel;
   article.setAttribute('data-disponivel', novoEstado);
-  
+
   // Atualiza estilo e texto
   const texto = article.querySelector('.font-semibold');
   texto.textContent = novoEstado ? 'Disponível' : 'Indisponível';
-    
-  
- // Aplica opacidade ao fundo e ao texto
- if (novoEstado) {
+
+
+  // Aplica opacidade ao fundo e ao texto
+  if (novoEstado) {
     article.style.backgroundColor = '#EEEEEE'; // Cor original
     article.style.opacity = '1'; // Opacidade total
   } else {
@@ -57,17 +58,17 @@ function toggleDisponibilidade(event) {
     article.style.opacity = '0.32'; // Opacidade 12%
   }
 }
- 
 
 
-for(let i = 0; i < 5; i++) {
+
+for (let i = 0; i < 5; i++) {
   const endHour = startHour + 2;
-  
+
   const timeArticle = document.createElement('article');
   timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors cursor-pointer';
   timeArticle.style.backgroundColor = '#EEEEEE';
   timeArticle.setAttribute('data-disponivel', 'true');
-  
+
   timeArticle.innerHTML = `
     <p class="font-semibold">Disponível</p>
     <div class="flex gap-1 items-center">

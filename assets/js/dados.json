@@ -12,7 +12,7 @@
         "service-1",
         "service-3"
       ],
-      "img": "./src/Item-1.png",
+      "img": "../assets/src/services/Item-1.png",
       "isPromo": true
     },
     "combo-2": {
@@ -29,7 +29,7 @@
         "opcional-1",
         "opcional-3"
       ],
-      "img": "./src/Item-2.png",
+      "img": "../assets/src/services/Item-2.png",
       "isPromo": true
     },
     "service-1": {
@@ -40,7 +40,7 @@
       "detailText2": "Consultoria especial: suas histórias capilares são ouvidas para solu-ções personalizadas. Lavagem relaxante: um momento sublime de tranquilidade para dis-sipar o estresse Finalizaçao perfeita: seus cabelos saem prontos para arrasar",
       "duracao": "1h30 – 2h",
       "preco": 120,
-      "img": "./src/corte.png",
+      "img": "../assets/src/services/corte.png",
       "isPromo": false
     },
     "service-2": {
@@ -51,7 +51,7 @@
       "detailText2": "Consiste em um trata-mento básico com linhas nacionais! Inclui: Lavagem relaxante Protocolo customizado para necessidades bási-cas Secagem e estilização",
       "duracao": "1h30 – 2h",
       "preco": 160,
-      "img": "./src/detox.png",
+      "img": "../assets/src/services/detox.png",
       "isPromo": false
     },
     "service-3": {
@@ -62,7 +62,7 @@
       "detailText2": "Ideal para cabelos poro-sos e resistentes a tratamentos comuns Detox profundo para  remover  resíduos Protocolo com óleos e manteigas naturais para renovar, nutrir e selar as cutículas. Seu cabelo será renovado, com saúde e brilho",
       "duracao": "1h30 – 2h",
       "preco": 20,
-      "img": "./src/ozonio.png",
+      "img": "../assets/src/services/ozonio.png",
       "isPromo": false
     }
   },
@@ -72,9 +72,9 @@
       "nome": "Detox",
       "titulo": "Repõe lipidios e nutrientes ao cabelo.",
       "detailText1": "Melhora o aspecto geral e de saude do cabelo.",
-      "detailText2": "",
+      "detailText2": "Ideal para cabelos poro-sos e resistentes a tratamentos comuns Detox profundo para  remover  resíduos Protocolo com óleos e manteigas naturais para renovar, nutrir e selar as cutículas.",
       "preco": 50,
-      "img": "./src/detox.png"
+      "img": "../assets/src/services/detox.png"
     },
 	"opcional-2": {
       "id": 2,
@@ -83,7 +83,7 @@
       "detailText1": "Melhora o aspecto geral e de saude do cabelo.",
       "detailText2": "",
       "preco": 50,
-      "img": "./src/umeccao.png"
+      "img": "../assets/src/services/umeccao.png"
     },
 	"opcional-3": {
       "id": 3,
@@ -92,7 +92,7 @@
       "detailText1": "Melhora o aspecto geral e de saude do cabelo.",
       "detailText2": "",
       "preco": 50,
-      "img": "./src/ozonio.png"
+      "img": "../assets/src/services/ozonio.png"
     }
   },
   "cliente": {

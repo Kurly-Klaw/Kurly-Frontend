@@ -1,4 +1,5 @@
 :root {
+  --offwhite: #c5c5c5;
   --fundo: #47061E;
   --fundo-mais: #25030f;
   --primaria: #EEEEEE;
@@ -12,6 +13,18 @@
 
 * {
   color: black;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+input,
+textarea {
+  user-select: text;
 }
 
 .titulo {
@@ -94,8 +107,8 @@ hr {
 }
 
 .btn-desabilitado,
-button.included {
-  opacity: 0.32;
+button.btnIncluido {
+  opacity: 0.52;
 }
 
 /* Estilo quando o radio está selecionado */
@@ -108,11 +121,13 @@ button.included {
   color: white;
 }
 
-.dtCard {
-  background-color: #d83c73;
+.produto .imgCard{
+  background-color: transparent;
 }
 
-
+.produto.expanded .imgCard{
+  background-color: var(--offwhite);
+}
 /* Track */
 #promo-list::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -135,7 +150,7 @@ button.included {
   background-color: transparent;
 }
 
-#infos{
+#infos {
   background: #fafafa;
 }
 

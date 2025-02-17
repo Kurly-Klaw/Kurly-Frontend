@@ -5,42 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início</title>
-    <!-- icon do site -->
+
+    <!-- Ícone do site -->
     <link rel="shortcut icon" href="./assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon">
-    
-    <!-- layout geral da página -->
-    <link rel="stylesheet" href="./assets/css/wind.css">
-    <!-- animação dos elementos da página -->
-    <link rel="stylesheet" href="./assets/css/anima.css">
-    <!-- Tema do site -->
-    <link rel="stylesheet" href="./assets/css/colors.css">
-    
+
+    <!-- Estilos da página -->
+    <link rel="stylesheet" href="./assets/css/wind.css"> <!-- Layout geral -->
+    <link rel="stylesheet" href="./assets/css/anima.css"> <!-- Animações -->
+    <link rel="stylesheet" href="./assets/css/colors.css"> <!-- Tema do site -->
+
+    <!-- Ícones do Google Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/listServices.js"></script>
-    <script src="./assets/js/localStorage.js"></script>
-    <script src="./assets/js/sessionStorage.js"></script>
-
+    <!-- Scripts JavaScript -->
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/listServices.js" defer></script>
+    <script src="./assets/js/localStorage.js" defer></script>
+    <script src="./assets/js/sessionStorage.js" defer></script>
 </head>
 
 <body>
+    <!-- Barra de navegação superior -->
     <nav class="sup-nav">
-        <img src="./assets/src/logo/Coroa-Madrinhas.png" class="logo">
+        <img src="./assets/src/logo/Coroa-Madrinhas.png" alt="Logo Madrinha's" class="logo">
         <h1 class="page-title">Madrinha's</h1>
     </nav>
 
+    <!-- Cabeçalho com promoções -->
     <header>
         <h2>Promoções</h2>
-        <ul id="promo-list">
-        </ul>
+        <ul id="promo-list"></ul>
     </header>
 
+    <!-- Conteúdo principal -->
     <main>
         <h2 class="list-title">Serviços</h2>
         <ul id="services-list"></ul>
     </main>
 
+    <!-- Rodapé com navegação inferior -->
     <footer>
         <nav class="sub-nav">
             <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
@@ -56,3 +59,5 @@
         </nav>
     </footer>
 </body>
+
+</html>

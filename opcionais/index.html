@@ -5,23 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acréscimo</title>
-    <!-- icon do site -->
-    <link
-      rel="shortcut icon"
-      href="../assets/src/logo/Coroa-Madrinhas.png"
-      type="image/x-icon"
-    />
-    <!-- Estilos  -->
-    <link rel="stylesheet" href="../assets/css/wind.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/colors.css" />
+
+  <!-- Ícone do site -->
+  <link rel="shortcut icon" href="../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../assets/css/wind.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/anima.css" />
+  <link rel="stylesheet" href="../assets/css/colors.css" />
+
+
+  <!-- Ícones do Google Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-  <script src="../assets/js/listServices.js"></script>
-
 </head>
 
 <body class="flex-col w-full max-w-md mx-auto md:flex">
+  <!-- Navegação superior -->
   <nav class="select-service">
     <a aria-label="Voltar" href="../">
       <img src="../assets/src/icons/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
@@ -29,10 +29,13 @@
     <h1>Adicionar acréscimo</h1>
   </nav>
 
+  <!-- Cabeçalho com serviço escolhido -->
   <header>
     <h2 class="titulo">Serviço escolhido</h2>
-    <div id="select-service">
-      <div class="imgCard"><img id="select-service-img"></div>
+    <div id="select-service" class="selected">
+      <div id="img-service" class="imgCard">
+        <img id="select-service-img" alt="Imagem do serviço">
+      </div>
       <div class="select-service-text">
         <div class="hdCard">
           <h3 id="select-service-title"></h3>
@@ -45,13 +48,16 @@
     </div>
   </header>
 
-
-  <main class="flex flex-col gap-2 p-4 mb-2 rounded-lg">
+  <!-- Conteúdo principal -->
+  <main class="flex flex-col gap-2 p-4 mb-8 rounded-lg">
     <h2 class="font-semibold titulo">Acréscimos</h2>
     <ul id="more-list"></ul>
 
+    <!-- Botão para continuar -->
     <a class="continuar" aria-label="Continuar" href="../horario">Continuar</a>
   </main>
+
+  <!-- Rodapé com navegação inferior -->
   <footer>
     <nav class="sub-nav">
       <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../'">
@@ -66,7 +72,9 @@
       </label>
     </nav>
   </footer>
-
+  <!-- Scripts JavaScript -->
+  <script type="module" src="./cart.js"></script>
+  <script type="module" src="./services.js"></script>
 </body>
 
 </html>

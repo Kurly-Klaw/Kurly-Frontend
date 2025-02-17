@@ -6,11 +6,11 @@ export function createSchedule(payload) {
 };
 
 export function getSchedule(start_date, end_date) {
-    const headers = {
+    const url = ('/schedule?' + new URLSearchParams({
         start_date: start_date,
         end_date: end_date
-    };
-    return api.get('/schedule', headers)
+    }).toString())
+    return api.get(url)
 };
 
 export function updateSchedule(payload, start_date, end_date) {

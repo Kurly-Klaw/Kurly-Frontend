@@ -4,7 +4,7 @@
 
 /* Layout global */
 body {
-  @apply flex flex-col w-full max-w-md mx-auto md:flex ;
+  @apply flex flex-col w-full max-w-md mx-auto md:flex;
 }
 
 body::-webkit-scrollbar {
@@ -30,25 +30,31 @@ main {
   @apply rounded-t-none
 }
 
-
 section {
-  @apply flex flex-col items-center w-full gap-4 p-4 mb-3 rounded-lg;
+  @apply flex flex-col h-fit gap-2 p-4 mb-2 rounded-b-lg;
 }
-section:first-of-type{
+
+section.center {
+  @apply items-center;
+}
+
+section:first-of-type {
   @apply rounded-t-none
 }
 
+
+
 footer {
-  @apply fixed bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
+  @apply sticky bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
 }
 
 /* Layout do profile */
 
-article#infos{
+article#infos {
   @apply flex flex-col cursor-pointer h-fit;
 }
 
-.hair-issue{
+.hair-issue {
   @apply flex items-center h-[44px] gap-2 text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all
 }
 
@@ -61,10 +67,11 @@ article#infos{
   @apply flex flex-row;
 }
 
-.escondido{
+.escondido {
   @apply h-0 opacity-0;
 }
-.escondido.expanded{
+
+.escondido.expanded {
   @apply h-fit opacity-100
 }
 
@@ -129,7 +136,8 @@ nav.select-service h1 {
 }
 
 /* Lista de promoções */
-#promo-list,scroll-container {
+#promo-list,
+scroll-container {
   @apply flex p-4 space-x-4 overflow-x-auto h-fit scroll-smooth snap-x snap-mandatory;
 }
 
@@ -145,11 +153,10 @@ nav.select-service h1 {
   @apply hidden;
 }
 
-#promo-list .dtCard {
-  @apply hidden;
-}
+
 
 /* Cards de produto */
+
 .produto {
   @apply flex flex-col max-w-2xl mb-2 text-white shadow-lg rounded-xl relative cursor-pointer h-[144px];
 }
@@ -158,16 +165,14 @@ nav.select-service h1 {
   @apply absolute pt-2;
 }
 
+#promo-list .dtCard {
+  @apply hidden;
+}
+.select-service-text .dtCard {
+  @apply block col-span-2 row-start-2;
+}
 .produto>.dtCard {
   @apply absolute block row-start-2 overflow-hidden text-justify top-1/4;
-}
-
-.produto .imgCard {
-  @apply flex self-start object-cover object-top w-20 h-20 pl-0 rounded-lg aspect-square;
-}
-
-.promo .imgCard img {
-  @apply w-[345px] h-[224px];
 }
 
 .btnCard {
@@ -183,6 +188,16 @@ nav.select-service h1 {
   @apply grid grid-cols-3 gap-x-2;
 }
 
+.promo .imgCard img {
+  @apply w-[345px] h-[224px];
+}
+
+
+.produto .imgCard {
+  @apply flex self-start object-cover object-top w-fit h-20 pl-0 aspect-square;
+}
+
+
 #selected-service .imgCard {
   @apply col-start-1 row-span-2 row-start-1;
 }
@@ -191,9 +206,7 @@ nav.select-service h1 {
   @apply flex flex-col col-span-3 col-start-2;
 }
 
-.select-service-text .dtCard {
-  @apply block col-span-2 row-start-2;
-}
+
 
 #servico-selecionado {
   @apply flex flex-row;
@@ -203,13 +216,23 @@ nav.select-service h1 {
   @apply flex h-36 w-36;
 }
 
-.img-container img {
-  @apply aspect-square;
+.img-container img,
+.imgCard img {
+  @apply aspect-square h-[80px] w-[80px];
 }
 
 .selected-card {
   @apply ml-2;
 }
+
+.selected .imgCard{
+  @apply w-full
+}
+
+.selected .imgCard img{
+  @apply w-full h-auto aspect-square object-cover rounded-xl
+}
+
 
 /* Texto e tipografia */
 h1 {
@@ -298,10 +321,12 @@ form {
 .seta {
   @apply absolute right-0 py-2 mr-12;
 }
-.setas{
+
+.setas {
   @apply mt-0 top-0 flex
 }
-.seta.invertido,.setas.invertido{
+
+.seta.invertido, .setas.invertido {
   @apply rotate-180;
 }
 

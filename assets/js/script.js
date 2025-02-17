@@ -23,10 +23,3 @@ function slidePromo(event){
         block: 'center'})
   }
 }
-
-
-function load() {
-  listServices();
-}
-
-document.addEventListener("DOMContentLoaded", load);

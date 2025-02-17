@@ -12,7 +12,7 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
       const selectedLabel = e.target.closest('label'); // Encontra o label correspondente
       selectedLabel.querySelector('.radio-icon').src = "../assets/src/icons/Radio-checked.png";
     });
-  });
+  }); 
   
   document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.addEventListener('change', (e) => {
@@ -45,18 +45,21 @@ const decreaseButton = document.getElementById("decrease");
 const increaseButton = document.getElementById("increase");
 
 // Função para diminuir o valor do slider
-decreaseButton.addEventListener("click", () => {
-    if (slider.value > slider.min) {
-        slider.value -= 1;
-    }
-});
+// decreaseButton.addEventListener("click", () => {
+//     if (slider.value > slider.min) {
+//         slider.value = parseInt(slider.value) - 1;
+//         slider.dispatchEvent(new Event("input"));
+//     }
+// });
 
 // Função para aumentar o valor do slider
-increaseButton.addEventListener("click", () => {
-    if (slider.value < slider.max) {
-        slider.value = parseInt(slider.value) + 1;
-    }
-});
+// increaseButton.addEventListener("click", () => {
+//     if (slider.value < slider.max) {
+//         slider.value = parseInt(slider.value) + 1;
+//         slider.dispatchEvent(new Event("input"));
+//     }
+// });
+
 
 
 function proximaPagina(){

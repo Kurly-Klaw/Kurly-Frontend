@@ -1,118 +1,82 @@
-const listCart = sessionStorage.getItem("carrinho")
+// Obtém os itens do carrinho da sessionStorage
+const listCart = sessionStorage.getItem("carrinho");
+console.log(listCart);
 
-console.log(listCart)
+document.addEventListener("DOMContentLoaded", listServices);
 
 async function listServices() {
-  //Definie quais serão os pais dos elementos
-  const promoList = document.getElementById("promo-list");
-  const servicesList = document.getElementById("services-list");
-  const adictionList = document.getElementById("more-list");
-  const serviceDiv = document.getElementById("select-service");
-  const carrinho = JSON.parse(localStorage.getItem("carrinho"));
+    const promoList = document.getElementById("promo-list");
+    const servicesList = document.getElementById("services-list");
+    const adictionList = document.getElementById("more-list");
+    const carrinho = JSON.parse(localStorage.getItem("carrinho"));
+    try {
+        const response = await fetch("./assets/js/dados.json");
+        const data = await response.json();
 
-  //pega os dados para popular
-  fetch("./assets/js/dados.json")
-    .then((file) => file.json())
-    .then((data) => {
-      //verifica se existem os elementos pai na página
-      if (promoList || servicesList || adictionList) {
+        if (promoList || servicesList) {
+            console.log("Populando listas de serviços...");
 
+            Object.entries(data.items).forEach(([key, item]) => {
+                const isPromo = item.isPromo;
+                const btnText = "Agendar";
+                if (isPromo && promoList) promoList.appendChild(createItem(key, item, isPromo, btnText));
+                if (!isPromo && servicesList) servicesList.appendChild(createItem(key, item, isPromo, btnText));
+            });
 
-        Object.keys(data.items).forEach((key) => {
-
-          //Constantes utilizadas para criar os itens
-          const item = data.items[key];
-          const isPromo = item.isPromo;
-          let btnText = "Agendar";
-
-          //Anexa os itens criados nas listas UL pai
-          if (isPromo && promoList) promoList.appendChild(createItem(key, item, isPromo, btnText));
-          if (!isPromo && servicesList) servicesList.append(createItem(key, item, isPromo, btnText));
-
-        });
-        Object.keys(data.acrescimos).forEach((key) => {
-          //Constantes utilizadas para criar os itens
-          const item = data.acrescimos[key];
-          let btnText = "Adicionar";
-
-          if (adictionList) adictionList.append(createItem(key, item, false, btnText, true))
-        })
-
-      }
-
-      // btnEventListeners();
-    });
+            Object.entries(data.acrescimos).forEach(([key, item]) => {
+                const btnText = "Adicionar";
+                if (adictionList) adictionList.appendChild(createItem(key, item, false, btnText, true));
+            });
+        }
+    } catch (error) {
+        console.error("Erro ao carregar serviços:", error);
+    }
 }
 
-
 function createItem(key, item, isPromo, btnText, adictionList = false) {
+    console.log("Criando item");
+    const produto = document.createElement("li");
+    const container = document.createElement("div");
 
-  //Constantes utilizadas para criar os itens
-  const produto = document.createElement("li")
-  const container = document.createElement("div")
+    let subtitulo = adictionList ? `+ R$ ${item.preco}` : `R$ ${item.preco} • ${item.duracao}`;
+    let btnclasse = "btnAgendar";
+    let btnfuncao = adictionList ? "onclick='btnAdditionalPressed(event)'" : "onclick='btnProductPressed(event)'";
+    let data_includes = "";
 
-  //Variaveis para os itens
-  let subtitulo, classes, btnfuncao, funcao, btnclasse = "btnAgendar"
-  let data_id, data_includes = ""
-  //console.warn(item)
-
-  //Modificando cada item a depender do contexto
-  if (adictionList) //Se há lista de adicionais
-  {
-    subtitulo = `+ R$ ${item.preco}`;
-    let isSelected = JSON.parse(listCart).additionalSelection.indexOf(key) != -1
-    if(isSelected){ btnclasse = "btnAdicionar selected"
-      btnText = "Adicionado"
+    if (adictionList) {
+        const isSelected = JSON.parse(listCart).additionalSelection.includes(key);
+        btnclasse = isSelected ? "btnAdicionar selected" : "btnAdicionar";
+        btnText = isSelected ? "Adicionado" : btnText;
     }
-    else btnclasse = "btnAdicionar"
-    btnfuncao = "onclick='btnAdditionalPressed(event)'"
-  }
-  else {
-    subtitulo = `R$ ${item.preco} • ${item.duracao}`;
-    btnfuncao = "onclick='btnProductPressed(event)'"}
 
-  if (isPromo) { //Se item é Promoção
-    if(item.inclui) {
-      classes = "promo combo"
-      data_includes = `data-includes='[${item.inclui}]'`
-    }
-      else classes = "promo"
-    funcao = "onclick='slidePromo(event)'"
-  }
-  else {
-    classes = "produto"
-    funcao = "onclick='toggleCard(event)'"
-  }
+    const classes = isPromo ? (item.inclui ? "promo combo" : "promo") : "produto";
+    const funcao = isPromo ? "onclick='slidePromo(event)'" : "onclick='toggleCard(event)'";
+    if (item.inclui) data_includes = `data-includes='[${item.inclui}]'`;
 
-  //Estrutura do item
-  produto.innerHTML =
-    `<article class=${classes} id=${key} ${funcao}>
-<div class="imgCard">
-<img src="${item.img}" alt="Imagem do serviço ${item.nome}.">
-</div>
-</article>`
+    produto.innerHTML = `
+        <article class="${classes}" id="${key}" ${funcao}>
+            <div class="imgCard">
+                <img src="${item.img}" alt="Imagem do serviço ${item.nome}">
+                <div class="dtCard hidden">
+                    <p>${item.detailText1}</p>
+                    <p>${item.detailText2}</p>
+                </div>
+            </div>
+        </article>
+    `;
 
-  //Estrutura do container dos detalhes do item
-  container.innerHTML =
-    `<div class="hdCard">
-<h3>${item.nome}</h3>
-<p>${subtitulo}</p>
-</div>
-<div class="dtCard">
-<p>${item.detailText1}</p>
-<p>${item.detailText2}</p>
-</div>
-<div class="btnCard">
-<button class= '${btnclasse}' ${btnfuncao} ${data_includes} data-id="${key}">${btnText}</button>
-</div>
-<div class="seta"> ▲</div>`
+    container.innerHTML = `
+        <div class="hdCard">
+            <h3>${item.nome}</h3>
+            <p>${subtitulo}</p>
+        </div>
+        <div class="btnCard">
+            <button class="${btnclasse}" ${btnfuncao} ${data_includes} data-id="${key}">${btnText}</button>
+        </div>
+        <div class="seta"> ▲</div>
+    `;
 
-  //Define classe pro container de detalhes
-  container.classList.add("txtcontainer")
-
-  //Verifica se é promo e então coloca OU o container inteiro OU apenas seu conteúdo
-  if (isPromo) produto.querySelector("article").append(container)
-  else produto.querySelector("article").append(...container.childNodes)
-
-  return produto
+    container.classList.add("txtcontainer");
+    isPromo ? produto.querySelector("article").append(container) : produto.querySelector("article").append(...container.childNodes);
+    return produto;
 }

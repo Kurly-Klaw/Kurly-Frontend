@@ -1,4 +1,5 @@
 import { getUser, updateUser } from "../routes/UserRoutes.js";
+import {pushForm} from "./script-profile-form.js";
 const infos = document.getElementById("infos");
 const botaoLogin = document.getElementById("btn-login-btn");
 const nome = document.getElementById("user-name");
@@ -10,7 +11,7 @@ let formulario = document.getElementById("formulario");
 document.addEventListener("DOMContentLoaded", async (e) => {
   e.preventDefault();
   const userId = sessionStorage.getItem("user_id");
-  console.log(userId);
+  //console.log(userId);
   const mainElement = document.getElementById("profile");
   if (!userId) {
     //mainElement.style.display = "none";
@@ -19,12 +20,14 @@ document.addEventListener("DOMContentLoaded", async (e) => {
     mainElement.style.display = "flex";
     infos.classList.remove("rounded-b-lg");
     botaoLogin.style.display = "none";
+    
     let get = await getUser(userId);
-    console.warn(get.name);
+    //console.log(get);
     nome.textContent = get.name;
     contato.textContent = get.phone_number;
     email.textContent = get.email;
     id.textContent = userId;
+    let form = pushForm(get.hair_problems,get.hair_size,get.hair_type)
   }
 });
 
@@ -33,26 +36,26 @@ formulario.addEventListener("submit", async (e) => {
 
   //Previne o recarregamento da página
   e.preventDefault();
-  console.log(userId);
+  //console.log(userId);
   //Pega os dados do formulario
   let hairType = document.querySelector('input[name="hairType"]:checked').value;
   let size = document.querySelector("#hair-size");
   let issues = document.querySelectorAll('input[name="issues"]:checked');
-  size = { 1: "Curto", 2: "Médio", 3: "Longo" }[size.value];
+  size = { 0: "Curto", 1: "Médio", 2: "Longo" }[size.value];
 
   let temp = [];
   for (let i = 0; i < issues.length; i++) temp.push(issues[i].value);
   issues = temp;
-  console.warn(hairType, size, issues);
+ // //console.warn(hairType, size, issues);
 
   let get = await updateUser(
     {
-      hair_size: `${size}`,
-      hair_type: `${size}`,
-      hair_problems: issues,
+      "hair_size": `${size}`,
+      "hair_type": `${hairType}`,
+      "hair_problems": issues,
     },
     userId
   );
-  console.error("AAAAAAAAAA", await getUser(userId));
+  //console.log(get);
 });
 
