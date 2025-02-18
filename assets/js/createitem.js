@@ -1,50 +1,19 @@
-// Obtém os itens do carrinho da sessionStorage
-const listCart = sessionStorage.getItem("carrinho");
-console.log(listCart);
-
-document.addEventListener("DOMContentLoaded", listServices);
-
-async function listServices() {
-    const promoList = document.getElementById("promo-list");
-    const servicesList = document.getElementById("services-list");
-    const adictionList = document.getElementById("more-list");
-    const carrinho = JSON.parse(localStorage.getItem("carrinho"));
-    try {
-        const response = await fetch("./assets/js/dados.json");
-        const data = await response.json();
-
-        if (promoList || servicesList) {
-            console.log("Populando listas de serviços...");
-
-            Object.entries(data.items).forEach(([key, item]) => {
-                const isPromo = item.isPromo;
-                const btnText = "Agendar";
-                if (isPromo && promoList) promoList.appendChild(createItem(key, item, isPromo, btnText));
-                if (!isPromo && servicesList) servicesList.appendChild(createItem(key, item, isPromo, btnText));
-            });
-
-            Object.entries(data.acrescimos).forEach(([key, item]) => {
-                const btnText = "Adicionar";
-                if (adictionList) adictionList.appendChild(createItem(key, item, false, btnText, true));
-            });
-        }
-    } catch (error) {
-        console.error("Erro ao carregar serviços:", error);
-    }
-}
-
-function createItem(key, item, isPromo, btnText, adictionList = false) {
+export function createItem(key="Vazio", item={}, isPromo = false, btnText = "Agendar", adictionList = false) {
     console.log("Criando item");
+    
     const produto = document.createElement("li");
     const container = document.createElement("div");
-
+    
     let subtitulo = adictionList ? `+ R$ ${item.preco}` : `R$ ${item.preco} • ${item.duracao}`;
     let btnclasse = "btnAgendar";
+
     let btnfuncao = adictionList ? "onclick='btnAdditionalPressed(event)'" : "onclick='btnProductPressed(event)'";
     let data_includes = "";
 
+
+
     if (adictionList) {
-        const isSelected = JSON.parse(listCart).additionalSelection.includes(key);
+        const isSelected = JSON.parse(carrinho).additionalSelection.includes(key);
         btnclasse = isSelected ? "btnAdicionar selected" : "btnAdicionar";
         btnText = isSelected ? "Adicionado" : btnText;
     }
@@ -73,7 +42,7 @@ function createItem(key, item, isPromo, btnText, adictionList = false) {
         <div class="btnCard">
             <button class="${btnclasse}" ${btnfuncao} ${data_includes} data-id="${key}">${btnText}</button>
         </div>
-        <div class="seta"> ▲</div>
+        <div class="seta">▲</div>
     `;
 
     container.classList.add("txtcontainer");

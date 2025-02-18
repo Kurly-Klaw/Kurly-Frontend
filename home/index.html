@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+
+    <!-- Ícone do site -->
+    <link rel="shortcut icon" href="../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon">
+
+    <!-- Estilos da página -->
+    <link rel="stylesheet" href="../assets/css/wind.css"> <!-- Layout geral -->
+    <link rel="stylesheet" href="../assets/css/anima.css"> <!-- Animações -->
+    <link rel="stylesheet" href="../assets/css/colors.css"> <!-- Tema do site -->
+
+    <!-- Ícones do Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Scripts JavaScript -->
+    <script  type="module" src="./script.js" defer></script>
+    <script type="module" src="./script-listservices.js" defer></script>
+</head>
+
+<body>
+    <!-- Barra de navegação superior -->
+    <nav class="sup-nav">
+        <img src="../assets/src/logo/Coroa-Madrinhas.png" alt="Logo Madrinha's" class="logo">
+        <h1 class="page-title">Madrinha's</h1>
+    </nav>
+
+    <!-- Cabeçalho com promoções populadas pelo script listservices.js -->
+    <header>
+        <h2>Promoções</h2>
+        <ul id="promo-list"></ul>
+    </header>
+
+    <!-- Conteúdo principal - lista populada pelo script listservices.js-->
+    <main>
+        <h2 class="list-title">Serviços</h2>
+        <ul id="services-list"></ul>
+    </main>
+
+    <!-- Rodapé com navegação inferior -->
+    <footer>
+        <nav class="sub-nav">
+            <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./index.html'">
+                <input type="radio" name="botao-nav-1" class="hidden peer">
+                <span class="home-icon material-icons">home</span>
+                <h4>Início</h4>
+            </label>
+            <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='./profile'">
+                <input type="radio" name="botao-nav-1" class="hidden peer">
+                <span class="home-icon material-icons">person</span>
+                <h4>Perfil</h4>
+            </label>
+        </nav>
+    </footer>
+</body>
+
+</html>

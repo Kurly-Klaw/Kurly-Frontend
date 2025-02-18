@@ -1,88 +1,81 @@
-let sessionCarrinho = JSON.parse(sessionStorage.getItem("carrinho"))
-if (sessionCarrinho == null) setCarrinho()
+import { getService } from "./catchservices.js"
 
-function setCarrinho() {
-    console.log("Uai")
+let carrinho = JSON.parse(sessionStorage.getItem("carrinho"))
+if (carrinho == null) setCarrinho()
+
+export function setCarrinho() {
     sessionStorage.setItem(
         "carrinho",
         JSON.stringify({
             selectedServiceKey: null,
-            selectedServiceData: {},
-            comboService: [],
+            selectedServicesData: [],
+            comboServiceKeys: [],
             additionalSelection: [],
             total: 0,
-            data: new Date().toISOString(),
         })
     )
-    sessionCarrinho = JSON.parse(sessionStorage.getItem("carrinho"))
+    carrinho = JSON.parse(sessionStorage.getItem("carrinho"))
 }
 
-function getCarrinho() {
+export function getCarrinho() {
+    if (!sessionStorage.getItem("carrinho")) setCarrinho()
     return JSON.parse(sessionStorage.getItem("carrinho"))
 }
 
-function editCarrinho(i, dado) {
+export async function editCarrinho(i, dado = {}) {
     switch (i) {
         case 'selectedKey':
-            sessionCarrinho.selectedServiceKey = dado;
+            editCarrinho("cleanSelectedServicesData")
+            carrinho.selectedServiceKey = dado;
+            if (dado.startsWith('s')) carrinho.selectedServicesData = [await getService(dado)];
             break;
 
         case 'selectedData':
-            sessionCarrinho.selectedServiceData = dado;
+            carrinho.selectedServiceData = dado;
             break;
 
         case 'comboService':
-            let opcionais = [];  // Lista de itens opcionais
-            sessionCarrinho.comboService = []; // Garantir que comboService seja resetado
+            editCarrinho("cleanCombo") // Garantir que comboService seja resetado
 
             // Loop para separar os opcionais e serviços principais
             for (let item of dado) {
-                
-                    sessionCarrinho.comboService.push(item);  // Adiciona item de comboService
-                
+                carrinho.comboServiceKeys.push(item);  // Adiciona item de comboService                
+                carrinho.selectedServicesData.push(await getService(item))
             }
-
-            sessionCarrinho.additionalSelection = opcionais;  // Atualiza a lista de opcionais
             break;
 
         case 'addSelection':
-            sessionCarrinho.additionalSelection = dado;  // Atualiza adicionalSelection
+            carrinho.additionalSelection = dado;  // Atualiza adicionalSelection
             break;
 
         case 'cleanCombo':
-            sessionCarrinho.comboService = [];  // Limpa o comboService
+            carrinho.comboServiceKeys = [];  // Limpa o comboService
+            break;
+        case 'cleanSelectedServicesData':
+            carrinho.selectedServicesData = [];  // Limpa o comboService
+            break;
+        case 'cleanadditional':
+            carrinho.additionalSelection = [];  // Limpa o comboService
             break;
     }
 
-    sessionCarrinho.data = new Date().toISOString();  // Atualiza a data do carrinho
     updateCart();  // Atualiza o carrinho na sessão
 }
 
 
-function updateCart() {
-    sessionStorage.setItem('carrinho', JSON.stringify(sessionCarrinho));
+export function updateCart() {
+    sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
-function addAdditionalSelection(cart, dataId) {
+export function addAdditionalSelection(cart, dataId) {
     let index = cart.additionalSelection.indexOf(dataId);
     if (index == -1) cart.additionalSelection.push(dataId);
     updateCart()
 }
 
-function rmvAdditionalSelection(cart, dataId) {
+export function rmvAdditionalSelection(cart, dataId) {
     let index = cart.additionalSelection.indexOf(dataId);
     if (index != -1) cart.additionalSelection.splice(index, 1);
     updateCart()
 }
 
-
-function btnProductPressed(event) {
-    const btn = event.currentTarget;
-    const idSelected = btn.getAttribute("data-id")
-    const includeSelected = btn.getAttribute("data-includes")
-    //console.warn(`Agendando o pedido ${idSelected}`);
-    editCarrinho("selectedKey", idSelected)
-    if (includeSelected) editCarrinho("comboService", includeSelected.replace(/[\[\]]/g, "").split(","))
-    else editCarrinho("cleanCombo")
-    window.location.href = "./opcionais";
-}
