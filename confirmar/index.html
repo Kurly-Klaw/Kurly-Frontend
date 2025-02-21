@@ -25,21 +25,21 @@
 <body class="font-sans">
   <main id="main-confirmar" class="max-w-md p-4 shadow-lg">
     <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
-    <div id="select-service" class="grid grid-cols-3 gap-4 items-start h-fit">
-      <div class=" h-full">
-        <img id="select-service-img" alt="Imagem do serviço" class="w-full h-full aspect-square object-cover rounded-lg">
+    <div id="select-service" class="grid items-start grid-cols-3 gap-4 h-fit">
+      <div class="h-full ">
+        <img id="select-service-img" alt="Imagem do serviço" class="object-cover w-full h-full rounded-lg aspect-square">
       </div>
 
-      <div class="select-service-text col-span-2">
+      <div class="col-span-2 select-service-text">
         <h3 id="select-service-title" class="text-lg font-medium" id="">Corte</h3>
         <p id="select-service-price" class="text-sm text-gray-600">R$120,00 • 1h30 – 2h.</p>
-        <p id="select-service-details" class="detalhe pt-2">Incluso: avaliação, lavagem e finalização.</p>
+        <p id="select-service-details" class="pt-2 detalhe">Incluso: avaliação, lavagem e finalização.</p>
       </div>
     </div>
     
     <ul id="additionalSelection"></ul>
 
-    <div class="flex justify-between items-center my-4 border-t bg-gray-200 rounded-lg p-4"> 
+    <div class="flex items-center justify-between p-4 my-4 bg-gray-200 border-t rounded-lg"> 
       <div class="text-xl font-semibold">
         Total: <span id="valortotal">R$ 220,00</span>
       </div>
@@ -47,7 +47,7 @@
     
       <div class="flex items-center space-x-2 ">
         <i class="text-black fas fa-calendar-alt"></i>
-        <div class="flex flex-col text-sm items-center">
+        <div class="flex flex-col items-center text-sm">
           <p id="selected-schedule">7:00 - 9:00</p>
           <p id="selected-date">31/01/2025</p>
         </div>
@@ -58,6 +58,23 @@
 
     <a id="btnConfirmar" class="px-4 py-2 continuar" href="../">Confirmar</a>
   </main>
+  
+  <div id="preFooter"></div>
+  
+  <footer>
+    <nav class="sub-nav">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer">
+        <span class="home-icon material-icons">home</span>
+        <h4>Início</h4>
+      </label>
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer">
+        <span class="home-icon material-icons">person</span>
+        <h4>Perfil</h4>
+      </label>
+    </nav>
+  </footer>
   <script src="./script-resume.js"></script>
   <script type="module" src="./script-register-schedule.js"></script>
 </body>

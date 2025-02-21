@@ -1,14 +1,16 @@
 :root {
   --offwhite: #c5c5c5;
-  --fundo: #47061E;
+  --fundo: #47061e;
+  --chips: #fa92374b;
   --fundo-mais: #25030f;
-  --primaria: #EEEEEE;
+  --primaria: #eeeeee;
   --secundaria: #d9d9d9;
   --terciaria: #502f2b;
-  --btn: #A76C39;
+  --btn: #a76c39;
   --btnd: #682c1d;
   --btnA: hsla(28, 49%, 44%, 0.388);
   --inputOk: #59881c;
+  --bluer: #ffffff3d;
 }
 
 * {
@@ -27,6 +29,12 @@ textarea {
   user-select: text;
 }
 
+dialog #popupContent {
+  border: 1px solid var(--offwhite);
+  background-color: var(--secundaria);
+}
+
+
 .titulo {
   font-weight: 600;
   color: var(--fundo);
@@ -34,6 +42,10 @@ textarea {
 
 body {
   background-color: var(--fundo);
+}
+
+dialog {
+  background-color: var(--bluer);
 }
 
 main,
@@ -51,16 +63,15 @@ footer {
 
 article.produto,
 .card {
-  background-color: var(--primaria)
+  background-color: var(--primaria);
 }
-article.produto.resume{
+article.produto.resume {
   background-color: transparent;
 }
 
 article.produto.selected {
-  background-color: transparent
+  background-color: transparent;
 }
-
 
 button {
   background-color: var(--fundo);
@@ -75,17 +86,16 @@ button {
 }
 
 button:hover,
-.label-cabelo:hover,
 a.continuar,
 .roxo {
-  background-color: var(--fundo)
+  background-color: var(--fundo);
 }
 
 button.btnAdicionar {
   border-color: var(--btnA);
   border-width: 1px;
   color: var(--fundo);
-  background-color: transparent
+  background-color: transparent;
 }
 
 button.btnAdicionar:hover,
@@ -93,20 +103,19 @@ button.selected,
 button.included {
   color: black;
   fill-opacity: 0;
-  background-color: var(--btnA)
+  background-color: var(--btnA);
 }
 
-
 .btnPromo button {
-  background-color: var(--fundo)
+  background-color: var(--fundo);
 }
 
 .btnPromo button:hover {
-  background-color: var(--fundo-mais)
+  background-color: var(--fundo-mais);
 }
 
 hr {
-  border-color: var(--fundo)
+  border-color: var(--fundo);
 }
 
 .btn-desabilitado,
@@ -115,20 +124,20 @@ button.btnIncluido {
 }
 
 /* Estilo quando o radio está selecionado */
-.day-radio:checked~.day-number {
+.day-radio:checked ~ .day-number {
   background-color: #502f2b;
   border-color: black;
 }
 
-.day-radio:checked~.day-number p {
+.day-radio:checked ~ .day-number p {
   color: white;
 }
 
-.produto .imgCard{
+.produto .imgCard {
   background-color: transparent;
 }
 
-.produto.expanded .imgCard{
+.produto.expanded .imgCard {
   background-color: var(--offwhite);
 }
 /* Track */
@@ -146,8 +155,6 @@ button.btnIncluido {
   background: #555;
 }
 
-
-
 .slider-input {
   border: solid black 1px;
   background-color: transparent;
@@ -163,14 +170,34 @@ button.btnIncluido {
 }
 
 .label-cabelo {
-  color: white;
-  background-color: var(--fundo)
+  color: black;
+  border: 1px var(--btn) solid;
+}
+
+.label-cabelo:hover {
+  background-color: var(--btnd);
+}
+
+.hair-issue:hover {
+  background-color: var(--btn);
+}
+
+input[type="checkbox"] + img {
+  width: 0px;
+}
+
+input[type="checkbox"]:checked + img {
+  width: 18px;
+  content: url("../src/icons/Checkbox-checked.png"); /* Troca a imagem */
+}
+
+.label-cabelo.checked {
+  background-color: var(--chips); /* Muda o fundo do label */
 }
 
 .label-tipo-cabelo {
-  background-color: var(--btn)
+  background-color: var(--btn);
 }
-
 
 input:valid {
   border-color: var(--inputOk);

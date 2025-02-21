@@ -11,6 +11,20 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+dialog:open {
+  backdrop-filter: blur(2px);
+
+  @apply items-center w-[100vw] h-[100vh] z-30 flex flex-col;
+}
+
+dialog #popupContent {
+  @apply flex flex-col w-72 h-72  items-center rounded-xl p-2 gap-y-3 fixed mt-[25vh] z-40 bg-white blur-0;
+}
+
+dialog .btn-login-container {
+  @apply mt-12;
+}
+
 header {
   @apply flex flex-col w-full h-full px-2 mb-2 rounded-b-2xl;
 }
@@ -22,19 +36,19 @@ main {
 }
 
 main {
-  margin-bottom: 6.25rem;
+  /* margin-bottom: 6.25rem; */
   @apply rounded-lg;
 }
-#main-confirmar{
-  @apply gap-0 px-4 py-0 rounded-b-lg rounded-t-none
+#main-confirmar {
+  @apply gap-0 px-4 py-0 rounded-t-none rounded-b-lg;
 }
 
 #profile {
-  @apply rounded-t-none
+  @apply rounded-t-none;
 }
 
 section {
-  @apply flex flex-col h-fit gap-2 p-4 mb-2 rounded-b-lg;
+  @apply flex flex-col gap-2 p-4 mb-2 rounded-b-lg h-fit;
 }
 
 section.center {
@@ -42,13 +56,15 @@ section.center {
 }
 
 section:first-of-type {
-  @apply rounded-t-none
+  @apply rounded-t-none;
 }
 
-
+#preFooter {
+  @apply sticky mb-[92px];
+}
 
 footer {
-  @apply sticky bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
+  @apply fixed bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
 }
 
 /* Layout do profile */
@@ -58,9 +74,8 @@ article#infos {
 }
 
 .hair-issue {
-  @apply flex items-center h-[44px] gap-2 text-white text-[14px] py-2 px-4 rounded-full cursor-pointer transition-all
+  @apply flex items-center h-fit w-fit gap-2 text-white text-[14px] py-1 px-4 rounded-md cursor-pointer transition-all;
 }
-
 
 /* article#infos > *{
   @apply overflow-hidden
@@ -75,9 +90,8 @@ article#infos {
 }
 
 .escondido.expanded {
-  @apply h-fit opacity-100
+  @apply opacity-100 h-fit;
 }
-
 
 /* Navegação */
 nav {
@@ -156,15 +170,13 @@ scroll-container {
   @apply hidden;
 }
 
-
-
 /* Cards de produto */
 
 .produto {
   @apply flex flex-col max-w-2xl mb-2 text-white shadow-lg rounded-xl relative cursor-pointer h-[144px];
 }
 
-.produto>.hdCard {
+.produto > .hdCard {
   @apply absolute pt-2;
 }
 
@@ -174,7 +186,7 @@ scroll-container {
 .select-service-text .dtCard {
   @apply block col-span-2 row-start-2;
 }
-.produto>.dtCard {
+.produto > .dtCard {
   @apply absolute block row-start-2 overflow-hidden text-justify top-1/4;
 }
 
@@ -195,11 +207,9 @@ scroll-container {
   @apply w-[345px] h-[224px];
 }
 
-
 .produto .imgCard {
-  @apply flex self-start object-cover object-top w-fit h-20 pl-0 aspect-square;
+  @apply flex self-start object-cover object-top h-20 pl-0 w-fit aspect-square;
 }
-
 
 #selected-service .imgCard {
   @apply col-start-1 row-span-2 row-start-1;
@@ -208,8 +218,6 @@ scroll-container {
 .select-service-text {
   @apply flex flex-col col-span-3 col-start-2;
 }
-
-
 
 #servico-selecionado {
   @apply flex flex-row;
@@ -228,39 +236,38 @@ scroll-container {
   @apply ml-2;
 }
 
-.selected .imgCard{
-  @apply w-full
+.selected .imgCard {
+  @apply w-full;
 }
 
-.selected .imgCard img{
-  @apply w-full h-auto aspect-square object-cover rounded-xl
+.selected .imgCard img {
+  @apply object-cover w-full h-auto aspect-square rounded-xl;
 }
 
 /* Confirmação */
 
-article.produto.resume{
-  @apply grid grid-cols-4 gap-4 shadow-none h-fit
+article.produto.resume {
+  @apply grid grid-cols-4 gap-4 shadow-none h-fit;
 }
 
-.imgCard.resume, .imgCard.resume img{
-  @apply w-full h-auto aspect-square
-} 
-
-
-
-.hdCard.resume, .dtCard.resume{
-  @apply relative
+.imgCard.resume,
+.imgCard.resume img {
+  @apply w-full h-auto aspect-square;
 }
 
-.hdCard.resume{
-  @apply col-span-3
+.hdCard.resume,
+.dtCard.resume {
+  @apply relative;
 }
 
+.hdCard.resume {
+  @apply col-span-3;
+}
 
 /* Texto e tipografia */
 
-hr{
-  @apply my-4
+hr {
+  @apply my-4;
 }
 
 h1 {
@@ -286,8 +293,8 @@ p {
   @apply text-sm;
 }
 
-p.detalhe{
-  @apply text-xs text-justify
+p.detalhe {
+  @apply text-xs text-justify;
 }
 
 /* Botões e links */
@@ -304,7 +311,7 @@ button.btn-login {
   @apply flex justify-center mt-2;
 }
 
-.line-align>li>a {
+.line-align > li > a {
   @apply text-center underline;
 }
 
@@ -313,9 +320,6 @@ button.btn-login {
 }
 
 /* Elementos de formulários */
-
-
-
 
 .scroll-container {
   -ms-overflow-style: none;
@@ -355,10 +359,11 @@ form {
 }
 
 .setas {
-  @apply mt-0 top-0 flex
+  @apply top-0 flex mt-0;
 }
 
-.seta.invertido, .setas.invertido {
+.seta.invertido,
+.setas.invertido {
   @apply rotate-180;
 }
 

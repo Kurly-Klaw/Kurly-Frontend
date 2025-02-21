@@ -6,6 +6,7 @@ const nome = document.getElementById("user-name");
 const contato = document.getElementById("user-phone_number");
 const email = document.getElementById("user-email");
 const id = document.getElementById("user-id");
+const popup = document.getElementById('doLogin')
 let formulario = document.getElementById("formulario");
 
 document.addEventListener("DOMContentLoaded", async (e) => {
@@ -15,9 +16,10 @@ document.addEventListener("DOMContentLoaded", async (e) => {
   const mainElement = document.getElementById("profile");
   if (!userId) {
     //mainElement.style.display = "none";
+    popup.showModal()
     infos.classList.add("rounded-b-lg");
   } else if (userId) {
-    mainElement.style.display = "flex";
+    popup.close()
     infos.classList.remove("rounded-b-lg");
     botaoLogin.style.display = "none";
     
