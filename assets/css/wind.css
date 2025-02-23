@@ -636,11 +636,6 @@ video {
   grid-column: span 3 / span 3;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -666,20 +661,8 @@ video {
   margin-bottom: 1rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.mr-1 {
-  margin-right: 0.25rem;
 }
 
 .mr-2 {
@@ -1066,6 +1049,10 @@ video {
   font-weight: 700;
 }
 
+.font-light {
+  font-weight: 300;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1154,6 +1141,7 @@ body::-webkit-scrollbar {
 dialog:open {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
+  position: fixed;
   z-index: 30;
   display: flex;
   height: 100vh;
@@ -1162,7 +1150,7 @@ dialog:open {
   align-items: center;
 }
 
-dialog #popupContent {
+dialog .popupContent {
   position: fixed;
   z-index: 40;
   margin-top: 25vh;
@@ -1253,7 +1241,7 @@ section:first-of-type {
 
 #preFooter {
   position: sticky;
-  margin-bottom: 92px;
+  margin-bottom: 128px;
 }
 
 footer {
@@ -1265,6 +1253,9 @@ footer {
   width: 100%;
   max-width: 28rem;
   flex-direction: column;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  padding: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -1338,16 +1329,16 @@ nav {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-nav.profile-nav {
+nav.sup-nav {
   flex-direction: row;
 }
 
-nav.profile-nav h1 {
+nav.sup-nav h1 {
   margin-left: auto;
   margin-right: auto;
 }
 
-nav.profile-nav a {
+nav.sup-nav a {
   margin-left: 0px;
 }
 
@@ -1490,7 +1481,7 @@ scroll-container {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.produto > .hdCard {
+.produto>.hdCard {
   position: absolute;
   padding-top: 0.5rem;
 }
@@ -1505,7 +1496,7 @@ scroll-container {
   display: block;
 }
 
-.produto > .dtCard {
+.produto>.dtCard {
   position: absolute;
   top: 25%;
   grid-row-start: 2;
@@ -1514,16 +1505,21 @@ scroll-container {
   text-align: justify;
 }
 
-.btnCard {
+.btnCard,.btnDiv {
   grid-column-start: 2;
-  grid-row-start: 1;
   display: flex;
-  height: 64px;
+  height: -moz-fit-content;
+  height: fit-content;
   align-items: flex-start;
   justify-content: flex-end;
+  gap: 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
+}
+
+.btnCancelar,.btnEditar {
+  margin-left: 0px;
 }
 
 .imgProduto {
@@ -1610,6 +1606,13 @@ scroll-container {
 
 /* Confirmação */
 
+article.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0.5rem;
+}
+
 article.produto.resume {
   display: grid;
   height: -moz-fit-content;
@@ -1681,8 +1684,7 @@ p.detalhe {
 
 button,
 a.continuar {
-  margin-top: 0px;
-  margin-bottom: 1rem;
+  margin: 0px;
   margin-left: auto;
   margin-right: 0px;
   border-radius: 9999px;
@@ -1706,7 +1708,7 @@ button.btn-login {
   justify-content: center;
 }
 
-.line-align > li > a {
+.line-align>li>a {
   text-align: center;
   text-decoration-line: underline;
 }
@@ -1864,11 +1866,5 @@ li {
   .sm\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:flex {
-    display: flex;
   }
 }

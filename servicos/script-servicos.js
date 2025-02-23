@@ -29,9 +29,9 @@ async function listServices() {
           if (!isPromo && servicesList) servicesList.append(createItem(key, item, isPromo, btnText));
 
         });
-        Object.keys(data.acrescimos).forEach((key) => {
+        Object.keys(data.opcionais).forEach((key) => {
           //Constantes utilizadas para criar os itens
-          const item = data.acrescimos[key];
+          const item = data.opcionais[key];
           let btnText = "Adicionar";
 
           if (adictionList) adictionList.append(createItem(key, item, false, btnText, true))

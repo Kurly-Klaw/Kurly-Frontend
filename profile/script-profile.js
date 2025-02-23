@@ -1,5 +1,8 @@
 const editButton = document.getElementById("edit-pencil-icon");
 const formulario = document.getElementById("formulario");
+const photo = document.getElementById('input-user-img')
+const phone = document.getElementById('user-phone_number')
+
 
 document.querySelectorAll('input[type="radio"]').forEach((radio) => {
   radio.addEventListener("change", (e) => {
@@ -21,7 +24,7 @@ document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     const icon = label.querySelector(".checkbox-icon");
 
     if (checkbox.checked) {
-      label.classList.toggle("checked");      
+      label.classList.toggle("checked");
     } else {
       label.classList.toggle("checked");
 
@@ -42,25 +45,20 @@ function toggleCard(event) {
 }
 
 // Acessando o slider e os botões
+// const slider = document.getElementById("hair-size");
+// const decreaseButton = document.getElementById("decrease");
+// const increaseButton = document.getElementById("increase");
+
 const slider = document.getElementById("hair-size");
-const decreaseButton = document.getElementById("decrease");
-const increaseButton = document.getElementById("increase");
 
-// Função para diminuir o valor do slider
-// decreaseButton.addEventListener("click", () => {
-//     if (slider.value > slider.min) {
-//         slider.value = parseInt(slider.value) - 1;
-//         slider.dispatchEvent(new Event("input"));
-//     }
-// });
+function updateTrack() {
+  const value = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+  slider.style.background = `linear-gradient(to right, #A76C39 ${value}%, #F5EAE0 ${value}%)`;
+}
 
-// Função para aumentar o valor do slider
-// increaseButton.addEventListener("click", () => {
-//     if (slider.value < slider.max) {
-//         slider.value = parseInt(slider.value) + 1;
-//         slider.dispatchEvent(new Event("input"));
-//     }
-// });
+slider.addEventListener("input", updateTrack);
+updateTrack()
+
 
 function proximaPagina() {
   window.location.href = "../login";

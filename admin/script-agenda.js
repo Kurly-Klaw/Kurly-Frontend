@@ -1,6 +1,5 @@
-import { getSchedule } from "../routes/ScheduleRoutes.js";
-import { selectSchedule } from "./script-schedule.js";
-
+import { getSchedule } from "../../routes/ScheduleRoutes.js";
+import { getRegister } from "../../routes/RegisterRoutes.js";
 // Constantes e configurações
 const mesesDoAno = {
     0: "Janeiro", 1: "Fevereiro", 2: "Março", 3: "Abril", 4: "Maio", 5: "Junho",
@@ -20,15 +19,33 @@ const numeroDoDia = document.getElementById('numero-do-dia');
 const nomeDoMes = document.getElementById('mes-atual');
 const nomeDoMes3 = document.getElementById('mes-atual-3');
 const timeContainer = document.getElementById('time-container');
+const monthInput = document.getElementById("mes-atual")
+
+monthInput.value = `${ano}-0${mes + 1}`
+monthInput.addEventListener("change", function () {
+    const valorSelecionado = this.value; // Obtém o valor do input
+    getDaysOnMonth(valorSelecionado); // Chama a função e passa o valor
+});
+
+listarDiasDoMes()
 
 // Funções principais
-export function listarDiasDoMes() {
+function getDaysOnMonth(date) {
+    console.log(date)
+}
+
+
+
+
+
+function listarDiasDoMes() {
     const dias = Array.from({ length: ultimoDia - hoje + 1 }, (_, i) => hoje + i);
     addDay(dias);
     atualizaHoras();
 }
 
 function addDay(arr) {
+    daysContainer.innerHTML = ''
     numeroDoDia.textContent = hoje;
     nomeDoMes.textContent = mesesDoAno[mes];
     nomeDoMes3.textContent = mesesDoAno[mes].toUpperCase().slice(0, 3);
@@ -61,38 +78,40 @@ function getDayWeek(day) {
     return (diaSemana + day - 1) % 7; // Calcula o índice do dia da semana
 }
 
-export function listarHorasDia(arr) {
+function listarHorasDia(data) {
     timeContainer.replaceChildren(); // Limpa o container antes de adicionar novos elementos
-
-    arr.forEach(horario => {
-        const timeArticle = document.createElement('article');
-        timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors';
-        timeArticle.style.backgroundColor = '#EFEFEF';
-        timeArticle.style.border = 'solid 1px';
-        timeArticle.style.borderColor = '#EFEFEF';
-        timeArticle.setAttribute('data-disponivel', !horario.is_scheduled);
-        timeArticle.setAttribute('data-start', horario.start_hour);
-        timeArticle.setAttribute('data-end', horario.end_hour);
-
-        if (horario.is_scheduled) {
-            timeArticle.style.opacity = '0.32';
-            timeArticle.style.backgroundColor = '#A1A1A1'
-        } else {
-            timeArticle.classList.add('cursor-pointer');
-            timeArticle.addEventListener('click', choseSchedule);
-        }
-
-        timeArticle.innerHTML = `
-            <p class="font-semibold">${horario.is_scheduled ? "Indisponivel" : "Disponivel"}</p>
-            <div class="flex gap-1 items-center">
-                <i class="material-icons text-[1rem] leading-none">today</i>
-                <p class="text-[1rem]">${horario.start_hour}h – ${horario.end_hour}h</p>
-            </div>
-        `;
-
-        timeContainer.appendChild(timeArticle);
-    });
+    let arr = data.schedules
+    arr.forEach(horario => setDaysStatus(horario,data));
 }
+
+async function setDaysStatus(horario,data) {
+
+    const timeArticle = document.createElement('article');
+    timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors';
+    timeArticle.style.backgroundColor = '#EFEFEF';
+    timeArticle.style.border = 'solid 1px';
+    timeArticle.style.borderColor = '#EFEFEF';
+    timeArticle.setAttribute('data-disponivel', !horario.is_scheduled);
+    timeArticle.setAttribute('data-start', horario.start_hour);
+    timeArticle.setAttribute('data-end', horario.end_hour);
+    console.log(data.date)
+    
+    if (horario.is_scheduled) {
+        let a = await getRegister(data.date)
+        console.log(a)
+    }
+
+    timeArticle.innerHTML = `
+        <p class="font-semibold">${horario.is_scheduled ? "Agendado por?" : "Horário livre"}</p>
+        <div class="flex gap-1 items-center">
+            <i class="material-icons text-[1rem] leading-none">today</i>
+            <p class="text-[1rem]">${horario.start_hour}h – ${horario.end_hour}h</p>
+        </div>
+    `;
+
+    timeContainer.appendChild(timeArticle);
+}
+
 
 function choseSchedule(event) {
     document.querySelectorAll("#time-container .selected").forEach(el => el.classList.remove("selected"));
@@ -113,5 +132,5 @@ async function atualizaHoras() {
     const anoMesDia = `${ano}-${Mes(mes)}-${numeroDoDia.textContent}`;
 
     const scheduleData = await getSchedule(anoMesDia, anoMesDia);
-    listarHorasDia(scheduleData[0].schedules);
+    listarHorasDia(scheduleData[0]);
 }

@@ -1,342 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Perfil</title>
-    <!-- icon do site -->
-    <link
-      rel="shortcut icon"
-      href="../assets/src/logo/Coroa-Madrinhas.png"
-      type="image/x-icon"
-    />
 
-    <!-- Estilos  -->
-    <link rel="stylesheet" href="../assets/css/wind.css" />
-    <link rel="stylesheet" href="../assets/css/anima.css" />
-    <link rel="stylesheet" href="../assets/css/colors.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil</title>
+  <!-- icon do site -->
+  <link rel="shortcut icon" href="../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- Scripts Gerais -->
-    <!-- Scripts da página -->
-    <script src="../assets/js/localStorage.js"></script>
-  </head>
+  <!-- Estilos  -->
+  <link rel="stylesheet" href="../assets/css/wind.css" />
+  <link rel="stylesheet" href="../assets/css/anima.css" />
+  <link rel="stylesheet" href="../assets/css/colors.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <body>
-    <nav class="p-4 sup-nav profile-nav">
-      <a class="back-arrow" aria-label="Voltar" href="../index.html">
-        <img
-          src="../assets/src/icons/Seta-volta.png"
-          alt="Seta para voltar"
-          class="aspect-square w-[24px]"
-        />
-      </a>
-      <h1>Meu perfil</h1>
-      <span
-        class="material-icons edit-pencil"
-        aria-label="Editar perfil"
-        id="edit-pencil-icon"
-        onclick="editForm(event)"
-      >
-        edit
-      </span>
-    </nav>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
 
-    <dialog id="doLogin">
-      <div id="popupContent">
-        <h2>Você está desconectado!</h2>
-        <p class="text-justify">
-          Para acessar os dados do seu perfil, você precisa estar conectado.
-          Realize o login para aproveitar melhor nossos serviços.
-        </p>
-        <div class="btn-login-container">
-          <button
-            id="btn-login-btn"
-            class="btn-login"
-            onclick="proximaPagina()"
-          >
-            Fazer Login
-          </button>
-        </div>
+<body>
+  <nav class="p-4 sup-nav profile-nav">
+    <a class="back-arrow" aria-label="Voltar" href="../index.html">
+      <img src="../assets/src/icons/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
+    </a>
+    <h1>Meu perfil</h1>
+  </nav>
+
+  <dialog id="doLogin">
+    <div class="popupContent">
+      <h2>Você está desconectado!</h2>
+      <p class="text-justify">
+        Para acessar os dados do seu perfil, você precisa estar conectado.
+        Realize o login para aproveitar melhor nossos serviços.
+      </p>
+      <div class="btn-login-container">
+        <button id="btn-login-btn" class="btn-login" onclick="proximaPagina()">
+          Fazer Login
+        </button>
       </div>
-    </dialog>
-    
-    <main class="rounded-t-none" id="profile">
-      <article id="infos" onclick="toggleCard(event)">
-        <div class="usuario">
-          <div class="px-4 py-2">
-            <img
-              src="../assets/src/icons/User-Icon.png"
-              alt="Foto de perfil"
-              class="aspect-square w-[50px] border rounded-full bg-white"
-            />
-          </div>
-          <div class="-mt-1 dados">
-            <h3 id="user-name">Usuário Desconhecido</h3>
-            <p id="user-phone_number">Faça login para ver mais informações.</p>
-            <div class="escondido">
-              <h4 id="user-email">email@usuario.com</h4>
-              <p id="user-id">Muitos numeros.</p>
-            </div>
-          </div>
+    </div>
+  </dialog>
 
-          <div class="right-0 ml-auto mr-1"><a class="setas">▲</a></div>
+  <main class="rounded-t-none" id="profile">
+    <form id="formulario">
+    <div id="infos">
+      <div class="usuario">
+        <div class="px-4 py-2">
+
+          <label id="user-img" for="input-user-img" class="custom-file-upload">
+            <img id="imagePreview" src="../assets/src/icons/User-Icon.png" alt="Foto de perfil"
+              class="aspect-square w-[50px] border rounded-full bg-white" />
+          </label>
+          <input disabled id="input-user-img" type="file" />
         </div>
-      </article>
-      <form id="formulario">
-        <section id="the-hair">
-          <div class="flex w-full hair-profile-container">
-            <div class="flex justify-center flex-1 hair-img-container">
-              <img src="../assets/src/icons/Cabelos.png" alt="Tipo de cabelo" />
-            </div>
-            <div class="flex flex-col flex-1 w-full hair-types-container">
-              <div class="flex flex-col items-center w-full h-full gap-2">
-                <h2>Meu cabelo</h2>
-                <!-- Botão 1 -->
-                <label
-                  for="hair-type-ondulado"
-                  class="label-cabelo label-tipo-cabelo flex items-center gap-2 text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer transition-all flex-1"
-                >
-                  <input
-                    disabled
-                    id="hair-type-ondulado"
-                    type="radio"
-                    name="hairType"
-                    value="ondulado"
-                    class="hidden"
-                  />
-                  <img
-                    src="../assets/src/icons/Radio-unchecked.png"
-                    alt="Ícone"
-                    class="w-[18px] aspect-square radio-icon"
-                  />
-                  Ondulado
-                </label>
+        <div class="-mt-1 dados">
+          <h3 id="user-name">Usuário Desconhecido</h3>
+          <input type="text" id="user-phone_number" disabled></input>
+          <h4 id="user-email">email@usuario.com</h4>
+          <p id="user-id">Muitos numeros.</p>
 
-                <!-- Botão 2 -->
-                <label
-                  for="hair-type-cacheado"
-                  class="flex items-center gap-2 label-cabelo label-tipo-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer transition-all flex-1"
-                >
-                  <input
-                    disabled
-                    id="hair-type-cacheado"
-                    type="radio"
-                    name="hairType"
-                    value="cacheado"
-                    class="hidden"
-                  />
-                  <img
-                    src="../assets/src/icons/Radio-unchecked.png"
-                    alt="Ícone"
-                    class="w-[18px] aspect-square radio-icon"
-                  />
-                  Cacheado
-                </label>
+        </div>
+        <span class="material-icons edit-pencil" aria-label="Editar perfil" id="edit-pencil-icon"
+          onclick="editForm(event)">
+          edit
+        </span>
 
-                <!-- Botão 3 -->
-                <label
-                  for="hair-type-crespo"
-                  class="flex items-center gap-2 label-cabelo label-tipo-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer transition-all flex-1"
-                >
-                  <input
-                    disabled
-                    id="hair-type-crespo"
-                    type="radio"
-                    name="hairType"
-                    value="crespo"
-                    class="hidden"
-                  />
-                  <img
-                    src="../assets/src/icons/Radio-unchecked.png"
-                    alt="Ícone"
-                    class="w-[18px] aspect-square radio-icon"
-                  />
-                  Crespo
-                </label>
-              </div>
-            </div>
-          </div>
-          <div
-            class="grid justify-center w-full grid-cols-5 gap-2 px-4 -p-2 -mb-[5px]"
-          >
-            <div class="flex justify-end"></div>
-            <div class="col-span-3">
-              <label for="hair-size" class="sr-only">Problemas capilares</label>
-              <input
-                disabled
-                id="hair-size"
-                type="range"
-                class="slider-input"
-                min="0"
-                max="2"
-                step="1"
-              />
-            </div>
-          </div>
-        </section>
-        <section class="flex flex-col gap-2">
-          <p class="col-span-3 text-[1.375rem] font-semibold text-center">
-            Problemas capilares
-          </p>
-          <div class="flex flex-row flex-wrap justify-center w-full gap-2">
-            
+      </div>
+    </div>
+    <hr>
+
+    <section id="the-hair">
+      <div class="flex w-full hair-profile-container">
+        <div class="flex justify-center flex-1 hair-img-container">
+          <img src="../assets/src/icons/Cabelos.png" alt="Tipo de cabelo" />
+
+        </div>
+        <div class="flex flex-col flex-1 w-full hair-types-container">
+          <div class="flex flex-col items-center w-full h-full gap-2">
+            <h2>Meu cabelo</h2>
 
             <!-- Botão 1 -->
-            <label for="problem-ponta-dupla" class="hair-issue label-cabelo">
-              <input
-                disabled
-                id="problem-ponta-dupla"
-                name="issues"
-                type="checkbox"
-                value="Ponta duplas"
-                class="hidden"
-              />
-              <img
-                src="../assets/src/icons/Checkbox-unchecked.png"
-                alt="Ícone"
-                class="w-[18px] aspect-square checkbox-icon"
-              />
-              Ponta duplas
+            <label for="hair-type-ondulado"
+              class="label-cabelo label-tipo-cabelo flex items-center gap-2 text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer transition-all flex-1">
+              <input disabled id="hair-type-ondulado" type="radio" name="hairType" value="ondulado" class="hidden" />
+              <img src="../assets/src/icons/Radio-unchecked.png" alt="Ícone"
+                class="w-[18px] aspect-square radio-icon" />
+              Ondulado
             </label>
 
             <!-- Botão 2 -->
-            <label for="problem-quimica" class="label-cabelo hair-issue">
-              <input
-                disabled
-                id="problem-quimica"
-                name="issues"
-                type="checkbox"
-                value="Química"
-                class="hidden"
-              />
-              <img
-                src="../assets/src/icons/Checkbox-unchecked.png"
-                alt="Ícone"
-                class="w-[18px] aspect-square checkbox-icon"
-              />
-              Química
+            <label for="hair-type-cacheado"
+              class="flex items-center gap-2 label-cabelo label-tipo-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer transition-all flex-1">
+              <input disabled id="hair-type-cacheado" type="radio" name="hairType" value="cacheado" class="hidden" />
+              <img src="../assets/src/icons/Radio-unchecked.png" alt="Ícone"
+                class="w-[18px] aspect-square radio-icon" />
+              Cacheado
             </label>
 
             <!-- Botão 3 -->
-            <label for="problem-oleoso" class="label-cabelo hair-issue">
-              <input
-                disabled
-                id="problem-oleoso"
-                name="issues"
-                type="checkbox"
-                value="Oleoso"
-                class="hidden"
-              />
-              <img
-                src="../assets/src/icons/Checkbox-unchecked.png"
-                alt="Ícone"
-                class="w-[18px] aspect-square checkbox-icon"
-              />
-              Oleoso
-            </label>
-
-            <!-- Botão 4 -->
-            <label for="problem-ressecado" class="label-cabelo hair-issue">
-              <input
-                disabled
-                id="problem-ressecado"
-                name="issues"
-                type="checkbox"
-                value="Ressecado"
-                class="hidden"
-              />
-              <img
-                src="../assets/src/icons/Checkbox-unchecked.png"
-                alt="Ícone"
-                class="w-[18px] aspect-square checkbox-icon"
-              />
-              Ressecado
-            </label>
-
-            <!-- Botão 5 -->
-            <label for="problem-quebradico" class="label-cabelo hair-issue">
-              <input
-                disabled
-                id="problem-quebradico"
-                name="issues"
-                type="checkbox"
-                value="Quebradiço"
-                class="hidden"
-              />
-              <img
-                src="../assets/src/icons/Checkbox-unchecked.png"
-                alt="Ícone"
-                class="w-[18px] aspect-square checkbox-icon"
-              />
-              Quebradiço
-            </label>
-            
-            <!-- Botão 6 -->
-            <label for="problem-frizz" class="hair-issue label-cabelo">
-              <input
-                disabled
-                id="problem-frizz"
-                name="issues"
-                type="checkbox"
-                value="Frizz"
-                class="hidden"
-              />
-              <img
-                src="../assets/src/icons/Checkbox-unchecked.png"
-                alt="Ícone"
-                class="w-5 h-5 checkbox-icon"
-              />
-              Frizz
+            <label for="hair-type-crespo"
+              class="flex items-center gap-2 label-cabelo label-tipo-cabelo text-white text-[14px] py-2 w-full px-4 rounded-full cursor-pointer transition-all flex-1">
+              <input disabled id="hair-type-crespo" type="radio" name="hairType" value="crespo" class="hidden" />
+              <img src="../assets/src/icons/Radio-unchecked.png" alt="Ícone"
+                class="w-[18px] aspect-square radio-icon" />
+              Crespo
             </label>
           </div>
-        </section>
-      </form>
-      <section class="mt-2 rounded-lg">
-        <div class="flex flex-col gap-2 px-4 py-2">
-          <h2 class="text-[1.375rem] font-semibold text-center">
-            Agendamento atual
-          </h2>
-          <ul id="user-schedules" class="">
-            <li class="flex flex-col items-center mb-2">
-              <span class="opacity-[.32]">Sem agendamento marcado!</span>
-            </li>
-          </ul>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="flex justify-center w-full  px-4 -p-2 -mb-[5px]">
+          <input type="range" id="hair-size" min="0" max="2" step="1" disabled>
+      </div>
+    </section>
+    <section class="flex flex-col gap-2">
+      <p class="col-span-3 text-[1.375rem] font-semibold text-center">
+        Problemas capilares
+      </p>
+      <div class="flex flex-row flex-wrap justify-center w-full gap-2">
 
-    <div id="preFooter"></div>
 
-    <footer>
-      <nav class="sub-nav">
-        <label
-          class="nav-btn"
-          for="botao-nav-1"
-          onclick="window.location.href='../home'"
-        >
-          <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
-          <span class="home-icon material-icons">home</span>
-          <h4>Início</h4>
+        <!-- Botão 1 -->
+        <label for="problem-ponta-dupla" class="hair-issue label-cabelo">
+          <input disabled id="problem-ponta-dupla" name="issues" type="checkbox" value="Ponta duplas" class="hidden" />
+          <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
+            class="w-[18px] aspect-square checkbox-icon" />
+          Ponta duplas
         </label>
-        <label
-          class="nav-btn"
-          for="botao-nav-1"
-          onclick="window.location.href='../profile'"
-        >
-          <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
-          <span class="home-icon material-icons">person</span>
-          <h4>Perfil</h4>
-        </label>
-      </nav>
-    </footer>
 
-    <script src="./script-profile.js"></script>
-    <script src="./script-profile-data.js" type="module"></script>
-    <script src="./script-profile-schedule.js" type="module"></script>
-  </body>
+        <!-- Botão 2 -->
+        <label for="problem-quimica" class="label-cabelo hair-issue">
+          <input disabled id="problem-quimica" name="issues" type="checkbox" value="Química" class="hidden" />
+          <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
+            class="w-[18px] aspect-square checkbox-icon" />
+          Química
+        </label>
+
+        <!-- Botão 3 -->
+        <label for="problem-oleoso" class="label-cabelo hair-issue">
+          <input disabled id="problem-oleoso" name="issues" type="checkbox" value="Oleoso" class="hidden" />
+          <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
+            class="w-[18px] aspect-square checkbox-icon" />
+          Oleoso
+        </label>
+
+        <!-- Botão 4 -->
+        <label for="problem-ressecado" class="label-cabelo hair-issue">
+          <input disabled id="problem-ressecado" name="issues" type="checkbox" value="Ressecado" class="hidden" />
+          <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
+            class="w-[18px] aspect-square checkbox-icon" />
+          Ressecado
+        </label>
+
+        <!-- Botão 5 -->
+        <label for="problem-quebradico" class="label-cabelo hair-issue">
+          <input disabled id="problem-quebradico" name="issues" type="checkbox" value="Quebradiço" class="hidden" />
+          <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone"
+            class="w-[18px] aspect-square checkbox-icon" />
+          Quebradiço
+        </label>
+
+        <!-- Botão 6 -->
+        <label for="problem-frizz" class="hair-issue label-cabelo">
+          <input disabled id="problem-frizz" name="issues" type="checkbox" value="Frizz" class="hidden" />
+          <img src="../assets/src/icons/Checkbox-unchecked.png" alt="Ícone" class="w-5 h-5 checkbox-icon" />
+          Frizz
+        </label>
+      </div>
+    </section>
+    </form>
+    <section class="mt-2 rounded-lg">
+      <h2 class="text-[1.375rem] font-semibold text-center">
+        Agendamento atual
+      </h2>
+
+      <ul id="user-schedules" class="">
+        <li class="flex flex-col items-center mb-2">
+          <span class="opacity-[.32]">Sem agendamento marcado!</span>
+        </li>
+      </ul>
+
+    </section>
+  </main>
+
+  <div id="preFooter"></div>
+
+  <footer>
+    <nav class="sub-nav">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
+        <span class="home-icon material-icons">home</span>
+        <h4>Início</h4>
+      </label>
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../servicos/'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer">
+        <span class="list-icon material-icons">list_alt</span>
+        <h4>Serviços</h4>
+      </label>
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
+        <span class="person-icon material-icons">person</span>
+        <h4>Perfil</h4>
+      </label>
+    </nav>
+  </footer>
+
+
+
+  <dialog id="cancelarPopup">
+    <div class="popupContent">
+      <h2>Cancelar agendamento?</h2>
+      <p>Tem certeza que deseja cancelar o horário??</p>
+      <button id="btnNao">Não</button><button id="btnC">Cancelar</button>
+    </div>
+  </dialog>
+
+
+
+
+  <script src="./script-profile.js" defer></script>
+  <script src="./script-profile-data.js" type="module"></script>
+  <script src="./script-profile-schedule.js" type="module"></script>
+</body>
+
 </html>

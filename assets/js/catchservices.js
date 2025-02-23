@@ -1,9 +1,11 @@
 export async function getService(key) {
-    const data = await getServices("items")
+    let filter
+    filter = key.startsWith('o') ? "opcionais" : "items";
+    const data = await getServices(filter)
     let response = {}
-    
+
     Object.entries(data).forEach(([service, item]) => {
-        if (key == service){
+        if (key == service) {
             response = item
         }
     })
@@ -11,15 +13,14 @@ export async function getService(key) {
     return response
 }
 
-async function readJSON() {
+export async function readJSON() {
     const pathOfServices = "../assets/js/services.json"
     const response = await fetch(pathOfServices);
     return response.json()
 }
 
-export async function getServices(filter="items"){
+export async function getServices(filter) {
     let a = await readJSON()
-    //console.log(a.items)
-    filter = "items" ? a.items : a.acrescimos;
+    filter = filter === "items" ? a.items : a.opcionais;
     return filter
 }

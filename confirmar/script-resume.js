@@ -5,7 +5,7 @@ hr.style.display='none'
 
 
 //Dados
-fetch("../assets/js/dados.json")
+fetch("../assets/js/services.json")
     .then(response => response.json())
     .then(data => {
         Object.keys(data.items).forEach(key => {
@@ -13,7 +13,7 @@ fetch("../assets/js/dados.json")
                 let infos = {
                     img: data.items[key].img,
                     title: data.items[key].nome,
-                    price: data.items[key].preco,
+                    price: `R$ ${carrinho.total},00`,
                     details: data.items[key].detailText1,
                     start: carrinho.schedule.start_hour,
                     end: carrinho.schedule.end_hour,
@@ -21,16 +21,16 @@ fetch("../assets/js/dados.json")
                 };
                 remap(infos);
             }
-            if (carrinho.comboService.indexOf(key) != -1) {
+            if (carrinho.comboServiceKeys.indexOf(key) != -1) {
                 hr.style.display = 'block'
                 document.getElementById("additionalSelection").prepend(hr)
                 document.getElementById("additionalSelection").append(createItem(key, data.items[key]))
             }
         })
-        Object.keys(data.acrescimos).forEach(key => {
+        Object.keys(data.opcionais).forEach(key => {
             if (carrinho.additionalSelection.indexOf(key) != -1) {
                 document.getElementById("additionalSelection").prepend(hr)
-                document.getElementById("additionalSelection").append(createItem(key, data.acrescimos[key]))
+                document.getElementById("additionalSelection").append(createItem(key, data.opcionais[key]))
             }
         })
 
@@ -74,4 +74,5 @@ function remap(infos) {
     document.getElementById("select-service-details").textContent = infos.details;
     document.getElementById("selected-schedule").textContent = `${infos.start} - ${infos.end}`;
     document.getElementById("selected-date").textContent = infos.data;
+    document.getElementById("valorTotal").textContent = infos.price;
 }

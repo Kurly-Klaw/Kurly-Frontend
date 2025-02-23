@@ -27,7 +27,8 @@
     <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
     <div id="select-service" class="grid items-start grid-cols-3 gap-4 h-fit">
       <div class="h-full ">
-        <img id="select-service-img" alt="Imagem do serviço" class="object-cover w-full h-full rounded-lg aspect-square">
+        <img id="select-service-img" alt="Imagem do serviço"
+          class="object-cover w-full h-full rounded-lg aspect-square">
       </div>
 
       <div class="col-span-2 select-service-text">
@@ -36,15 +37,15 @@
         <p id="select-service-details" class="pt-2 detalhe">Incluso: avaliação, lavagem e finalização.</p>
       </div>
     </div>
-    
+
     <ul id="additionalSelection"></ul>
 
-    <div class="flex items-center justify-between p-4 my-4 bg-gray-200 border-t rounded-lg"> 
+    <div class="flex items-center justify-between p-4 my-4 bg-gray-200 border-t rounded-lg">
       <div class="text-xl font-semibold">
-        Total: <span id="valortotal">R$ 220,00</span>
+        Total: <span id="valorTotal" class="font-light">R$ 220,00</span>
       </div>
 
-    
+
       <div class="flex items-center space-x-2 ">
         <i class="text-black fas fa-calendar-alt"></i>
         <div class="flex flex-col items-center text-sm">
@@ -53,15 +54,12 @@
         </div>
       </div>
     </div>
-
-
-
-    <a id="btnConfirmar" class="px-4 py-2 continuar" href="../">Confirmar</a>
   </main>
-  
+
   <div id="preFooter"></div>
-  
+
   <footer>
+    <a id="btnConfirmar" class="px-4 py-2 continuar" href="../profile/">Confirmar</a>
     <nav class="sub-nav">
       <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">

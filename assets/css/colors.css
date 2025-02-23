@@ -160,8 +160,17 @@ button.btnIncluido {
   background-color: transparent;
 }
 
-#infos {
-  background: #fafafa;
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.custom-file-upload img{
+  content: "asad";
 }
 
 #increase,

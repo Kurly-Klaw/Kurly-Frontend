@@ -1,51 +1,56 @@
-// services.js
-import { getCart, updateCart } from './cart.js';
-
 document.addEventListener("DOMContentLoaded", listServices);
 
+import { getCart, updateCart } from './cart.js';
+import { readJSON } from '../assets/js/catchservices.js';
+import { rmvAdditionalSelection, addAdditionalSelection } from '../assets/js/sessionStorage.js';
+
+
+const value = document.getElementById('cartPrices')
 async function listServices() {
     const adictionList = document.getElementById("more-list");
-    const serviceDiv = document.getElementById("select-service");
     const carrinho = getCart();
 
-    fetch("../assets/js/dados.json")
-        .then(response => response.json())
-        .then(data => {
-            if (adictionList) {
-                Object.keys(data.items).forEach(key => {
-                    if (carrinho.selectedServiceKey === key) {
-                        let infos = {
-                            img: data.items[key].img,
-                            title: data.items[key].nome,
-                            price: data.items[key].preco,
-                            details: data.items[key].detailText1,
-                        };
-                        remap(infos);
-                    }
-                });
-
-                Object.keys(data.acrescimos).forEach(key => {
-                    const item = data.acrescimos[key];
-                    let btnText = "Adicionar";
-                    adictionList.append(createItem(key, item, false, btnText, true));
-                });
+    value.textContent = `R$ ${carrinho.total},00`
+    let data = await readJSON()
+    if (adictionList) {
+        Object.keys(data.items).forEach(key => {
+            if (carrinho.selectedServiceKey === key) {
+                let infos = {
+                    img: data.items[key].img,
+                    title: data.items[key].nome,
+                    price: data.items[key].preco,
+                    details: data.items[key].detailText1,
+                };
+                remap(infos);
             }
         });
+
+        Object.keys(data.opcionais).forEach(key => {
+            const item = data.opcionais[key];
+            adictionList.append(createItem(key, item));
+        });
+    }
 }
 
-function createItem(key, item, isPromo, btnText, adictionList = false) {
-    console.warn("Criando item");
+//Cria os itens que serão populados na tela
+function createItem(key, item) {
+//    console.warn("Criando item");
     const produto = document.createElement("li");
     const container = document.createElement("div");
-
+    
+    let btnText = "Adicionar";
     let subtitulo, classes, btnfuncao, funcao, btnclasse = "btnAgendar";
-    let data_id, data_includes = "";
 
-    let isSelected = getCart().comboService.indexOf(key) !== -1;
+    let isIncluded = getCart().comboServiceKeys.indexOf(key) !== -1; //Retorna falso se key não estiver incluso em comboServiceKeys
+    let isSelected = getCart().additionalSelection.indexOf(key) !== -1; //Retorna falso se key não estiver incluso em additionalSelection
     subtitulo = `+ R$ ${item.preco}`;
-    btnclasse = isSelected ? "btnIncluido selected" : "btnAdicionar";
-    btnText = isSelected ? "Incluido" : btnText;
-    btnfuncao = isSelected ? "" : "onclick='btnAdditionalPressed(event)'";
+
+    //linha confusa, mas é 2 ifs em série: SE isIncluded ? então btnclasse = "classes" se não: isSelected? então = outras classes : se não = mais valores
+    btnclasse = isIncluded ? "btnIncluido selected" : isSelected ? "btnAdicionar selected" : "btnAdicionar"
+    btnText = isIncluded ? "Incluido" : isSelected ? "Adicionado" : btnText
+
+    //Parecido com outra condição: Faz o botão ter ou não a função de ser adicionado, caso isIncluded
+    btnfuncao = isIncluded ? "" : "onclick='btnAdditionalPressed(event)'";
 
     classes = "produto";
     funcao = "onclick='toggleCard(event)'";
@@ -68,16 +73,17 @@ function createItem(key, item, isPromo, btnText, adictionList = false) {
             <p>${subtitulo}</p>
         </div>
         <div class="btnCard">
-            <button class="${btnclasse}" ${btnfuncao} ${data_includes} data-id="${key}">${btnText}</button>
+            <button class="${btnclasse}" ${btnfuncao} data-id="${key}">${btnText}</button>
         </div>
         <div class="seta"> ▲</div>
     `;
 
     container.classList.add("txtcontainer");
-    isPromo ? produto.querySelector("article").append(container) : produto.querySelector("article").append(...container.childNodes);
+    produto.querySelector("article").append(...container.childNodes);
     return produto;
 }
 
+//Seta valores de acordo com infos recebidas
 function remap(infos) {
     document.getElementById("select-service-img").src = infos.img;
     document.getElementById("select-service-title").textContent = infos.title;
@@ -85,32 +91,31 @@ function remap(infos) {
     document.getElementById("select-service-details").textContent = infos.details;
 }
 
-window.btnAdditionalPressed = async function(event) {
+
+//declara funções utilizadas pelos cards da página
+window.btnAdditionalPressed = async function (event) {
     const btn = event.currentTarget;
     const idSelected = btn.getAttribute("data-id");
     const carrinho = getCart();
-
-    if (carrinho.comboService.includes(idSelected)) {
+    if (carrinho.comboServiceKeys.includes(idSelected)) {
         btn.classList.add("included");
-        btn.textContent = "Incluído";
+        btn.textContent = "Incluido";
         return;
     }
 
     btn.classList.toggle("selected");
+
     if (btn.classList.contains("selected")) {
         btn.textContent = "Adicionado";
-        let index = carrinho.additionalSelection.indexOf(idSelected);
-        if (index == -1) carrinho.additionalSelection.push(idSelected);
+        addAdditionalSelection(idSelected)
     } else {
         btn.textContent = "Adicionar";
-        let index = carrinho.additionalSelection.indexOf(idSelected);
-        if (index != -1) carrinho.additionalSelection.splice(index, 1);
+        rmvAdditionalSelection(idSelected)
     }
-
     updateCart(carrinho);
 }
 
-window.toggleCard = function(event) {
+window.toggleCard = function (event) {
     const card = event.currentTarget;
     const isButton = event.target.closest('button');
     const seta = card.getElementsByClassName("seta")[0];

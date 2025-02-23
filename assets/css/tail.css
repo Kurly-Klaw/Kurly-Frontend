@@ -14,11 +14,11 @@ body::-webkit-scrollbar {
 dialog:open {
   backdrop-filter: blur(2px);
 
-  @apply items-center w-[100vw] h-[100vh] z-30 flex flex-col;
+  @apply fixed items-center w-[100vw] h-[100vh] z-30 flex flex-col;
 }
 
-dialog #popupContent {
-  @apply flex flex-col w-72 h-72  items-center rounded-xl p-2 gap-y-3 fixed mt-[25vh] z-40 bg-white blur-0;
+dialog .popupContent {
+  @apply flex flex-col w-72 h-72 items-center rounded-xl p-2 gap-y-3 fixed mt-[25vh] z-40 bg-white blur-0;
 }
 
 dialog .btn-login-container {
@@ -39,6 +39,7 @@ main {
   /* margin-bottom: 6.25rem; */
   @apply rounded-lg;
 }
+
 #main-confirmar {
   @apply gap-0 px-4 py-0 rounded-t-none rounded-b-lg;
 }
@@ -60,11 +61,11 @@ section:first-of-type {
 }
 
 #preFooter {
-  @apply sticky mb-[92px];
+  @apply sticky mb-[128px];
 }
 
 footer {
-  @apply fixed bottom-0 flex flex-col w-full max-w-md mx-auto md:flex;
+  @apply fixed bottom-0 p-2 rounded-t-xl flex flex-col w-full max-w-md mx-auto md:flex;
 }
 
 /* Layout do profile */
@@ -98,15 +99,15 @@ nav {
   @apply flex flex-col items-center py-4 pb-2 shadow-md;
 }
 
-nav.profile-nav {
+nav.sup-nav  {
   @apply flex-row;
 }
 
-nav.profile-nav h1 {
+nav.sup-nav h1 {
   @apply mx-auto;
 }
 
-nav.profile-nav a {
+nav.sup-nav a {
   @apply ml-0;
 }
 
@@ -176,23 +177,30 @@ scroll-container {
   @apply flex flex-col max-w-2xl mb-2 text-white shadow-lg rounded-xl relative cursor-pointer h-[144px];
 }
 
-.produto > .hdCard {
+.produto>.hdCard {
   @apply absolute pt-2;
 }
 
 #promo-list .dtCard {
   @apply hidden;
 }
+
 .select-service-text .dtCard {
   @apply block col-span-2 row-start-2;
 }
-.produto > .dtCard {
+
+.produto>.dtCard {
   @apply absolute block row-start-2 overflow-hidden text-justify top-1/4;
 }
 
-.btnCard {
-  @apply flex items-start justify-end px-4 pt-2 h-[64px] row-start-1 col-start-2;
+.btnCard,.btnDiv {
+  @apply flex items-start justify-end px-4 pt-2 h-fit col-start-2 gap-1;
 }
+
+.btnCancelar,.btnEditar{
+  @apply ml-0
+}
+
 
 .imgProduto {
   @apply object-cover rounded-lg;
@@ -245,7 +253,9 @@ scroll-container {
 }
 
 /* Confirmação */
-
+article.card{
+  @apply flex flex-row flex-nowrap p-2
+}
 article.produto.resume {
   @apply grid grid-cols-4 gap-4 shadow-none h-fit;
 }
@@ -300,7 +310,7 @@ p.detalhe {
 /* Botões e links */
 button,
 a.continuar {
-  @apply px-4 py-2 mt-0 mb-4 ml-auto mr-0 text-xs text-white rounded-full;
+  @apply px-4 py-2 m-0 ml-auto mr-0 text-xs text-white rounded-full;
 }
 
 button.btn-login {
@@ -311,7 +321,7 @@ button.btn-login {
   @apply flex justify-center mt-2;
 }
 
-.line-align > li > a {
+.line-align>li>a {
   @apply text-center underline;
 }
 

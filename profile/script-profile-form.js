@@ -1,9 +1,9 @@
-export function pushForm(issues, size, type) {
+export function pushForm(issues, size, type, phone, photo) {
     //console.log("Dados recebidos:", issues, size, type);
 
     // Atualiza o rádio (tipo de cabelo)
     let user_type = formulario.querySelector(`input[name="hairType"][value="${type}"]`);
-    
+
     if (user_type) {
         user_type.checked = true;
         user_type.dispatchEvent(new Event("change"));
@@ -14,15 +14,15 @@ export function pushForm(issues, size, type) {
     // Atualiza os checkboxes (problemas capilares)
     let checkboxes = formulario.querySelectorAll(`input[name="issues"]`);
 
-    if(issues )
-    for (let checkbox of checkboxes) {
-        if (issues.includes(checkbox.value)) {
-            checkbox.checked = true;
-            checkbox.dispatchEvent(new Event("change"));
-        } else {
-            checkbox.checked = false; // Caso precise resetar os outros checkboxes
+    if (issues)
+        for (let checkbox of checkboxes) {
+            if (issues.includes(checkbox.value)) {
+                checkbox.checked = true;
+                checkbox.dispatchEvent(new Event("change"));
+            } else {
+                checkbox.checked = false; // Caso precise resetar os outros checkboxes
+            }
         }
-    }
 
     // Atualiza o slider de tamanho de cabelo
     const sizeMap = {
@@ -33,7 +33,7 @@ export function pushForm(issues, size, type) {
 
     // Encontra o slider (input range)
     let slider = formulario.querySelector('#hair-size');
-    
+
     if (slider) {
         // Verifica se o valor do backend existe no map
         const sliderValue = sizeMap[size] !== undefined ? sizeMap[size] : 0; // Se não tiver, coloca como "curto" (valor 0)
@@ -42,4 +42,15 @@ export function pushForm(issues, size, type) {
     } else {
         //console.warn("Slider de tamanho de cabelo não encontrado.");
     }
+
+    let inputImg = formulario.querySelector('#input-user-img');
+    let userImg = document.getElementById('imagePreview')
+    if (inputImg) {
+        userImg.src = photo
+        inputImg.dispatchEvent(new Event("input"))
+    }
+
+    let userPhone = formulario.querySelector('#user-phone_number')
+    userPhone.value = phone
+    userPhone.dispatchEvent(new Event("input"))
 }

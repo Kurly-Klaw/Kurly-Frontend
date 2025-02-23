@@ -20,10 +20,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
-<body class="flex-col w-full max-w-md mx-auto md:flex">
+<body>
   <!-- Navegação superior -->
-  <nav class="select-service">
-    <a aria-label="Voltar" href="../">
+  <nav class="sup-nav">
+    <a aria-label="Voltar" href="../home/">
       <img src="../assets/src/icons/Seta-volta.png" alt="Seta para voltar" class="aspect-square w-[24px]" />
     </a>
     <h1>Adicionar acréscimo</h1>
@@ -49,27 +49,37 @@
   </header>
 
   <!-- Conteúdo principal -->
-  <main class="flex flex-col gap-2 p-4 mb-8 rounded-lg">
+  <main class="flex flex-col gap-2 p-4 rounded-lg">
     <h2 class="font-semibold titulo">Acréscimos</h2>
     <ul id="more-list"></ul>
-
-    <!-- Botão para continuar -->
-    <a class="continuar" aria-label="Continuar" href="../horario">Continuar</a>
   </main>
 
   <!-- Rodapé com navegação inferior -->
   <div id="preFooter"></div>
-  
   <footer>
+    <div class="flex flex-row">
+      <div class="flex flex-row items-center gap-1">
+        <h2>Total:</h2>
+        <p id="cartPrices">R$ 00,00</p>
+      </div>
+
+      <!-- Botão para continuar -->
+      <a class="continuar" aria-label="Continuar" href="../horario">Continuar</a>
+    </div>
     <nav class="sub-nav">
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home'">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home/'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">
         <span class="home-icon material-icons">home</span>
         <h4>Início</h4>
       </label>
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../servicos/'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">
-        <span class="home-icon material-icons">person</span>
+        <span class="list-icon material-icons">list_alt</span>
+        <h4>Serviços</h4>
+      </label>
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile/'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer">
+        <span class="person-icon material-icons">person</span>
         <h4>Perfil</h4>
       </label>
     </nav>

@@ -1,6 +1,6 @@
-import {editCarrinho} from '../assets/js/sessionStorage.js'
+import { setSelectedService } from '../assets/js/sessionStorage.js'
 
-function toggleCard(event) {
+window.toggleCard = function (event) {
   const card = event.currentTarget;
   const isButton = event.target.closest('button');
   const seta = card.getElementsByClassName("seta")[0]
@@ -17,7 +17,7 @@ function toggleCard(event) {
   }
 }
 
-function slidePromo(event) {
+window.slidePromo = function (event) {
   const promo = event.currentTarget;
   const isButton = event.target.closest('button');
   if (!isButton) {
@@ -28,16 +28,9 @@ function slidePromo(event) {
   }
 }
 
-async function btnProductPressed(event) {
+window.btnProductPressed = async function (event) {
   const btn = event.currentTarget;
   const idSelected = btn.getAttribute("data-id")
-  const includeSelected = btn.getAttribute("data-includes")
-  await editCarrinho("selectedKey", idSelected)
-  if (includeSelected) await editCarrinho("comboService", includeSelected.replace(/[\[\]]/g, "").split(","))
-  else await editCarrinho("cleanCombo")
+  await setSelectedService(idSelected)
   window.location.href = '../opcionais';
 }
-
-window.toggleCard = toggleCard;
-window.slidePromo = slidePromo;
-window.btnProductPressed = btnProductPressed;
