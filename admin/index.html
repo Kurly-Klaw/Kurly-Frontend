@@ -1,106 +1,174 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <!-- Meta tags e configurações básicas -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Horário</title>
 
-    <!-- Ícone do site -->
-    <link
-      rel="shortcut icon"
-      href="../../assets/src/logo/Coroa-Madrinhas.png"
-      type="image/x-icon"
-    />
+<head>
+  <!-- Meta tags e configurações básicas -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda Admin</title>
 
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/wind.css" />
-    <link rel="stylesheet" href="../../assets/css/colors.css" />
-    <!-- Ícones do Google Material -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Ícone do site -->
+  <link rel="shortcut icon" href="../../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon" />
 
-  <body>
-    <!-- Navegação -->
-    <nav>
-      <div class="flex items-center">
-        <a class="p-3 mr-2" aria-label="Voltar" href="../">
-          <img
-            src="../../assets/src/icons/Seta-volta.png"
-            alt="Seta para voltar"
-            class="aspect-square w-[24px]"
-          />
-        </a>
-        <p class="text-[1.375rem] font-bold">Agendamento</p>
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+
+  <!-- Ícones do Google Material -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/wind.css" />
+  <link rel="stylesheet" href="../../assets/css/colors.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- Navegação -->
+  <dialog>
+    <div class="popupContent">
+      <div class="flex flex-row">
+        <h2>Abrir agenda do Mês</h2> <a>X</a>
       </div>
-    </nav>
+      <form>
+        <div class="flex flex-col items-center space-x-2">
+          <div class="flex flex-row">
+            <label for="inicio">De:</label>
+            <input type="time" id="inicio" name="inicio" value="08:00">
 
-    <!-- Seção de seleção de dia -->
-    <section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg h-fit">
-      <p class="text-[1.375rem] font-semibold">Dia</p>
-      <div class="flex gap-2">
-        <!-- Container do dia e mês -->
-        <div class="flex flex-col items-center px-4 py-3 rounded-lg roxo">
-          <p id="numero-do-dia" class="text-[1.5rem] text-white"></p>
-          <p id="mes-atual-3" class="text-[1.5rem] text-white">JAN</p>
+            <label for="fim">às:</label>
+            <input type="time" id="fim" name="fim" value="18:00">
+          </div>
+          <div>
+            <label for="data-hora">Almoço:</label>
+            <input type="time" id="data-hora" name="data-hora" value="12:00">
+          </div>
         </div>
 
-        <!-- Container dos dias do mês -->
+        <div class="flex flex-row gap-2">
+          <div class="flex flex-col items-center">
+            <label for="domingo">D</label>
+            <input name="domingo" type="checkbox">
+          </div>
+
+          <div class="flex flex-col items-center">
+            <label for="segunda">S</label>
+            <input name="segunda" type="checkbox">
+          </div>
+
+          <div class="flex flex-col items-center">
+            <label for="terça">T</label>
+            <input name="terça" type="checkbox">
+          </div>
+
+          <div class="flex flex-col items-center">
+            <label for="quarta">Q</label>
+            <input name="quarta" type="checkbox">
+          </div>
+
+          <div class="flex flex-col items-center">
+            <label for="quinta">Q</label>
+            <input name="quinta" type="checkbox">
+          </div>
+
+          <div class="flex flex-col items-center">
+            <label for="sexta">S</label>
+            <input name="sexta" type="checkbox">
+          </div>
+
+          <div class="flex flex-col items-center">
+            <label for="sábado">S</label>
+            <input name="sábado" type="checkbox">
+          </div>
+        </div>
+        <input type="">
+
+      </form>
+    </div>
+
+
+  </dialog>
+
+  <nav>
+    <div class="flex items-center justify-between w-full p-4">
+      <div class="flex items-center">
+        <p class="text-[1.375rem] font-bold">Inicio</p>
+      </div>
+      <div>
+        <p>tres pontos</p>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Seção de seleção de dia -->
+  <section class="flex flex-col gap-2 p-4 mb-2 rounded-b-lg h-fit">
+    <p class="text-[1.375rem] font-semibold p-titulo">Dia</p>
+    <div class="flex gap-2">
+      <!-- Container do dia e mês -->
+      <div class="flex flex-col items-center justify-center px-4 py-3 rounded-lg roxo">
+        <p id="numero-do-dia" class="text-[1.5rem] text-white font-inter"></p>
+        <p id="mes-atual-3" class="text-[1.5rem] text-white font-inter">JAN</p>
+      </div>
+
+      <!-- Container dos dias do mês -->
+      <div class="w-full">
         <div class="relative gap-2 overflow-hidden">
           <div
-            class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#d9d9d9] to-transparent pointer-events-none z-10"
-          ></div>
-            <input type="month" id="mes-atual" class="font-bold text-center"></input>
-          <div
-            class="flex items-center overflow-x-auto scroll-container scroll-pb-36"
-          >
+            class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#d9d9d9] to-transparent pointer-events-none z-10">
+          </div>
+          <input type="month" id="mes-atual" class="font-bold text-center font-inter"></input>
+
+          <div class="flex items-center overflow-x-auto scroll-container scroll-pb-36">
             <div id="days-container" class="flex gap-4 w-max">
-                <p>Agenda do mês fechada.</p>
+              <p>Agenda do mês fechada.</p>
             </div>
           </div>
-        </div>  
+
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Conteúdo principal - Seleção de horários -->
-    <main>
-      <p class="text-[1.375rem] font-semibold">Horários</p>
-      <div id="time-container" class="flex flex-col gap-2"></div>
-        
-    </main>
+  <!-- Conteúdo principal - Seleção de horários -->
+  <main>
+    <p class="text-[1.375rem] font-semibold p-titulo">Horários</p>
+    <div id="time-container" class="flex flex-col gap-2">
+      <div id="noSchedulesAlert" class="hidden">
+        <p>Agenda do dia fechada</p>
+        <button>Abrir agenda</button>
+      </div>
+    </div>
 
-    <div id="preFooter"></div>
-  
-    <footer>
-      <nav class="sub-nav">
-        <label
-          class="nav-btn"
-          for="botao-nav-1"
-          onclick="window.location.href='../home'"
-        >
-          <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
-          <span class="home-icon material-icons">home</span>
-          <h4>Início</h4>
-        </label>
-        <label
-          class="nav-btn"
-          for="botao-nav-1"
-          onclick="window.location.href='../profile'"
-        >
-          <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
-          <span class="home-icon material-icons">person</span>
-          <h4>Usuarios</h4>
-        </label>
-      </nav>
-    </footer>
+  </main>
 
-    <!-- Script JavaScript -->
-    <script type="module" src="./script-agenda.js"></script>
-    <script type="module" src="./script-date.js"></script>
-  </body>
+  <div id="preFooter"></div>
+
+  <footer>
+    <nav class="sub-nav">
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
+        <span class=" material-icons">home</span>
+        <h4>Início</h4>
+      </label>
+      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
+        <input disabled type="radio" name="botao-nav-1" class="hidden peer" />
+        <span class="home-icon material-icons">person</span>
+        <h4>Usuarios</h4>
+      </label>
+    </nav>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script type="module" src="./script-agenda.js"></script>
+  <script type="module" src="./script-date.js"></script>
+</body>
+
+
+
+
 </html>
-

@@ -5,13 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Confirmação</title>
-  <!-- icon do site -->
-  <link rel="shortcut icon" href="../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon" />
-  <!-- Estilos  -->
-  <link rel="stylesheet" href="../assets/css/wind.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/colors.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Ícone do site -->
+  <link rel="shortcut icon" href="../../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+
+  <!-- Ícones do Google Material -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/colors.css" />
+  <link rel="stylesheet" href="../../assets/css/wind.css" />
+  <link rel="stylesheet" href="../../assets/css/anima.css" />
 </head>
 <nav>
   <div class="flex items-center w-full">
@@ -22,7 +33,7 @@
   </div>
 </nav>
 
-<body class="font-sans">
+<body>
   <main id="main-confirmar" class="max-w-md p-4 shadow-lg">
     <h2 class="mb-4 text-2xl font-semibold">Resumo do serviço</h2>
     <div id="select-service" class="grid items-start grid-cols-3 gap-4 h-fit">
@@ -59,7 +70,8 @@
   <div id="preFooter"></div>
 
   <footer>
-    <a id="btnConfirmar" class="px-4 py-2 continuar" href="../profile/">Confirmar</a>
+    <div class="ml-auto my-1"><a id="btnConfirmar" class="px-4 py-2 continuar cursor-pointer">Confirmar</a></div>
+
     <nav class="sub-nav">
       <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../home'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">

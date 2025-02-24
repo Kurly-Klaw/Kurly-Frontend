@@ -27,6 +27,7 @@ class Fetch {
         const data = await response.json();
         return data;
     }
+    //windon.djawdi= login
 
     // Método POST com suporte para headers adicionais
     async post(path, body, headers = {}, params = {}) {

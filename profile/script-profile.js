@@ -44,11 +44,6 @@ function toggleCard(event) {
   }
 }
 
-// Acessando o slider e os botões
-// const slider = document.getElementById("hair-size");
-// const decreaseButton = document.getElementById("decrease");
-// const increaseButton = document.getElementById("increase");
-
 const slider = document.getElementById("hair-size");
 
 function updateTrack() {
@@ -65,6 +60,8 @@ function proximaPagina() {
 }
 
 function editForm(event) {
+
+
   const elementos = formulario.elements;
 
   for (let i = 0; i < elementos.length; i++) {
@@ -73,8 +70,16 @@ function editForm(event) {
 
   if (formulario.elements[0].disabled) {
     editButton.textContent = "edit";
+    document.querySelectorAll('.label-has-input').forEach(label => {
+      label.classList.add('disabled');
+    });
     formulario.requestSubmit();
   } else {
     editButton.textContent = "check";
+    document.querySelectorAll('.label-has-input.disabled').forEach(label => {
+      label.classList.remove('disabled');
+    });
+
   }
 }
+

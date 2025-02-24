@@ -10,6 +10,10 @@ export function getUser(user_id) {
     return api.get(userUrl);
 }
 
+export function loginUser(payload, ) {
+    return api.post('/users/login', payload);
+}
+
 export function updateUser(payload, user_id) {
     const headers = {
         user_id: user_id

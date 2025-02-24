@@ -11,10 +11,10 @@ export function createRegister(payload, user_id) {
 
 export function getRegister(date) {
 
-    const params = {
+    const url = ('/register?' + new URLSearchParams({
         date: date
-    };
-    return api.get('/register', {}, params);
+    }).toString())
+    return api.get(url)
 };
 
 export function getRegisterById(register_id) {

@@ -7,6 +7,7 @@ export function pushForm(issues, size, type, phone, photo) {
     if (user_type) {
         user_type.checked = true;
         user_type.dispatchEvent(new Event("change"));
+    
     } else {
         //console.warn("Nenhum input encontrado para o tipo:", type);
     }
@@ -46,6 +47,7 @@ export function pushForm(issues, size, type, phone, photo) {
     let inputImg = formulario.querySelector('#input-user-img');
     let userImg = document.getElementById('imagePreview')
     if (inputImg) {
+        photo = photo ? photo : "../assets/src/icons/User-icon.png"
         userImg.src = photo
         inputImg.dispatchEvent(new Event("input"))
     }

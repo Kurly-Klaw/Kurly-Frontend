@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
+
+
+
 /* Layout global */
 body {
   @apply flex flex-col w-full max-w-md mx-auto md:flex;
@@ -12,9 +19,7 @@ body::-webkit-scrollbar {
 }
 
 dialog:open {
-  backdrop-filter: blur(2px);
-
-  @apply fixed items-center w-[100vw] h-[100vh] z-30 flex flex-col;
+  @apply fixed items-center w-fit h-fit z-30 flex flex-col;
 }
 
 dialog .popupContent {
@@ -48,6 +53,9 @@ main {
   @apply rounded-t-none;
 }
 
+section.sectionD {
+  @apply flex flex-col gap-2 p-0 mb-2 rounded-b-lg h-fit;
+}
 section {
   @apply flex flex-col gap-2 p-4 mb-2 rounded-b-lg h-fit;
 }
@@ -96,10 +104,15 @@ article#infos {
 
 /* Navegação */
 nav {
-  @apply flex flex-col items-center py-4 pb-2 shadow-md;
+  @apply flex items-center py-4 pb-2 shadow-md;
 }
 
-nav.sup-nav  {
+nav.home{
+  @apply flex flex-col;
+}
+
+
+nav.sup-nav {
   @apply flex-row;
 }
 
@@ -114,6 +127,10 @@ nav.sup-nav a {
 a.back-arrow,
 a.edit-pencil {
   @apply p-3 ml-auto;
+}
+
+a.link{
+  @apply underline cursor-pointer;
 }
 
 nav.select-service {
@@ -193,11 +210,13 @@ scroll-container {
   @apply absolute block row-start-2 overflow-hidden text-justify top-1/4;
 }
 
-.btnCard,.btnDiv {
+.btnCard,
+.btnDiv {
   @apply flex items-start justify-end px-4 pt-2 h-fit col-start-2 gap-1;
 }
 
-.btnCancelar,.btnEditar{
+.btnCancelar,
+.btnEditar {
   @apply ml-0
 }
 
@@ -253,9 +272,10 @@ scroll-container {
 }
 
 /* Confirmação */
-article.card{
+article.card {
   @apply flex flex-row flex-nowrap p-2
 }
+
 article.produto.resume {
   @apply grid grid-cols-4 gap-4 shadow-none h-fit;
 }
@@ -310,7 +330,11 @@ p.detalhe {
 /* Botões e links */
 button,
 a.continuar {
-  @apply px-4 py-2 m-0 ml-auto mr-0 text-xs text-white rounded-full;
+  @apply px-4 py-2 text-xs text-white rounded-full;
+}
+
+button.auto {
+  @apply ml-auto
 }
 
 button.btn-login {
@@ -379,4 +403,15 @@ form {
 
 li {
   @apply list-none;
+}
+
+.material-symbols-outlined {
+  font-size: 19px !important;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+.font-inter{
+  font-family: 'Inter', sans-serif;
 }

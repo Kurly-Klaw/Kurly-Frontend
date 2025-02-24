@@ -11,38 +11,39 @@
   <link rel="stylesheet" href="../assets/css/wind.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/colors.css" />
+  <link rel="stylesheet" href="../assets/css/anima.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet" />
+  <script type="module" src="./script-login.js"></script>
 </head>
 
 <body>
-  <main>
-    <header class="items-center mt-10">
-      <div class="flex flex-col items-center">
-        <img class="w-10 aspect-auto " src="../assets/src/logo/Coroa-Madrinhas.png" />
-        <h1>Boas Vindas!</h1>
-      </div>
-      <p class="text-center"> Digite seu email e senha para poder aproveitar melhor nossos serviços!</p>
-    </header>
+  <main class="pt-10">
+    <h1>Login</h1>
+    <section>
+      <div class="flex flex-col items-center font-medium" id="login">
+        <div class="login-input-div flex flex-col items-center">
 
-    <section id="login">
-      <form action="" method="post" id="form-login">
-        <div class="login-input-div">
-          <input type="email" id="idEmail" placeholder=" " required class="peer" />
-          <label for="idEmail">Nome:</label>
+
+          <div class="login-input-div">
+            <input type="email" id="idEmail" placeholder=" " required class="peer" />
+            <label for="idEmail"> Email </label>
+          </div>
+
+          <div class="login-input-div">
+            <input type="password" id="idSenha" placeholder=" " required minlength="8" class="peer" />
+
+            <label for="idSenha">Senha:</label>
+          </div>
+          <div>
+            <button id="btnLogin">Login</button>
+          </div>
         </div>
-        <div class="login-input-div">
-          <input type="password" id="idSenha" placeholder=" " required class="peer" />
-          <label for="idSenha">Senha:</label>
-        </div>
-        <button type="submit" href="../index.html">
-          Entrar
-        </button>
-      </form>
+      </div>
     </section>
     <ul class="line-align">
       <li><a href="../recSenha/">Esqueci minha senha</a> </li>
@@ -51,6 +52,7 @@
 
     </ul>
   </main>
+
 </body>
 
 </html>

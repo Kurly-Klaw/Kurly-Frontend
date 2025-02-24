@@ -19,6 +19,7 @@ async function listServices() {
                     img: data.items[key].img,
                     title: data.items[key].nome,
                     price: data.items[key].preco,
+                    dura: data.items[key].duracao,
                     details: data.items[key].detailText1,
                 };
                 remap(infos);
@@ -34,10 +35,10 @@ async function listServices() {
 
 //Cria os itens que serão populados na tela
 function createItem(key, item) {
-//    console.warn("Criando item");
+    //    console.warn("Criando item");
     const produto = document.createElement("li");
     const container = document.createElement("div");
-    
+
     let btnText = "Adicionar";
     let subtitulo, classes, btnfuncao, funcao, btnclasse = "btnAgendar";
 
@@ -70,7 +71,7 @@ function createItem(key, item) {
     container.innerHTML = `
         <div class="hdCard">
             <h3>${item.nome}</h3>
-            <p>${subtitulo}</p>
+            <p class="font-inter">${subtitulo}</p>
         </div>
         <div class="btnCard">
             <button class="${btnclasse}" ${btnfuncao} data-id="${key}">${btnText}</button>
@@ -87,7 +88,7 @@ function createItem(key, item) {
 function remap(infos) {
     document.getElementById("select-service-img").src = infos.img;
     document.getElementById("select-service-title").textContent = infos.title;
-    document.getElementById("select-service-price").textContent = infos.price;
+    document.getElementById("select-service-price").textContent = `R$ ${infos.price},00 • ${infos.dura}`;
     document.getElementById("select-service-details").textContent = infos.details;
 }
 

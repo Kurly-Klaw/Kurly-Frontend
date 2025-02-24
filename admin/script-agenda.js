@@ -1,5 +1,6 @@
-import { getSchedule } from "../../routes/ScheduleRoutes.js";
-import { getRegister } from "../../routes/RegisterRoutes.js";
+import { getSchedule } from "../routes/ScheduleRoutes.js";
+import { getRegister, createRegister, updateRegister, updateRegisterStatus, deleteRegister } from "../routes/RegisterRoutes.js";
+
 // Constantes e configurações
 const mesesDoAno = {
     0: "Janeiro", 1: "Fevereiro", 2: "Março", 3: "Abril", 4: "Maio", 5: "Junho",
@@ -14,6 +15,7 @@ const ultimoDia = new Date(ano, mes + 1, 0).getDate(); // Último dia do mês
 const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']; // Domingo a Sábado
 
 // Elementos do DOM
+
 const daysContainer = document.getElementById('days-container');
 const numeroDoDia = document.getElementById('numero-do-dia');
 const nomeDoMes = document.getElementById('mes-atual');
@@ -54,10 +56,11 @@ function addDay(arr) {
         const dayElement = document.createElement('label');
         dayElement.className = 'flex flex-col items-center cursor-pointer flex-shrink-0';
         dayElement.innerHTML = `
-            <input type="radio" name="day" class="day-radio" ${dia === hoje ? 'checked' : ''}>
+            <input type="radio" name="day" class="day-radio font-inter" ${dia === hoje ? 'checked' : ''}>
             <p class="text-sm font-medium mb-1">${weekDays[getDayWeek(dia)]}</p>
             <div class="day-number aspect-square w-7 border-black border rounded-full flex items-center justify-center">
-                <p class="text-base text-black font-semibold">${dia}</p>
+                <p class="text-base text-black font-semibold font-inter">${dia}</p>
+                
             </div>
         `;
 
@@ -78,54 +81,148 @@ function getDayWeek(day) {
     return (diaSemana + day - 1) % 7; // Calcula o índice do dia da semana
 }
 
-function listarHorasDia(data) {
-    timeContainer.replaceChildren(); // Limpa o container antes de adicionar novos elementos
-    let arr = data.schedules
-    arr.forEach(horario => setDaysStatus(horario,data));
+async function listarHorasDia(data) {
+    if (data === null) {
+        document.getElementById('noSchedulesAlert').classList.remove('hidden')
+
+    }
+    else {
+        timeContainer.replaceChildren(); // Limpa o container antes de adicionar novos elementos
+        let arr = data.schedules
+        const Registers = await retriveRegister(data)
+        arr.forEach(horario => {
+            let registerEx = false
+            let foundedRegister
+            if (Registers) {
+                Registers.forEach(register => {
+                    if (register.schedule.start_hour == horario.start_hour && register.schedule.end_hour == horario.end_hour) {
+                        registerEx = true
+                        foundedRegister = register
+                    }
+                })
+            }
+            if (registerEx) {
+                setScheduleRegisterData(horario, foundedRegister)
+            } else {
+                setNormalScheduleData(horario)
+            }
+
+        });
+
+    }
 }
 
-async function setDaysStatus(horario,data) {
-
+function setScheduleRegisterData(horario, data) {
+    //console.log(data)
     const timeArticle = document.createElement('article');
-    timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors';
+    timeArticle.className = 'scheduleCard p-4 gap-2 rounded-xl flex flex-col transition-colors';
     timeArticle.style.backgroundColor = '#EFEFEF';
-    timeArticle.style.border = 'solid 1px';
     timeArticle.style.borderColor = '#EFEFEF';
-    timeArticle.setAttribute('data-disponivel', !horario.is_scheduled);
-    timeArticle.setAttribute('data-start', horario.start_hour);
-    timeArticle.setAttribute('data-end', horario.end_hour);
-    console.log(data.date)
-    
-    if (horario.is_scheduled) {
-        let a = await getRegister(data.date)
-        console.log(a)
-    }
 
     timeArticle.innerHTML = `
-        <p class="font-semibold">${horario.is_scheduled ? "Agendado por?" : "Horário livre"}</p>
-        <div class="flex gap-1 items-center">
-            <i class="material-icons text-[1rem] leading-none">today</i>
-            <p class="text-[1rem]">${horario.start_hour}h – ${horario.end_hour}h</p>
+<div class="flex items-start justify-between ">
+    <div class="flex gap-2 h-fit">
+        <div class="h-12 aspect-square"><img class="h-full aspect-square"></div>
+        <div class="flex flex-col h-fit">
+        <p class="font-semibold text-base">${horario.is_scheduled ? `${data.name}` : "Horário livre"}</p>
+        <p class="text-base">${data ? data.phone_number : ""}</p>
         </div>
+    </div>
+    <div class="flex items-center gap-1">
+        <i class="material-icons text-[19px] leading-none">today</i>
+        <p class="font-[inter] text-[#49454F]">${horario.start_hour}h – ${horario.end_hour}h</p>
+    </div>
+</div>
+<div class="w-full h-fit flex justify-end gap-2">
+    <button class="btn-admin-agenda-cancelar py-2 px-4 flex items-center text-sm gap-1 space-x-2 ">
+<span class="material-symbols-outlined">close</span>
+Cancelar
+</button>
+
+<button class="btn-admin-agenda-confirmar py-2 px-4 flex items-center text-sm gap-1 space-x-2 ">
+<span class="material-symbols-outlined text-white">check</span>
+Confirmar
+</button>
+<dialog>
+<article>
+<h2>Cancelar agendamento?</h2>
+<div class="flex">
+<button class="btn-manter-dialog py-2 px-4 flex items-center text-sm gap-1 space-x-2 ">Manter
+</button>
+<button id="${data.register_id}" class="btn-cancelar-dialog py-2 px-4 flex items-center text-sm gap-1 space-x-2 ">Cancelar
+</button>
+</div>
+</article>
+</dialog>
+
+</div>
+    
+`;
+    timeArticle.querySelector(".btn-admin-agenda-cancelar").addEventListener('click', async () => {
+        timeArticle.querySelector(`dialog`).showModal()
+    })
+    timeArticle.querySelector(".btn-cancelar-dialog").addEventListener('click', async () => {
+        await deleteRegister(data.register_id)
+        atualizaHoras()
+        timeArticle.querySelector(`dialog`).close()
+    }
+
+    )
+    timeArticle.querySelector(".btn-manter-dialog").addEventListener('click', async () => {
+        timeArticle.querySelector(`dialog`).close()
+    }
+
+    )
+
+
+    timeContainer.appendChild(timeArticle);
+
+}
+
+async function setNormalScheduleData(horario) {
+    //console.log(data)
+    const timeArticle = document.createElement('article');
+    timeArticle.className = 'scheduleCard p-4 gap-2 rounded-xl flex flex-col transition-colors';
+    timeArticle.style.backgroundColor = '#EFEFEF';
+    timeArticle.style.borderColor = '#EFEFEF';
+
+    timeArticle.innerHTML = `
+    <div class="flex items-start justify-between ">
+        <div class="flex gap-2 h-fit">
+            <div class="h-12 aspect-square"><img class="h-full aspect-square"></div>
+            <div class="flex flex-col h-fit">
+            <p class="font-semibold text-base">Horário livre</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-1">
+            <i class="material-icons text-[19px] leading-none">today</i>
+            <p class="font-[inter] text-[#49454F]">${horario.start_hour}h – ${horario.end_hour}h</p>
+        </div>
+    </div>
+    <div class="w-full h-fit flex justify-end gap-2">
+        <button class="btn-admin-agenda-cancelar py-2 px-4 flex items-center text-sm gap-1 space-x-2 ">
+    <span class="material-symbols-outlined">close</span>
+  Preencher
+</button>
+
+<button class="btn-admin-agenda-confirmar py-2 px-4 flex items-center text-sm gap-1 space-x-2 ">
+  <span class="material-symbols-outlined text-white">lock_open</span>
+  Reservar
+</button>
+
+
+    </div>
+        
     `;
 
     timeContainer.appendChild(timeArticle);
+
 }
 
-
-function choseSchedule(event) {
-    document.querySelectorAll("#time-container .selected").forEach(el => el.classList.remove("selected"));
-
-    const Mes = (num) => (num + 1).toString().padStart(2, "0");
-    const anoMesDia = `${ano}-${Mes(mes)}-${numeroDoDia.textContent}`;
-    const diaMesAno = `${numeroDoDia.textContent}/${Mes(mes)}/${ano}`;
-
-    const timeCard = event.currentTarget;
-    if (!event.target.closest('button')) {
-        timeCard.classList.toggle('selected');
-        selectSchedule(anoMesDia, diaMesAno, timeCard.dataset.start, timeCard.dataset.end);
-    }
+async function retriveRegister(data) {
+    return await getRegister(data.date)
 }
+
 
 async function atualizaHoras() {
     const Mes = (num) => (num + 1).toString().padStart(2, "0");
@@ -133,4 +230,8 @@ async function atualizaHoras() {
 
     const scheduleData = await getSchedule(anoMesDia, anoMesDia);
     listarHorasDia(scheduleData[0]);
+}
+
+async function chanceRetriveStatus(sendStatus, register_id) {
+    await updateRegisterStatus({ status: sendStatus }, register_id)
 }

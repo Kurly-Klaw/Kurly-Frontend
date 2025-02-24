@@ -5,21 +5,25 @@ import { deleteRegister } from "../routes/RegisterRoutes.js"
 let userschedules = await getUser(sessionStorage.getItem("user_id"))
 userschedules = userschedules.current_schedule
 const schedule = document.getElementById("user-schedules")
-console.log(userschedules)
+//console.log(userschedules)
 
 if (userschedules.length > 0) {
     schedule.innerHTML = ""
     for (let i = 0; i < userschedules.length; i++) {
-        console.log(userschedules, userschedules[i])
+        //console.log(userschedules, userschedules[i])
         schedule.append(await createItem(userschedules[i].treatment, userschedules[i]))
     }
 }
 
-async function createItem(key,schedule ) {
+async function createItem(key, schedule) {
     let item = await getService(key);
     let status = schedule.status
     let date = schedule.date
-    console.log("Criando item ", key, item);
+
+    date = date.split('-').reverse().join('/');
+
+    console.warn(item)
+    //console.log("Criando item ", key, item);
 
     const produto = document.createElement("li");
 
@@ -32,9 +36,9 @@ async function createItem(key,schedule ) {
                 </div>
 
             <div class="hdCard">
-                <h3>${key}</h3>
-                <p>${date}</p>
-                <p>${status}</p>
+                <h3 class="flex">${item.nome}</h3>
+                <p class="font-inter">${date}</p>
+                <p>${status = 'scheduled' ? 'Agendado' : 'Cancelado'}</p>
             </div>
             <div class="dtCard">
                 <p>${item.detailText1}</p>
@@ -53,14 +57,15 @@ async function createItem(key,schedule ) {
 window.cancelarHora = function (event) {
     let a = document.getElementById('cancelarPopup')
     let register_id = event.target.dataset.id
-    
+
     a.show()
     let btnNao = document.querySelector('#btnNao')
     let btnC = document.querySelector('#btnC')
-    btnC.addEventListener('click', ()=> {
+    btnC.addEventListener('click', () => {
         deleteRegister(register_id)
         a.close()
     })
-    btnNao.addEventListener('click', ()=> {
-        a.close()})
+    btnNao.addEventListener('click', () => {
+        a.close()
+    })
 }

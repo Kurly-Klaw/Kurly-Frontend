@@ -7,22 +7,30 @@
   <title>Início</title>
 
   <!-- Ícone do site -->
-  <link rel="shortcut icon" href="../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../assets/src/logo/Coroa-Madrinhas.png" type="image/x-icon" />
 
-  <!-- Estilos da página -->
-  <link rel="stylesheet" href="../assets/css/wind.css"> <!-- Layout geral -->
-  <link rel="stylesheet" href="../assets/css/anima.css"> <!-- Animações -->
-  <link rel="stylesheet" href="../assets/css/colors.css"> <!-- Tema do site -->
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
 
-  <!-- Ícones do Google Fonts -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Ícones do Google Material -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <!-- Scripts JavaScript -->
-  <script type="module" src="./script.js" defer></script>
-  <script type="module" src="./script-listservices.js" defer></script>
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/wind.css" />
+  <link rel="stylesheet" href="../../assets/css/colors.css" />
+  <link rel="stylesheet" href="../../assets/css/anima.css" />
+  
+  <script src="./script-listservices.js" type="module"></script>
+  <script src="./script.js" type="module"></script>
 </head>
 
 <body>
+
   <!-- Barra de navegação superior -->
   <nav class="home">
     <img src="../assets/src/logo/Coroa-Madrinhas.png" alt="Logo Madrinha's" class="logo">
@@ -50,11 +58,7 @@
         <span class="home-icon material-icons">home</span>
         <h4>Início</h4>
       </label>
-      <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../servicos/'">
-        <input disabled type="radio" name="botao-nav-1" class="hidden peer">
-        <span class="list-icon material-icons">list_alt</span>
-        <h4>Serviços</h4>
-      </label>
+
       <label class="nav-btn" for="botao-nav-1" onclick="window.location.href='../profile'">
         <input disabled type="radio" name="botao-nav-1" class="hidden peer">
         <span class="home-icon material-icons">person</span>

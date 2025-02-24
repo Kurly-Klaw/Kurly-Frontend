@@ -65,24 +65,22 @@ export function listarHorasDia(arr) {
     timeContainer.replaceChildren(); // Limpa o container antes de adicionar novos elementos
 
     arr.forEach(horario => {
-        const timeArticle = document.createElement('article');
-        timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors';
-        timeArticle.style.backgroundColor = '#EFEFEF';
-        timeArticle.style.border = 'solid 1px';
-        timeArticle.style.borderColor = '#EFEFEF';
-        timeArticle.setAttribute('data-disponivel', !horario.is_scheduled);
-        timeArticle.setAttribute('data-start', horario.start_hour);
-        timeArticle.setAttribute('data-end', horario.end_hour);
+        if (horario != null) {
+            const timeArticle = document.createElement('article');
+            timeArticle.className = 'p-4 rounded-xl flex justify-between transition-colors schedule-card';
+            timeArticle.setAttribute('data-disponivel', !horario.is_scheduled);
+            timeArticle.setAttribute('data-start', horario.start_hour);
+            timeArticle.setAttribute('data-end', horario.end_hour);
 
-        if (horario.is_scheduled) {
-            timeArticle.style.opacity = '0.32';
-            timeArticle.style.backgroundColor = '#A1A1A1'
-        } else {
-            timeArticle.classList.add('cursor-pointer');
-            timeArticle.addEventListener('click', choseSchedule);
-        }
+            if (horario.is_scheduled) {
+                timeArticle.style.opacity = '0.32';
+                timeArticle.style.backgroundColor = '#A1A1A1'
+            } else {
+                timeArticle.classList.add('cursor-pointer');
+                timeArticle.addEventListener('click', choseSchedule);
+            }
 
-        timeArticle.innerHTML = `
+            timeArticle.innerHTML = `
             <p class="font-semibold">${horario.is_scheduled ? "Indisponivel" : "Disponivel"}</p>
             <div class="flex gap-1 items-center">
                 <i class="material-icons text-[1rem] leading-none">today</i>
@@ -90,7 +88,8 @@ export function listarHorasDia(arr) {
             </div>
         `;
 
-        timeContainer.appendChild(timeArticle);
+            timeContainer.appendChild(timeArticle);
+        }
     });
 }
 
@@ -113,5 +112,7 @@ async function atualizaHoras() {
     const anoMesDia = `${ano}-${Mes(mes)}-${numeroDoDia.textContent}`;
 
     const scheduleData = await getSchedule(anoMesDia, anoMesDia);
-    listarHorasDia(scheduleData[0].schedules);
+    if (scheduleData[0] != null) listarHorasDia(scheduleData[0].schedules);
+    else listarHorasDia([])
+
 }

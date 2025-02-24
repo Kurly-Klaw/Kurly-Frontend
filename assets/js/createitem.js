@@ -37,7 +37,7 @@ export function createItem(key="Vazio", item={}, isPromo = false, btnText = "Age
     container.innerHTML = `
         <div class="hdCard">
             <h3>${item.nome}</h3>
-            <p>${subtitulo}</p>
+            <p class="font-inter">${subtitulo}</p>
         </div>
         <div class="btnCard">
             <button class="${btnclasse}" ${btnfuncao} ${data_includes} data-id="${key}">${btnText}</button>
