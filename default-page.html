@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc</title>
+    <!-- icon do site -->
+    <link
+      rel="shortcut icon"
+      href="./assets/src/logo/Coroa-Madrinhas.png"
+      type="image/x-icon"
+    />
+    <!-- layout geral da página -->
+    <link rel="stylesheet" href="./assets/css/wind.css" />
+    <!-- animação dos elementos da página -->
+    <link rel="stylesheet" href="./assets/css/anima.css" />
+    <!-- Tema do site -->
+    <link rel="stylesheet" href="./assets/css/colors.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <h1>Elementos</h1>
+    </nav>
+    <header>
+      <img src="./assets/src/logo/Coroa-Madrinhas.png" alt="Logo" />
+      <h2>Título - header</h2>
+      <p>Subtítulo</p>
+      <section>
+        <h3>Coisa</h3>
+        <p>Texto</p>
+      </section>
+      <table>
+        <thead>
+            <th>Nome</th>
+            <th>Elemento</th>
+            <th>Uso</th>
+        </thead>
+        <tr>
+            <td></td>
+            <td><button>Texto</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btnlogin">Texto</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btnAdicionar">Texto</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="btndesabilitado">Texto</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h1>H1</h1></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h2>H2</h2></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h3>H3</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><h4>H4</h4></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><p>p</p></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td<label for="day-radio"
+            ><input class="day-radio" type="radio" name="day-radio" />
+            <div
+              class="flex items-center justify-center border border-black rounded-full day-number aspect-square w-7"
+            >
+              <p class="text-base font-semibold text-black">3</p>
+            </div>
+          </label></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><label for="" class="label-cabelo label-tipo-cabelo"
+                ><input
+                  id="hair-type-ondulado"
+                  type="radio"
+                  name="hairType"
+                  class="radio-icon"
+                  value="ondulado"
+                />
+              </label></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><label for="problem-ponta-dupla" class="label-cabelo hair-issue"
+                ><input
+                  id="problem-quimica"
+                  name="inssues"
+                  type="checkbox"
+                  value="Química"
+                  class="hidden"
+                />Teste</label
+              ></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><div
+                class="grid justify-center w-full grid-cols-5 gap-2 px-4 -p-2 -mb-[5px]"
+              >
+                <div class="flex justify-end">
+                  <input
+                    type="button"
+                    id="decrease"
+                    class="justify-center w-12 h-12 text-white rounded-full label-cabelo"
+                  />
+                  -
+                </div>
+      
+                <div class="col-span-3">
+                  <label for="hair-size" class="sr-only">Tamanho do cabelo</label>
+                  <input
+                    id="hair-size"
+                    type="range"
+                    class="slider-input"
+                    min="0"
+                    max="2"
+                    step="1"
+                  />
+                </div>
+      
+                <input
+                  type="button"
+                  id="increase"
+                  class="justify-center w-12 text-white rounded-full aspect-square label-cabelo"
+                />
+                +
+              </div></td>
+            <td></td>
+        </tr>
+        
+        
+        
+        
+      </table>
+    </header>
+    <main>
+      <h2>Conjuntos</h2>
+      <ul id="promo-list">
+        <li>
+          <article class="promo">
+            <img />
+            <h3>Teste</h3>
+          </article>
+        </li>
+        <li>
+          <article class="promo">
+            <img />
+            <h3>Teste</h3>
+          </article>
+        </li>
+      </ul>
+
+      <ul id="services-list">
+        <li>
+          <article class="produto">
+            <img class="imgCard" />
+            <div class="hdCard">
+              <h3>Card de produto</h3>
+              <p>Preço e duração</p>
+            </div>
+            <div class="dtCard">
+              <p>Titulo</p>
+              <p>Descrição do produto</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

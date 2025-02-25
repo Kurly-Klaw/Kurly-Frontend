@@ -1,8 +1,16 @@
-import axios from "axios";
+import Fetch from './fetch.js'
 
-const api = axios.create({
+const fetchInstance = new Fetch();
+
+const authorization = document.cookie;
+if (!authorization){
+    sessionStorage.removeItem('user_id')
+    sessionStorage.removeItem('user_type')
+}
+const authorizationValue = authorization.split('=')[1];
+console.log(authorizationValue)
+const api = fetchInstance.create({
     baseURL: 'http://localhost:3000/api',
-    headers: { 'User-Agent': 'AluroniAdmin', 'user_id': '2a33ab75-2c91-4627-87d0-de4f4a9c697c' }
+    headers: { 'User-Agent': 'AluroniAdmin', 'user_id': localStorage.getItem('user_id'), authorization: authorizationValue }
 });
-
 export default api;

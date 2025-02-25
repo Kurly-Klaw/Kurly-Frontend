@@ -1,0 +1,290 @@
+:root {
+  --offwhite: #c5c5c5;
+  --fundo: #47061e;
+  --chips: #fa92374b;
+  --fundo-mais: #25030f;
+  --primaria: #eeeeee;
+  --secundaria: #d9d9d9;
+  --terciaria: #502f2b;
+  --btn: #a76c39;
+  --white: white;
+  --btnd: #682c1d;
+  --btnA: hsla(28, 49%, 44%, 0.388);
+  --inputOk: #59881c;
+  --bluer: #ffffff3d;
+  --textOutlined: #594E45;
+  --bkgOutlined: #F5EAE0;
+  --btnHovered: #ad7748;
+  --gray: #acacace5;
+}
+
+* {
+  color: black;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+input,
+textarea {
+  user-select: text;
+}
+
+dialog #popupContent {
+  border: 1px solid var(--offwhite);
+  background-color: var(--secundaria);
+}
+
+
+.titulo {
+  font-weight: 600;
+  color: var(--fundo);
+}
+
+body {
+  background-color: var(--fundo);
+}
+
+
+
+main,
+nav,
+#infos,
+section,
+header,
+footer {
+  background-color: var(--secundaria);
+}
+
+.btn-login {
+  background-color: transparent;
+}
+
+article.produto,
+.card {
+  background-color: var(--primaria);
+}
+
+article.produto.resume {
+  background-color: transparent;
+}
+
+article.produto.selected {
+  background-color: transparent;
+}
+
+article.selected {
+  background-color: var(--btn);
+}
+
+button {
+  background-color: var(--fundo);
+}
+
+.btn-login {
+  background-color: var(--btn);
+}
+
+.btn-login:hover {
+  background-color: var(--btnd);
+}
+
+button:hover,
+a.continuar,
+.roxo {
+  background-color: var(--fundo);
+}
+
+.btn-admin-agenda-cancelar:hover {
+  background-color: var(--bkgOutlined);
+}
+
+.btn-admin-agenda-confirmar:hover {
+  background-color: var(--btnHovered);
+}
+
+button.btnAdicionar {
+  border-color: var(--btnA);
+  border-width: 1px;
+  color: var(--fundo);
+  background-color: transparent;
+}
+
+button.btnAdicionar:hover,
+button.selected,
+button.included {
+  color: black;
+  fill-opacity: 0;
+  background-color: var(--btnA);
+}
+
+.btnPromo button {
+  background-color: var(--fundo);
+}
+
+.btnPromo button:hover {
+  background-color: var(--fundo-mais);
+}
+
+hr {
+  border-color: var(--fundo);
+}
+
+.btn-desabilitado,
+button.btnIncluido {
+  opacity: 0.52;
+}
+
+/* Estilo quando o radio está selecionado */
+.day-radio:checked~.day-number {
+  background-color: var(--fundo);
+  border-color: black;
+
+}
+
+.day-radio:checked~.day-number p {
+  color: var(--white);
+}
+
+.produto .imgCard {
+  background-color: transparent;
+}
+
+.produto.expanded .imgCard {
+  background-color: var(--offwhite);
+}
+
+/* Track */
+#promo-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+#promo-list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+#promo-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.slider-input {
+  border: solid black 1px;
+  background-color: transparent;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.schedule-card {
+  background-color: var(--white);
+}
+
+input:disabled {
+  background-color: var(--gray);
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.custom-file-upload img {
+  content: "asad";
+}
+
+#increase,
+#decrease {
+  background-color: black;
+}
+
+
+.btn-admin-agenda-cancelar {
+  background-color: transparent;
+  color: var(--textOutlined);
+  border: 1px var(--btn) solid;
+}
+
+.btn-admin-agenda-cancelar span {
+  color: var(--textOutlined);
+}
+
+.btn-admin-agenda-confirmar {
+  background-color: var(--btn);
+  color: white;
+  border: 1px var(--btn) solid;
+}
+
+.label-cabelo {
+  color: white;
+  border: 1px var(--btn) solid;
+}
+
+
+.label-cabelo:hover {
+  background-color: var(--btnHovered);
+}
+
+
+.hair-issue {
+  color: white;
+  border: 1px var(--btn) solid;
+  color: var(--textOutlined);
+}
+
+.hair-issue:hover {
+  background-color: var(--bkgOutlined);
+}
+
+.checked {
+  background-color: var(--bkgOutlined);
+  border-color: var(--bkgOutlined);
+}
+
+input[type="checkbox"]:checked+span {
+  display: block;
+  background-color: var(--bkgOutlined);
+  border: var(--bkgOutlined);
+
+}
+
+
+.label-cabelo.checked {
+  background-color: var(--chips);
+  /* Muda o fundo do label */
+}
+
+.label-tipo-cabelo {
+  background-color: var(--btn);
+}
+
+.label-tipo-cabelo.disabled,.hair-issue.disabled {
+  background-color: var(--offwhite);
+  border-color: var(--offwhite);
+  ;
+}
+
+input:disabled,
+label+input:disabled {
+  background-color: var(--gray);
+}
+
+input:valid {
+  border-color: var(--inputOk);
+}
+
+.p-titulo {
+  color: var(--fundo);
+}
+
+h3 {
+  word-wrap: break-word; /* Quebra a palavra se ela for muito longa */
+  word-break: break-word; /* Quebra a linha quando a palavra ultrapassar a largura */
+}

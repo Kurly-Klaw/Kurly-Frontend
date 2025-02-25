@@ -1,99 +1,46 @@
-import api from '../services/api'
+import api from './api.js';
 
 
 export function createRegister(payload, user_id) {
     const headers = {
-        headers: {
-            user_id: user_id
-        }
+        user_id: user_id
     };
 
-    api.post('/register', payload, headers)
-        .then(function (response) {
-            if (response.status === 201) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.post('/register', payload, headers);
 };
 
 export function getRegister(date) {
 
-    const params = {
-        params:{
-            date: date
-        }
-    };
-
-    api.get('/register', params)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    const url = ('/register?' + new URLSearchParams({
+        date: date
+    }).toString())
+    return api.get(url)
 };
 
 export function getRegisterById(register_id) {
 
-    const registerUrl = `/register/${register_id}`
+    const registerUrl = `/register/${register_id}`;
 
-    api.get(registerUrl)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.get(registerUrl);
 };
 
 export function updateRegister(payload, register_id) {
 
     const registerUrl = `/register/${register_id}`
 
-    api.put(registerUrl, payload)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.put(registerUrl, payload);
 };
 
 export function updateRegisterStatus(payload, register_id) {
 
     const registerUrl = `/register/${register_id}/status`;
 
-    api.put(registerUrl, payload)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.put(registerUrl, payload);
 };
 
 export function deleteRegister(register_id) {
 
     const registerUrl = `/register/${register_id}`;
 
-    api.delete(registerUrl)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.delete(registerUrl);
 };

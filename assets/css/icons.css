@@ -1,0 +1,9 @@
+input[name="hairType"]{
+    background-image: url("../assets/src/icons/Radio-unchecked.png")
+}
+input[name="hairType"]{
+    background-image: url("../assets/src/icons/Radio-unchecked.png")
+}
+input[name="hairType"]:checked{
+    background-image: url("../assets/src/icons/Radio-checked.png")
+}

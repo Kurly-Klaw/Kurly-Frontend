@@ -1,70 +1,31 @@
-import api from '../services/api'
-
+import api from './api.js';
 
 export function createSchedule(payload) {
-    api.post('/schedule', payload)
-        .then(function (response) {
-            if (response.status === 201) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    
+    return api.post('/schedule', payload);
 };
 
 export function getSchedule(start_date, end_date) {
-    const headers = {
-        headers: {
-            start_date: start_date,
-            end_date: end_date
-        }
-    };
-
-    api.get('/schedule', headers)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    const url = ('/schedule?' + new URLSearchParams({
+        start_date: start_date,
+        end_date: end_date
+    }).toString())
+    return api.get(url)
 };
 
 export function updateSchedule(payload, start_date, end_date) {
     const headers = {
-        headers: {
-            start_date: start_date,
-            end_date: end_date
-        }
+        start_date: start_date,
+        end_date: end_date
     };
 
-    api.put('/schedule', payload, headers)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.put('/schedule', payload, headers);
 };
 
 export function deleteRegister(date) {
     const params = {
-        params: {
-            date: date
-        }
+        date: date
     };
 
-    api.delete('/schedule', params)
-        .then(function (response) {
-            if (response.status === 200) {
-                return response.data;
-            }
-        })
-        .catch(function (error) {
-            return error;
-        });
+    return api.delete('/schedule', {}, params);
 };
